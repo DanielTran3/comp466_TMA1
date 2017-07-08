@@ -1,0 +1,67 @@
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.titleDiv {
+    text-align: left;
+}
+
+.titleDiv > span {
+    display: block;
+}
+
+.title1 {
+    font-size: 3em !important;
+}
+
+.title2 {
+    font-size: 2em !important;
+}
+
+.title3 {
+    font-size: 1.5em !important;
+}
+
+    /*Need to make linksBar height larger*/
+.linksBar {
+    background-color: #FFFFFF;
+    /*height: 5vh;*/
+    max-width: 100%;
+    padding: 5px;
+}
+
+.linksBar > ul {
+    margin: 0;
+}
+
+.linksBar > ul > li {
+    list-style: none;
+    padding-left: 2%;
+    display: inline;
+}
+
+.linksBar > ul > li > a {
+    color: #000000;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.linksBar > ul > li > a:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.aside {
+    width: 20%;
+    height: 95vh;
+    margin: 0;
+    float: left;
+    background-color: #FFFF00;
+}
+
+.main-content {
+    width: 80%;
+    height: 95vh;
+    float: left;
+}

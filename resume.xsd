@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:resume="http://www.resume.com"
+        targetNamespace="http://www.resume.com">
+
+        <element name="myResume" type="resume:resumeType" />
+
+        <complexType name="resumeType">
+                <sequence>
+                        <element name="section" type="resume:sectionDetails"
+                        minOccurs="3" maxOccurs="unbounded" />
+                </sequence>
+        </complexType>
+
+        <complexType name="sectionDetails">
+                <sequence>
+                        <element name="sectionHeader" type="string"
+                        minOccurs="1" maxOccurs="1" />
+                        <element name="sectionInformation" type="resume:sectionInfo"
+                        minOccurs="1" maxOccurs="unbounded" />
+                </sequence>
+        </complexType>
+
+        <complexType name="sectionInfo">
+                <sequence>
+                        <element name="workplaceName" type="string"
+                        minOccurs="0" maxOccurs="1" />
+                        <element name="workPosition" type="string"
+                        minOccurs="0" maxOccurs="1" />
+                        <element name="details" type="string"
+                        minOccurs="1" maxOccurs="unbounded" />
+                </sequence>
+        </complexType>
+</schema>

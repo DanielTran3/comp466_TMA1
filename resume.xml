@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type = "text/xsl" href = "resume.xsl"?>
+<!--
+<resume:myResume xmlns:resume="http://www.resume.com">
+-->
+<myResume>
+    <section>
+        <sectionHeader>General Information</sectionHeader>
+        <sectionInformation>
+            <details>Performed Chinese yo-yo during special events and at various schools</details>
+            <details>Loves working out at the gym and playing badminton</details>
+            <details>Has a passion for researching and assembling desktop computers</details>
+            <details>Enjoys participating in Hackathons</details>
+        </sectionInformation>
+    </section>
+    <section>
+        <sectionHeader>Educational Background</sectionHeader>
+        <sectionInformation>
+            <details>Computer Engineering, BSc, 2018</details>
+            <details>Cumulative Grade Point Average: 3.5/4.0</details>
+            <details>Completed Academic Terms: 7/8</details>
+            <details>Completed Co-op Work Terms: 3/5</details>
+            <details>Length of Next Work Term: 4 or 8 Months</details>
+        </sectionInformation>
+    </section>
+    <section>
+        <sectionHeader>Work Experience</sectionHeader>
+        <sectionInformation>
+            <workplaceName>IBM, Toronto, ON</workplaceName>
+            <workPosition>Data Scientist</workPosition>
+            <details>Updated, reworked, and performed regression testing on old online course lab material on Big Data University (BDU) to be compatible with newer software versions</details>
+            <details>Developed, refactored, and integrated courses into a recently developed cloud environment</details>
+            <details>Demonstrated effective communication skills through participation in scrum meetings with team members to resolve technical roadblocks</details>
+            <details>Developed a beginner and advanced course based on machine learning and utilizing Spark MLlib, with a lab component coded in Python</details>
+            <details>Displayed interest in learning about Big Data technologies including Hive, Hadoop, MapReduce &amp; YARN, Pig, Spark, and more</details>
+            <details>Migrated and formatted courses from BDU (moodle platform) to a new platform</details>
+            <details>Performed data analysis using Python, SQL, and machine learning algorithms on a large dataset of course enrolment records from the education department of IBM, accumulated over several years</details>
+        </sectionInformation>
+        <sectionInformation>
+            <workplaceName>DiscoverE, Edmonton, AB</workplaceName>
+            <workPosition>Instructor</workPosition>
+            <details>Presented workshops to students in Grades 1-9 based on Science, Technology, Engineering, and Math in an exciting manner</details>
+            <details>Ability to work in small and large groups, ranging anywhere from 1 to 40 coworkers</details>
+            <details>Practiced and refined management skills through coordinating groups of 25-30 students</details>
+            <details>Able to present complex concepts efficiently and effectively in a group environment</details>
+            <details>Practiced creativity through developing and designing exciting and insightful nanotechnology based projects</details>
+            <details>Taught students about coding in Java and Android Studios, as well as game design and 3D modelling in programs such as Construct 2, Unity, Gimp, Blender, and Audacity</details>
+        </sectionInformation>
+        <sectionInformation>
+            <workplaceName>McDonalds, Edmonton, AB</workplaceName>
+            <workPosition>Employee</workPosition>
+            <details>Adaptable in many situations, reflected through operating in multiple roles, such as cashier, cook, stock manager and inventory coordinator</details>
+            <details>Excellent organization skills shown through tabulating all store produce, protein, and food on a weekly basis</details>
+            <details>Supervised and systematically stocked shipments of products and food, while managing a team of 2-5 people</details>
+            <details>Trained new crew members in understanding procedures and protocols in the workplace</details>
+        </sectionInformation>
+    </section>
+    <section>
+        <sectionHeader>Computer Experience</sectionHeader>
+        <sectionInformation>
+            <details>Proficient with C/C++, Assembly Language, Java, MatLab, Python, SQL, and VHDL</details>
+            <details>Experienced in using IDEs such as Android Studios, Eclipse, and NBEClipse</details>
+            <details>Experienced in Electronics Circuit Design, IC design, Cadence, and SPICE</details>
+            <details>Experienced with Microsoft Office Applications: Excel, PowerPoint, Visio, Word, Outlook</details>
+            <details>Experience using Adobe Applications: Fireworks, Flash, Illustrator, Photoshop</details>
+            <details>Knowledgeable in Computer Hardware and Assembly, Oscilloscopes, Arduino Hardware, and NetBurner Embedded Systems</details>
+            <details>Experienced with Virtual Machines, Linux-operating systems, and Windows</details>
+            <details>Experienced with Git/GitHub Version Control</details>
+            <details>Experienced with Object-Oriented Design and Multi-Threaded Programming</details>
+        </sectionInformation>
+    </section>
+</myResume>
