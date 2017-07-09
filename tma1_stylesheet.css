@@ -1,6 +1,6 @@
 body {
-    background-color: #000000;
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #000000;
     margin: 0;
 }
 
@@ -26,10 +26,10 @@ body {
 
     /*Need to make linksBar height larger*/
 .linksBar {
-    background-color: #FFFFFF;
+    background-color: #000000;
     /*height: 5vh;*/
     max-width: 100%;
-    padding: 5px;
+    padding: 10px;
 }
 
 .linksBar > ul {
@@ -43,13 +43,14 @@ body {
 }
 
 .linksBar > ul > li > a {
-    color: #000000;
+    color: #FFFFFF;
     text-decoration: none;
     vertical-align: middle;
 }
 .linksBar > ul > li > a:hover {
-    background-color: #000000;
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 10px;
 }
 
 .aside {
