@@ -1,10 +1,176 @@
 <?xml version="1.0"?>
 
 <units>
-    <tutorial number="1">
+    <tutorial name="Unit 1" id="0">
+        <section title="1.1 HTML5, CSS3, JavaScript, Portability and jQuery">
+            <subsection subtitle="HTML5">
+                <paragraph>
+                    HTML (HyperText Markup Language)—a special type of computer language called a markup language
+                    designed to specify the content and structure of web pages (also called documents) in a
+                    portable manner. HTML5, now under development, is the emerging version of HTML. HTML enables
+                    you to create content that will render appropriately across the extraordinary range of 
+                    devices connected to the Internet—including smartphones, tablet computers, notebook computers, 
+                    desktop computers, special-purpose devices such as large-screen displays at concert arenas and 
+                    sports stadiums, and more.
+                </paragraph>
+                <paragraph>
+                    You’ll learn the basics of HTML5, then cover more sophisticated techniques such as creating tables,
+                    creating forms for collecting user input and using new features in HTML5, including page-structure
+                    elements that enable you to give meaning to the parts of a page (e.g., headers, navigation areas,
+                    footers, sections, figures, figure captions and more).
+                </paragraph>
+                <paragraph>
+                    A “stricter” version of HTML called XHTML (Extensible HyperText Markup Language), which is based on
+                    XML (eXtensible Markup Language, introduced in Chapter 15), is still used frequently today. Many of
+                    the server-side technologies we cover later in the book produce web pages as XHTML documents,
+                    by default, but the trend is clearly to HTML5.
+                </paragraph>
+            </subsection>
+            <subsection subtitle="Cascading Style Sheets (CSS)">
+                <paragraph>
+                    Although HTML5 provides some capabilities for controlling a document’s presentation, it’s better not
+                    to mix presentation with content. HTML5 should be used only to specify a document’s structure and content.
+                </paragraph>
+                <paragraph>
+                    Use Cascading Style Sheets (CSS) to specify the presentation, or styling, of elements on a web page
+                    (e.g., fonts, spacing, sizes, colors, positioning). CSS was designed to style portable web pages independently
+                    of their content and structure. By separating page styling from page content and structure, you can easily
+                    change the look and feel of the pages on an entire website, or a portion of a website, simply by swapping
+                    out one style sheet for another. CSS3 is the current version of CSS under development. Chapter 5 introduces
+                    many new features in CSS3.
+                </paragraph>
+            </subsection>
+            <subsection subtitle="JavaScript">
+                <paragraph>
+                    JavaScript is a language that helps you build dynamic web pages (i.e., pages that can be modified 
+                    “on the fly” in response to events, such as user input, time changes and more) and computer applications.
+                    It enables you to do the client-side programming of web applications. In addition, there are now several 
+                    projects dedicated to server-side JavaScript, including CommonJS (www.commonjs.org), Node.js (nodejs.org)
+                    and Jaxer (jaxer.org).
+                </paragraph>
+                <paragraph>
+                    JavaScript was created by Netscape, the company that built the first wildly successful web browser. Both
+                    Netscape and Microsoft have been instrumental in the standardization of JavaScript by ECMA International 
+                    (formerly the European Computer Manufacturers Association) as ECMAScript. ECMAScript 5, the latest version 
+                    of the standard, corresponds to the version of JavaScript we use in this book.
+                </paragraph>
+                <paragraph>
+                    The JavaScript chapters of the book are more than just an introduction to the language. They also present 
+                    computer-programming fundamentals, including control structures, functions, arrays, recursion, strings and 
+                    objects. You’ll see that JavaScript is a portable scripting language and that programs written in JavaScript 
+                    can run in web browsers across a wide range of devices.
+                </paragraph>
+            </subsection>
+            <subsection subtitle="Web Browsers and Web-Browser Portability">
+                <paragraph>
+                    Ensuring a consistent look and feel on client-side browsers is one of the great challenges of developing 
+                    web-based applications. Currently, a standard does not exist to which software vendors must adhere when 
+                    creating web browsers. Although browsers share a common set of features, each browser might render pages 
+                    differently. Browsers are available in many versions and on many different platforms (Microsoft Windows, 
+                    Apple Macintosh, Linux, UNIX, etc.). Vendors add features to each new version that sometimes result in 
+                    cross-platform incompatibility issues. It’s difficult to develop web pages that render correctly on all 
+                    versions of each browser.
+                </paragraph>
+                <paragraph>
+                    Support for HTML5, CSS3 and JavaScript features varies by browser. The HTML5 Test website (http://html5test.com/) 
+                    scores each browser based on its support for the latest features of these evolving standards. Internet Explorer 
+                    10 (IE10) is expected to have a much higher compliance rating than IE9. You can also check sites 
+                    such as http://caniuse.com/ for a list of features covered by each browser.
+                </paragraph>
+            </subsection>
+            <subsection subtitle="jQuery">
+                <paragraph>
+                    jQuery (jQuery.org) is currently the most popular of hundreds of JavaScript libraries. jQuery simplifies 
+                    JavaScript programming by making it easier to manipulate a web page’s elements and interact with servers 
+                    in a portable manner across various web browsers. It provides a library of custom graphical user interface 
+                    (GUI) controls (beyond the basic GUI controls provided by HTML5) that can be used to enhance the look and 
+                    feel of your web pages.
+                </paragraph>
+            </subsection>
+        </section>
+        <section title="1.2 Web Basics">
+            <subsection subtitle="Hyperlinks">
+                <paragraph>
+                    HTML documents normally contain hyperlinks, which, when clicked, load a specified web document. Both images and 
+                    text may be hyperlinked. When the mouse pointer hovers over a hyperlink, the default arrow pointer changes into 
+                    a hand with the index finger pointing upward. Often hyperlinked text appears underlined and in a different color 
+                    from regular text in a web page.
+                </paragraph>
+                <paragraph>
+                    Originally employed as a publishing tool for scientific research, hyperlinks are widely used to reference sources, 
+                    or sites that have more information on a particular topic. The paths created by hyperlinking create the effect of the “web.”
+                </paragraph>
+                <paragraph>
+                    When the user clicks a hyperlink, a web server locates the requested web page and sends it to the user’s web browser. 
+                    Similarly, the user can type the address of a web page into the browser’s address field and press Enter to view the specified page.
+                </paragraph>
+                <paragraph>
+                    Hyperlinks can reference other web pages, e-mail addresses, files and more. If a hyperlink’s URL is in the form 
+                    mailto:emailAddress, clicking the link loads your default e-mail program and opens a message window addressed to 
+                    the specified e-mail address. If a hyperlink references a file that the browser is incapable of displaying, the 
+                    browser prepares to download the file, and generally prompts the user for information about how the file should 
+                    be stored. When a file is downloaded, it’s copied onto the user’s computer. Programs, documents, images, sound 
+                    and video files are all examples of downloadable files.
+                </paragraph>
+            </subsection>
+            <subsection subtitle="URIs and URLs">
+                <paragraph>
+                    URIs (Uniform Resource Identifiers) identify resources on the Internet. URIs that start with http:// are called URLs 
+                    (Uniform Resource Locators). Common URLs refer to files, directories or server-side code that performs tasks such as 
+                    database lookups, Internet searches and business-application processing. If you know the URL of a publicly available 
+                    resource anywhere on the web, you can enter that URL into a web browser’s address field and the browser can access that resource.
+                </paragraph>
+            </subsection>
+            <subsection subtitle="Parts of a URL">
+                <paragraph>
+                    A URL contains information that directs a browser to the resource that the user wishes to access. Web servers make such resources 
+                    available to web clients. Popular web servers include Apache’s HTTP Server and Microsoft’s Internet Information Services (IIS).
+                    Let’s examine the components of the URL: http://www.deitel.com/books/downloads.html
+                </paragraph>
+                <paragraph>
+                    The text http:// indicates that the HyperText Transfer Protocol (HTTP) should be used to obtain the resource. Next in the URL 
+                    is the server’s fully qualified hostname (for example, www.deitel.com)—the name of the web-server computer on which the resource 
+                    resides. This computer is referred to as the host, because it houses and maintains resources. The hostname www.deitel.com is 
+                    translated into an IP (Internet Protocol) address—a numerical value that uniquely identifies the server on the Internet. An 
+                    Internet Domain Name System (DNS) server maintains a database of hostnames and their corresponding IP addresses and performs 
+                    the translations automatically.
+                </paragraph>
+                <paragraph>
+                    The remainder of the URL (/books/downloads.html) specifies the resource’s location (/books) and name (downloads.html) on the 
+                    web server. The location could represent an actual directory on the web server’s file system. For security reasons, however, 
+                    the location is typically a virtual directory. The web server translates the virtual directory into a real location on the 
+                    server, thus hiding the resource’s true location.
+                </paragraph>
+            </subsection>
+            <subsection subtitle="HTTP Headers">
+                <paragraph>
+                    Next, the server sends one or more HTTP headers, which provide additional information about the data that will be sent. In 
+                    this case, the server is sending an HTML5 text document, so one HTTP header for this example would read: Content-type: text/html
+                </paragraph>
+                <paragraph>
+                    The text http:// indicates that the HyperText Transfer Protocol (HTTP) should be used to obtain the resource. Next in the URL 
+                    is the server’s fully qualified hostname (for example, www.deitel.com)—the name of the web-server computer on which the resource 
+                    resides. This computer is referred to as the host, because it houses and maintains resources. The hostname www.deitel.com is 
+                    translated into an IP (Internet Protocol) address—a numerical value that uniquely identifies the server on the Internet. An 
+                    Internet Domain Name System (DNS) server maintains a database of hostnames and their corresponding IP addresses and performs 
+                    the translations automatically.
+                </paragraph>
+                <paragraph>
+                    The information provided in this header specifies the Multipurpose Internet Mail Extensions (MIME) type of the content that the 
+                    server is transmitting to the browser. The MIME standard specifies data formats, which programs can use to interpret data correctly. 
+                    For example, the MIME type text/plain indicates that the sent information is text that can be displayed directly. Similarly, the 
+                    MIME type image/jpeg indicates that the content is a JPEG image. When the browser receives this MIME type, it attempts to display the image.
+                </paragraph>
+                <paragraph>
+                    The header or set of headers is followed by a blank line, which indicates to the client browser that the server is finished sending 
+                    HTTP headers. Finally, the server sends the contents of the requested document (downloads.html). The client-side browser then 
+                    renders (or displays) the document, which may involve additional HTTP requests to obtain associated CSS and images.
+                </paragraph>
+            </subsection>    
+        </section>        
     </tutorial>
-    <tutorial number="2">
+    <tutorial name="Unit 2" id="1">
     </tutorial>
-    <tutorial number="3">
+    <tutorial name="Unit 3" id="2">
     </tutorial>
 </units>
