@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel = "stylesheet" type="text/css" href="../tma1_stylesheet.css" />
+        <title>Photo Slideshow</title>
+        <script src="photoSlideshow.js"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                preloadImages();
+                initButtonNameDict();
+                initListeners();
+                initCanvas();
+            }
+        </script>
+    </head>
+    <body>
+        <div id="slideshowToolbar">
+            <button id="start_stop_button" value="Start">Start</button>
+            <button id="random_sequential_button" value="Sequential">Sequential</button>
+            <button id="forward_backward_button" value="Forward">Forward</button>
+            <div class="dropdown">
+            <button id="transitionsDropdownMenu_Button" class="transitionsDropdownMenu_Button">Transitions</button>
+            <div id="transitionsDropdownMenu" class="transitionsDropdownMenu">
+                <a href="#">Float Down</a>
+                <a href="#">Spin To The Center</a>
+                <a href="#">Fade In/Out</a>
+            </div>
+            </div>
+        </div>
+        <canvas id="slideshowCanvas" style="height:89vh"/>
+        
+    </body>
+</html>

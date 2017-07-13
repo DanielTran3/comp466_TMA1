@@ -99,3 +99,85 @@ div.aside > button:hover {
 .active {
     background-color: #00cc00 !important;
 }
+#slideshowToolbar {
+    width: 100%;
+    height: 5vh;
+    display: inline-flex;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    justify-content: center;
+}
+
+#slideshowCanvas {
+    width: 100%;
+    height: 95vh;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown:hover .transitionsDropdownMenu_Button {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.dropdown:hover .transitionsDropdownMenu {
+    display: block;
+    box-shadow: 3px 3px 3px #989898;
+}
+
+.transitionsDropdownMenu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.transitionsDropdownMenu > a {
+    height: 5vh;
+    text-decoration: none;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    text-align: left;
+    background-color: #000020;
+    color: #ffffff;
+    font-family: "Arial";
+}
+.transitionsDropdownMenu > a:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.transitionsDropdownMenu > a:hover {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Arial";
+}
+
+.transitionsDropdownMenu_Button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 2vh;
+    font-family: "Arial";
+    border-radius: 5px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+div#slideshowToolbar > button,
+div#slideshowToolbar > div.dropdown {
+    width: 10%;
+    height: 5vh;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    font-size: 2vh;
+    font-family: "Arial";
+}
