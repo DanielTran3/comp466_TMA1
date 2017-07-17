@@ -181,3 +181,8 @@ div#slideshowToolbar > div.dropdown {
     font-size: 2vh;
     font-family: "Arial";
 }
+
+.selectedTransition {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+}

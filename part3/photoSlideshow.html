@@ -5,6 +5,7 @@
         <script src="photoSlideshow.js"></script>
         <script type="text/javascript">
             window.onload = function() {
+                loadTransitionsListDict();
                 preloadImages();
                 initButtonNameDict();
                 initListeners();
@@ -20,9 +21,10 @@
             <div class="dropdown">
             <button id="transitionsDropdownMenu_Button" class="transitionsDropdownMenu_Button">Transitions</button>
             <div id="transitionsDropdownMenu" class="transitionsDropdownMenu">
+                <a href="#" class="selectedTransition">No Animation</a>
                 <a href="#">Float Down</a>
                 <a href="#">Spin To The Center</a>
-                <a href="#">Fade In/Out</a>
+                <a href="#">Fade In</a>
             </div>
             </div>
         </div>
