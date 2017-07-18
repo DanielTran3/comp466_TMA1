@@ -23,8 +23,10 @@ body {
 .title3 {
     font-size: 1.5em !important;
 }
-
-    /*Need to make linksBar height larger*/
+.title4 {
+    font-size: 1.2em !important;
+}
+/*Need to make linksBar height larger*/
 .linksBar {
     background-color: #000000;
     /*height: 5vh;*/
@@ -113,7 +115,6 @@ div.aside > button:hover {
     height: 95vh;
 }
 
-
 .dropdown {
     position: relative;
     display: inline-block;
@@ -185,4 +186,47 @@ div#slideshowToolbar > div.dropdown {
 .selectedTransition {
     background-color: #FFFFFF !important;
     color: #000000 !important;
+}
+
+.welcomeText {
+    height: 75%;
+    width: 50%;
+    max-width: 50%;
+    max-height: 100vh;
+    padding-left: 25%;
+    padding-top: 10%;
+    display: block;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.welcomeText > span.title4,
+.welcomeText > span.title1 {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    font-family: Consolas,monospace;
+}
+
+.whiteButton {
+    background-color: #FFFFFF;
+    border: 1.5px solid #000000;
+    color: #000000;
+    height: auto;
+    padding: 2%;
+    font-size: 1.2em;
+    margin-top: 5%;
+
+    -o-transition: background-color 0.5s linear; /* opera */
+    -ms-transition: background-color 0.5s linear; /* IE 10 */
+    -moz-transition: background-color 0.5s linear; /* Firefox */
+    -webkit-transition: background-color 0.5s linear; /*safari and chrome */
+    transition: background-color 0.5s linear; /* vendorless fallback */
+}
+
+.whiteButton:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+    transition-duration: 0.5s;
 }

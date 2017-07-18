@@ -2,22 +2,24 @@
 
 <units>
     <tutorial name="Unit 1" id="0">
-        <section title="1.1 HTML5, CSS3, JavaScript, Portability and jQuery">
-            <subsection subtitle="HTML5">
+        <section title="1.1 HTML5">
+            <subsection subtitle="An Introduction to HTML">
                 <paragraph>
-                    HTML (HyperText Markup Language)—a special type of computer language called a markup language
-                    designed to specify the content and structure of web pages (also called documents) in a
-                    portable manner. HTML5, now under development, is the emerging version of HTML. HTML enables
-                    you to create content that will render appropriately across the extraordinary range of 
-                    devices connected to the Internet—including smartphones, tablet computers, notebook computers, 
-                    desktop computers, special-purpose devices such as large-screen displays at concert arenas and 
-                    sports stadiums, and more.
+                    HTML (HyperText Markup Language) is used to create elements that the user interacts with. Since HTML is a
+                    Markup language, it is used to define the content and structure of the webpage. These contents act to display
+                    information from a server, or to receive inputs from the user to send to a server for processing. HTML is the
+                    front-end side (or Top tier) of the three-tier architecture. The three-tier architecture is used to help
+                    define a separation of logic between the front-end and the back-end, where the tiers are called Top Tier
+                    (or User Interface Tier or Client Tier), the Middle Tier (or Business Logic Tier), and the Bottom Tier
+                    (or Data Tier or Information Tier).
                 </paragraph>
                 <paragraph>
-                    You’ll learn the basics of HTML5, then cover more sophisticated techniques such as creating tables,
-                    creating forms for collecting user input and using new features in HTML5, including page-structure
-                    elements that enable you to give meaning to the parts of a page (e.g., headers, navigation areas,
-                    footers, sections, figures, figure captions and more).
+                    HTML elements can appear differently depending on the browser used, as well as the browser version. Thus,
+                    it is important to ensure that the elements being added into your application are compatible with a majority
+                    of the web browsers. This will help ensure that everyone can use the application as it was intended and not
+                    miss out on any features that you add in. To help with this, there are websites that can help compare and
+                    contrast between different browsers to see which browsers can utilize which HTML elements. Some of them
+                    are <a href="html5test.com">Html5Test</a> and <a href="caniuse.com">CanIUse</a>.
                 </paragraph>
                 <paragraph>
                     A “stricter” version of HTML called XHTML (Extensible HyperText Markup Language), which is based on

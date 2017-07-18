@@ -52,7 +52,7 @@ function removeTabInformation(informationDiv) {
 // Make recursive
 function loadTabInformation(informationNode, tabNumber, informationDiv) {
     var data = informationNode.children[tabNumber];
-        displayInformation(data.children, informationDiv);
+    displayInformation(data.children, informationDiv);
 }
 
 function displayInformation(tutorialData, informationDiv) {
@@ -73,6 +73,9 @@ function displayInformation(tutorialData, informationDiv) {
             var paragraphText = document.createElement("p");
             paragraphText.innerHTML = tutorialData[i].textContent;
             informationDiv.appendChild(paragraphText);
+        }
+        else if (tutorialData[i].tagName === "a") {
+            
         }
     }
 }
