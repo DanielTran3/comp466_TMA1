@@ -2,8 +2,8 @@
 
 <units>
     <tutorial name="Unit 1" id="0">
-        <section title="1.1 HTML5">
-            <subsection subtitle="An Introduction to HTML">
+        <section title="HTML Part 1">
+            <subsection subtitle="1.1 An Introduction to HTML Structure Elements">
                 <paragraph>
                     HTML (HyperText Markup Language) is used to create elements that the user interacts with. Since HTML is a
                     Markup language, it is used to define the content and structure of the webpage. These contents act to display
@@ -22,56 +22,69 @@
                     are <a href="html5test.com">Html5Test</a> and <a href="caniuse.com">CanIUse</a>.
                 </paragraph>
                 <paragraph>
-                    A “stricter” version of HTML called XHTML (Extensible HyperText Markup Language), which is based on
-                    XML (eXtensible Markup Language, introduced in Chapter 15), is still used frequently today. Many of
-                    the server-side technologies we cover later in the book produce web pages as XHTML documents,
-                    by default, but the trend is clearly to HTML5.
+                    In this unit, we will be looking at a couple of page-structure elements, and in the next unit, we will look at
+                    some different input types that are available in HTML5. So in this chapter, we will be looking at the
+                    following page-structure elements: paragraph, table, div, a, and ul/ol/li elements.
+                </paragraph>
+                <paragraph>
+                    A quick note in regards to HTML elements is that each element can be given an unique ID (specified by the ID attribute).
+                    The id can be used to identify a specific element on a page (each ID must be different on one given page).
+                    There willbe more discussion on this later on.
                 </paragraph>
             </subsection>
-            <subsection subtitle="Cascading Style Sheets (CSS)">
+            <subsection subtitle="1.2 Paragraph Element">
                 <paragraph>
-                    Although HTML5 provides some capabilities for controlling a document’s presentation, it’s better not
-                    to mix presentation with content. HTML5 should be used only to specify a document’s structure and content.
+                    In HTML, there exists a paragraph element, which can be created by using the &lt;p&gt;&lt;/p&gt; tag. Paragraphs
+                    are used to display text that the programmer wants the end-user to see. Paragraphs are formatted such that They
+                    operate similarly to the paragraphs seen in **essays or books.** CHECK THIS INFORMATION
                 </paragraph>
                 <paragraph>
-                    Use Cascading Style Sheets (CSS) to specify the presentation, or styling, of elements on a web page
-                    (e.g., fonts, spacing, sizes, colors, positioning). CSS was designed to style portable web pages independently
-                    of their content and structure. By separating page styling from page content and structure, you can easily
-                    change the look and feel of the pages on an entire website, or a portion of a website, simply by swapping
-                    out one style sheet for another. CSS3 is the current version of CSS under development. Chapter 5 introduces
-                    many new features in CSS3.
-                </paragraph>
-            </subsection>
-            <subsection subtitle="JavaScript">
-                <paragraph>
-                    JavaScript is a language that helps you build dynamic web pages (i.e., pages that can be modified 
-                    “on the fly” in response to events, such as user input, time changes and more) and computer applications.
-                    It enables you to do the client-side programming of web applications. In addition, there are now several 
-                    projects dedicated to server-side JavaScript, including CommonJS (www.commonjs.org), Node.js (nodejs.org)
-                    and Jaxer (jaxer.org).
-                </paragraph>
-                <paragraph>
-                    JavaScript was created by Netscape, the company that built the first wildly successful web browser. Both
-                    Netscape and Microsoft have been instrumental in the standardization of JavaScript by ECMA International 
-                    (formerly the European Computer Manufacturers Association) as ECMAScript. ECMAScript 5, the latest version 
-                    of the standard, corresponds to the version of JavaScript we use in this book.
-                </paragraph>
-                <paragraph>
-                    The JavaScript chapters of the book are more than just an introduction to the language. They also present 
-                    computer-programming fundamentals, including control structures, functions, arrays, recursion, strings and 
-                    objects. You’ll see that JavaScript is a portable scripting language and that programs written in JavaScript 
-                    can run in web browsers across a wide range of devices.
+                    Here is an example of a couple of paragraph elements displayed over eachother.
+                    <p>This is a paragraph</p>
+                    <p>This is another paragraph</p>
+                    <code>
+                        &lt;p&gt;This is a paragraph&lt;/&gt;
+                        &lt;p&gt;This is another paragraph&lt;/&gt;
+                    </code>
                 </paragraph>
             </subsection>
-            <subsection subtitle="Web Browsers and Web-Browser Portability">
+            <subsection subtitle="1.3 Table Element">
                 <paragraph>
-                    Ensuring a consistent look and feel on client-side browsers is one of the great challenges of developing 
-                    web-based applications. Currently, a standard does not exist to which software vendors must adhere when 
-                    creating web browsers. Although browsers share a common set of features, each browser might render pages 
-                    differently. Browsers are available in many versions and on many different platforms (Microsoft Windows, 
-                    Apple Macintosh, Linux, UNIX, etc.). Vendors add features to each new version that sometimes result in 
-                    cross-platform incompatibility issues. It’s difficult to develop web pages that render correctly on all 
-                    versions of each browser.
+                    A table element is very useful for formatting data output and displaying tabular data. Tables begin by using the
+                    &lt;table&gt;&lt;/table&gt; tag. This will create the outer boundary that contains the table. The rows of the
+                    table can be created using the &lt;tr&gt;&lt;/&gt; tags, which stands for "table row". Each of these tags that
+                    are specified within a table element will create a new row. To create columns, the &lt;td&gt;&lt;/td&gt; tag
+                    can be used. The "td" tag stands for ""
+                </paragraph>
+                <paragraph>
+                    Here is an example of a table creation, with 3 rows and 4 columns
+                    <table>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                        </tr>
+                    </table>
+                </paragraph>
+            </subsection>
+            <subsection subtitle="1.4 Div Element">
+                <paragraph>
+                    A div element can be used to separate portions of the web page. A div is _______, where it has its own
+                    padding and margin spacing around the div element. A div element can contain any other html elements
+                    within it.
                 </paragraph>
                 <paragraph>
                     Support for HTML5, CSS3 and JavaScript features varies by browser. The HTML5 Test website (http://html5test.com/) 
@@ -80,13 +93,16 @@
                     such as http://caniuse.com/ for a list of features covered by each browser.
                 </paragraph>
             </subsection>
-            <subsection subtitle="jQuery">
+            <subsection subtitle="1.5 a Element">
                 <paragraph>
-                    jQuery (jQuery.org) is currently the most popular of hundreds of JavaScript libraries. jQuery simplifies 
-                    JavaScript programming by making it easier to manipulate a web page’s elements and interact with servers 
-                    in a portable manner across various web browsers. It provides a library of custom graphical user interface 
-                    (GUI) controls (beyond the basic GUI controls provided by HTML5) that can be used to enhance the look and 
-                    feel of your web pages.
+                    The a element can contain a link  that will redirect the user to the specified http address. The address can be
+                    specified in the href attribute of the a element. Text can be placed between the start and end tags to create a
+                    hyperlinked text (generally denoted with blue text and an underline beneath the text). Clicking the link will
+                    change the color of the text to purple, denoting that the site had been visited before. CSS styles can be used
+                    to change these behaviours, but they will be discussed later on.
+                </paragraph>
+                <paragraph>
+
                 </paragraph>
             </subsection>
         </section>
@@ -172,7 +188,101 @@
         </section>        
     </tutorial>
     <tutorial name="Unit 2" id="1">
+        <section title="HTML Part 2">
+            <subsection title="2.1 An Introduction to HTML Input Elements">
+                <paragraph>
+                    Now that you have some basic information on some HTML structure elements, it's time to investigate another important realm of
+                    HTML, which are the input elements. These elements allow the user to provide data to the backend for processing. Generally, a
+                    majority of input elements can be seen in forms, where the user enters some sensitive data that is used to query a database.
+                    An example of this would be when someone is filling out registration information to sign up on a social media platform. Most
+                    likely, you will be asked to fill in your First Name, Last Name, Date of Birth, Email Address, and Password. All of these inputs
+                    use the HTML input elements that will be discussed. There are other forms of inputs that are different than text inputs, such as
+                    sliders, numeric, ___,___,___,___, and ___.
+                </paragraph>
+            </subsection>
+            <subsection>
+            </subsection>
+        </section>
     </tutorial>
     <tutorial name="Unit 3" id="2">
+        <section title="CSS">
+            <subsection title="3.1 What is CSS?">
+                <paragraph>
+                    CSS (Cascading Style-sheet) is a ___ language used to style HTML elements. CSS helps in creating aesthetically pleasing
+                    web pages by allowing the developer to color structural elements, input elements, and just about anything else HTML related. It also
+                    helps to layout the web application, as it can specify the sizes of of HTML elements. In turn, this means that CSS also helps
+                    with the scalability of web applications on smaller and larger devices (such as scaling down from a desktop browser on a large screen,
+                    to a mobile browser on a cellular device. Thus, it is obvious that CSS is an important aspect of web development.
+                </paragraph>
+            </subsection>
+            <subsection title="3.2 Inline CSS vs. an External Stylesheet">
+                <paragraph>
+                    There are two ways to modify HTML elements using CSS. The first way is through the use of inline css in the HTML elements.
+                    This is where the CSS styles are applied directly to the HTML element (the HTML style attributes are modified directly in the
+                    creation of the HTML element). An example of what this would look like on a div element would be:
+                </paragraph>
+                <code>
+                    &lt;div style="width:50%; background-color:blue;"&gt;&lt;/div&gt;
+                </code>
+                <paragraph>
+                    As shown here, there is an attribute in the HTML div starting tag called style, and when that attribute is in place, CSS code
+                    can be written to directly modify this element.
+                </paragraph>
+                <paragraph>
+                    Using inline HTML may not be of best practice, as it can cause a lot of duplicated code (if multiple elements want to be styled
+                    the same way), leading to a lack in maintainability and consistancy. What I mean by maintainability and consistancy is, is if there
+                    are multiple webpages in which the same theme needs to be applied to all of the pages, then it becomes a tedious and
+                    inefficient to style each and every element with the same styles.
+                </paragraph>
+                <paragraph>
+                    A more reasonable approach would be to use an external CSS stylesheet, which can be used to create a common style for certain
+                    elements or certain groups of elements. This can be done in one of two ways. In the first method, a "style" element
+                    (&lt;style&gt;&lt;CSS description here&gt;&lt;/style&gt;) can be declared inside the HTML document that will allow for CSS styling
+                    for a specific HTML file. This solution is better than the inline CSS, but still not the best, since the CSS code would need to
+                    be duplicated in other HTML files as well. The best way is to use a separate CSS file (of type .css), where the stylesheet can be
+                    referenced in each HTML file (using &lt;link rel="stylesheet" type="text/css" href="yourstylesheet.css" /&gt;). Discussing some of
+                    the attributes in the link tag, rel describes ___, type defines the MIME type as a text with CSS formatting, and the href is the
+                    direct reference to the stylesheet. Thus, any HTML files that have the reference can use the CSS ___ specified in the CSS file.
+                </paragraph>
+            </subsection>
+            <subsection title="3.3 Using External CSS Stylesheets">
+                <paragraph>
+                    First, let's begin be defining a CSS ___ for an HTML element. As stated in the previous unit, HTML elements can be given unique IDs. In CSS,
+                    styles can be applied directly to an HTML element with a specific ID. For example, if there is an element declared as
+                    &lt;div id="myDiv"&gt;&lt;/div&gt; and we wanted to set the background color to red, it can be done in the CSS stylesheet as
+                    #myDiv { background-color:red; }. Notice how the div's ID was preceded by a '#'. The # symbol specifies that the CSS properties will be
+                    applied to an elements with that specific ID. Now let's say we wanted to apply the CSS properties to multiple HTML elements. A ___ 
+                    can be made similarly to how the ___ was made for an ID, but replacing the '#' with a '.' (so using the above example, it would look like
+                    .myDiv { background-color:red; }). This ___ can be applied to any HTML element by using the class attribute (so in the above div, it would
+                    be &lt;div class="myDiv"&gt;&lt;/div&gt;). Multiple CSS classes can be applied to an element. If you want CSS ___ to be applied to a
+                    certain HTML elements (such as applying the CSS ___ to all div elements), then specify the HTML element name with nothing preceding it
+                    (so once again, for a div element it would look like div { background-color:red; } to apply a red background to all div's).
+                </paragraph>
+            </subsection>
+        </section>
+    </tutorial>
+    <tutorial name="Unit 4" id="3">
+        <section title="JavaScript, AJAX, and XML">
+            <subsection title="4.1 What is JavaScript?">
+                <paragraph>
+                    JavaScript is a client-side scripting language that can be used to perform tasks to save time and data transfer between the server
+                    and the client. For example, if there is a simple calculation, such as adding two inputs from the user, then it may be redundant
+                    to have to send that data back to a server so it can return the result of such a simple calculation back. Just keep in mind that if
+                    you are using JavaScript, do not store any sensitive data in JavaScript because anyone who has access to the website can use a console
+                    viewer and view any of the data stored. JavaScript helps in making HTML more interactive, since it can create actions, effects, transitions,
+                    etc when events occurs on an HTML element or page (such as clicking a button, typing into an input, etc.)
+                </paragraph>
+                <paragraph>
+                    JavaScript can be used in similar ways as CSS can. Some JavaScript functions can be called for an event in an inline HTML element
+                    (For example, &lt;button type="submit" onclick="javascriptFunction()"&gt;&lt;/button&gt; would create a button that would call the functions
+                    "javascriptFunction" when it is clicked). For similar reasons as with CSS, it is not recommended to call JavaScript functions in this
+                    manner, as it makes maintainability and scalability more difficult. JavaScript can be declared inside an HTML file by using the
+                    &lt;script&gt;"...JavaScript Here"&lt;/script&gt;. The JavaScript decan be defined between the two script tags. As well, JavaScript can
+                    be defined outside of an HTML file, as its own external JavaScript file (ending with .js). The JavaScript can be included into any
+                    HTML file by using the same script tag, but with a src attribute that points to the location of the JavaScript file (ex.
+                    &lt;script src="myJavascriptFile.js"&gt;&lt;/script&gt;
+                </paragraph>
+            </subsection>
+        </section>
     </tutorial>
 </units>
