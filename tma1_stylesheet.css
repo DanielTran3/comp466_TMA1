@@ -230,3 +230,7 @@ div#slideshowToolbar > div.dropdown {
     color: #FFFFFF;
     transition-duration: 0.5s;
 }
+
+table, th, td {
+    border: 1px solid black;
+}

@@ -82,21 +82,22 @@ function changeButtonValue(button) {
     button.innerHTML = buttonNameDict[button.innerHTML];
 }
 
+function scaleImage(image, canvas) {
+    var scale = 0.9;
+    // Get the actual height and width of the image
+    var height = image.naturalHeight;
+    var width = image.naturalWidth;
+    // Compare with the current size of the canvas
+    while(height > canvas.clientHeight || width > canvas.clientWidth) {
+        height *= scale;
+        width *= scale;
+    } 
+    return [width, height];
+}
+
 function displayImageOnCanvas() {
     var canvas = document.getElementById("slideshowCanvas");
-    var image = _images[listOfImgSrc[currentPhotoIndex]];
-    var scale = 0.5;
-    while(image.height > canvas.height) {
-        image.height *= scale;
-        image.width *= scale;
-    } 
-    while (image.width > canvas.width) {
-        image.height *= scale;
-        image.width *= scale;
-    }
-    var ctx = canvas.getContext("2d");
-    // ctx.drawImage(_images[listOfImgSrc[currentPhotoIndex]], canvas.height / 2, 0);
-    //drawImageUsingTransition(ctx, canvas);
+    
     transitionsListDict[currentTransition][1]();
 }
 
@@ -178,11 +179,25 @@ function noAnimationTransition() {
     var ctx = canvas.getContext("2d");
     ctx.globalAlpha = 1;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(_images[listOfImgSrc[currentPhotoIndex]], canvas.height / 2, 0);
+    var image = _images[listOfImgSrc[currentPhotoIndex]];
+    var dimensions = scaleImage(image, canvas);
+    ctx.drawImage(image, canvas.height / 2, 0, dimensions[0], dimensions[1]);
 }
 
+var yPos = -400;
 function floatDownTransition() {
-
+    var canvas = document.getElementById("slideshowCanvas");
+    var ctx = canvas.getContext("2d");
+    var image = _images[listOfImgSrc[currentPhotoIndex]];
+    var dimensions = scaleImage(image, canvas);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(image, canvas.height / 2, yPos+=5, dimensions[0], dimensions[1]);
+    if (yPos < 0) {
+        requestAnimationFrame(floatDownTransition);
+    }
+    else {
+        yPos = -400;
+    }
 }
 
 function spinToTheCenterTransition() {
@@ -195,7 +210,8 @@ function fadeInTransition() {
     var ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.globalAlpha = alpha;
-    ctx.drawImage(_images[listOfImgSrc[currentPhotoIndex]], canvas.height / 2, 0);
+    var dimensions = scaleImage(image, canvas);    
+    ctx.drawImage(_images[listOfImgSrc[currentPhotoIndex]], canvas.height / 2, 0, dimensions[0], dimensions[1]);
     alpha += 0.01;
     if (alpha < 1) {
         requestAnimationFrame(fadeInTransition);

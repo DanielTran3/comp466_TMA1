@@ -3,7 +3,7 @@
 <units>
     <tutorial name="Unit 1" id="0">
         <section title="HTML Part 1">
-            <subsection subtitle="1.1 An Introduction to HTML Structure Elements">
+            <subsection title="1.1 An Introduction to HTML Structure Elements">
                 <paragraph>
                     HTML (HyperText Markup Language) is used to create elements that the user interacts with. Since HTML is a
                     Markup language, it is used to define the content and structure of the webpage. These contents act to display
@@ -19,7 +19,7 @@
                     of the web browsers. This will help ensure that everyone can use the application as it was intended and not
                     miss out on any features that you add in. To help with this, there are websites that can help compare and
                     contrast between different browsers to see which browsers can utilize which HTML elements. Some of them
-                    are <a href="html5test.com">Html5Test</a> and <a href="caniuse.com">CanIUse</a>.
+                    are Html5Test.com and CanIUse.com
                 </paragraph>
                 <paragraph>
                     In this unit, we will be looking at a couple of page-structure elements, and in the next unit, we will look at
@@ -32,160 +32,92 @@
                     There willbe more discussion on this later on.
                 </paragraph>
             </subsection>
-            <subsection subtitle="1.2 Paragraph Element">
+            <subsection title="1.2 Paragraph Element">
                 <paragraph>
                     In HTML, there exists a paragraph element, which can be created by using the &lt;p&gt;&lt;/p&gt; tag. Paragraphs
-                    are used to display text that the programmer wants the end-user to see. Paragraphs are formatted such that They
-                    operate similarly to the paragraphs seen in **essays or books.** CHECK THIS INFORMATION
+                    are used to display text that the programmer wants the end-user to see. It helps with defining a structure for the document.
                 </paragraph>
                 <paragraph>
                     Here is an example of a couple of paragraph elements displayed over eachother.
-                    <p>This is a paragraph</p>
-                    <p>This is another paragraph</p>
-                    <code>
-                        &lt;p&gt;This is a paragraph&lt;/&gt;
-                        &lt;p&gt;This is another paragraph&lt;/&gt;
-                    </code>
                 </paragraph>
+                <image src="paragraph.png">Two paragraphs, one ontop of the other saying &quot;This is a paragraph&quot; and &quot;This is another paragraph&quot; respectively</image>
+                <image src="paragraph_code.png">
+                &lt;p&gt;This is a paragraph&lt;/p&gt;
+                &lt;p&gt;This is another paragraph&lt;/p&gt;
+                </image>
             </subsection>
-            <subsection subtitle="1.3 Table Element">
+            <subsection title="1.3 Table Element">
                 <paragraph>
                     A table element is very useful for formatting data output and displaying tabular data. Tables begin by using the
                     &lt;table&gt;&lt;/table&gt; tag. This will create the outer boundary that contains the table. The rows of the
-                    table can be created using the &lt;tr&gt;&lt;/&gt; tags, which stands for "table row". Each of these tags that
+                    table can be created using the &lt;tr&gt;&lt;/tr&gt; tags, which stands for "table row". Each of these tags that
                     are specified within a table element will create a new row. To create columns, the &lt;td&gt;&lt;/td&gt; tag
-                    can be used. The "td" tag stands for ""
+                    can be used. The "td" tag stands for "table data"
                 </paragraph>
                 <paragraph>
                     Here is an example of a table creation, with 3 rows and 4 columns
-                    <table>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>12</td>
-                        </tr>
-                    </table>
                 </paragraph>
+                <image src="table.png">A Table containing 3 rows and 4 columns, filled with numbers from 1 to 12.</image>
+                <image src="table_code.png">
+                    &lt;table&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;1&lt;/td&gt;
+                            &lt;td&gt;2&lt;/td&gt;
+                            &lt;td&gt;3&lt;/td&gt;
+                            &lt;td&gt;4&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;5&lt;/td&gt;
+                            &lt;td&gt;6&lt;/td&gt;
+                            &lt;td&gt;7&lt;/td&gt;
+                            &lt;td&gt;8&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;9&lt;/td&gt;
+                            &lt;td&gt;10&lt;/td&gt;
+                            &lt;td&gt;11&lt;/td&gt;
+                            &lt;td&gt;12&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                </image>
             </subsection>
-            <subsection subtitle="1.4 Div Element">
+            <subsection title="1.4 Div Element">
                 <paragraph>
-                    A div element can be used to separate portions of the web page. A div is _______, where it has its own
-                    padding and margin spacing around the div element. A div element can contain any other html elements
+                    A div element can be used to separate portions of the web page. A div is block-level element, meaning it has its own
+                    padding, border, and margin spacing around the div's content. A div element can contain any other html elements
                     within it.
                 </paragraph>
                 <paragraph>
-                    Support for HTML5, CSS3 and JavaScript features varies by browser. The HTML5 Test website (http://html5test.com/) 
-                    scores each browser based on its support for the latest features of these evolving standards. Internet Explorer 
-                    10 (IE10) is expected to have a much higher compliance rating than IE9. You can also check sites 
-                    such as http://caniuse.com/ for a list of features covered by each browser.
+                    Here's an example of a div element with a paragraph inside of it. The div will have a 1px padding on the left and a 10px
+                    padding on the right, with a blue dotted border.
                 </paragraph>
+                <image src="div.png">A div with a paragraph that says "A paragraph inside a div", where the div has a 1px left padding, 10px right padding, a width of 100px, and a blue dotted border</image>
+                <image src="div_code.png">
+                    &lt;div style=&quot;padding-left:1px; padding-right:10px; border-style:dotted; border-color:blue; width:100px;&quot;%gt;
+                        &lt;p%gt;A paragraph inside a div&lt;/p%gt;
+                    &lt;/div%gt;
+                </image>
             </subsection>
-            <subsection subtitle="1.5 a Element">
+            <subsection title="1.5 Anchor Element">
                 <paragraph>
-                    The a element can contain a link  that will redirect the user to the specified http address. The address can be
+                    The anchor element can contain a link  that will redirect the user to the specified http address. The address can be
                     specified in the href attribute of the a element. Text can be placed between the start and end tags to create a
                     hyperlinked text (generally denoted with blue text and an underline beneath the text). Clicking the link will
                     change the color of the text to purple, denoting that the site had been visited before. CSS styles can be used
                     to change these behaviours, but they will be discussed later on.
                 </paragraph>
                 <paragraph>
-
+                    Here's an example of an anchor element before and after it was clicked.
                 </paragraph>
+                <image src="a_before.png">Anchor element with the text "Anchor Element" before it was clicked (text is blue)</image>
+                <image src="a_after.png">Anchor element with the text "Anchor Element" after it was clicked (text is purple)</image>
+                <image src="a_code.png">
+                    &lt;a href="#"&gt;Anchor Element&lt;/a&gt;
+                </image>
+            </subsection>
+            <subsection title="1.6 Lists">
             </subsection>
         </section>
-        <section title="1.2 Web Basics">
-            <subsection subtitle="Hyperlinks">
-                <paragraph>
-                    HTML documents normally contain hyperlinks, which, when clicked, load a specified web document. Both images and 
-                    text may be hyperlinked. When the mouse pointer hovers over a hyperlink, the default arrow pointer changes into 
-                    a hand with the index finger pointing upward. Often hyperlinked text appears underlined and in a different color 
-                    from regular text in a web page.
-                </paragraph>
-                <paragraph>
-                    Originally employed as a publishing tool for scientific research, hyperlinks are widely used to reference sources, 
-                    or sites that have more information on a particular topic. The paths created by hyperlinking create the effect of the “web.”
-                </paragraph>
-                <paragraph>
-                    When the user clicks a hyperlink, a web server locates the requested web page and sends it to the user’s web browser. 
-                    Similarly, the user can type the address of a web page into the browser’s address field and press Enter to view the specified page.
-                </paragraph>
-                <paragraph>
-                    Hyperlinks can reference other web pages, e-mail addresses, files and more. If a hyperlink’s URL is in the form 
-                    mailto:emailAddress, clicking the link loads your default e-mail program and opens a message window addressed to 
-                    the specified e-mail address. If a hyperlink references a file that the browser is incapable of displaying, the 
-                    browser prepares to download the file, and generally prompts the user for information about how the file should 
-                    be stored. When a file is downloaded, it’s copied onto the user’s computer. Programs, documents, images, sound 
-                    and video files are all examples of downloadable files.
-                </paragraph>
-            </subsection>
-            <subsection subtitle="URIs and URLs">
-                <paragraph>
-                    URIs (Uniform Resource Identifiers) identify resources on the Internet. URIs that start with http:// are called URLs 
-                    (Uniform Resource Locators). Common URLs refer to files, directories or server-side code that performs tasks such as 
-                    database lookups, Internet searches and business-application processing. If you know the URL of a publicly available 
-                    resource anywhere on the web, you can enter that URL into a web browser’s address field and the browser can access that resource.
-                </paragraph>
-            </subsection>
-            <subsection subtitle="Parts of a URL">
-                <paragraph>
-                    A URL contains information that directs a browser to the resource that the user wishes to access. Web servers make such resources 
-                    available to web clients. Popular web servers include Apache’s HTTP Server and Microsoft’s Internet Information Services (IIS).
-                    Let’s examine the components of the URL: http://www.deitel.com/books/downloads.html
-                </paragraph>
-                <paragraph>
-                    The text http:// indicates that the HyperText Transfer Protocol (HTTP) should be used to obtain the resource. Next in the URL 
-                    is the server’s fully qualified hostname (for example, www.deitel.com)—the name of the web-server computer on which the resource 
-                    resides. This computer is referred to as the host, because it houses and maintains resources. The hostname www.deitel.com is 
-                    translated into an IP (Internet Protocol) address—a numerical value that uniquely identifies the server on the Internet. An 
-                    Internet Domain Name System (DNS) server maintains a database of hostnames and their corresponding IP addresses and performs 
-                    the translations automatically.
-                </paragraph>
-                <paragraph>
-                    The remainder of the URL (/books/downloads.html) specifies the resource’s location (/books) and name (downloads.html) on the 
-                    web server. The location could represent an actual directory on the web server’s file system. For security reasons, however, 
-                    the location is typically a virtual directory. The web server translates the virtual directory into a real location on the 
-                    server, thus hiding the resource’s true location.
-                </paragraph>
-            </subsection>
-            <subsection subtitle="HTTP Headers">
-                <paragraph>
-                    Next, the server sends one or more HTTP headers, which provide additional information about the data that will be sent. In 
-                    this case, the server is sending an HTML5 text document, so one HTTP header for this example would read: Content-type: text/html
-                </paragraph>
-                <paragraph>
-                    The text http:// indicates that the HyperText Transfer Protocol (HTTP) should be used to obtain the resource. Next in the URL 
-                    is the server’s fully qualified hostname (for example, www.deitel.com)—the name of the web-server computer on which the resource 
-                    resides. This computer is referred to as the host, because it houses and maintains resources. The hostname www.deitel.com is 
-                    translated into an IP (Internet Protocol) address—a numerical value that uniquely identifies the server on the Internet. An 
-                    Internet Domain Name System (DNS) server maintains a database of hostnames and their corresponding IP addresses and performs 
-                    the translations automatically.
-                </paragraph>
-                <paragraph>
-                    The information provided in this header specifies the Multipurpose Internet Mail Extensions (MIME) type of the content that the 
-                    server is transmitting to the browser. The MIME standard specifies data formats, which programs can use to interpret data correctly. 
-                    For example, the MIME type text/plain indicates that the sent information is text that can be displayed directly. Similarly, the 
-                    MIME type image/jpeg indicates that the content is a JPEG image. When the browser receives this MIME type, it attempts to display the image.
-                </paragraph>
-                <paragraph>
-                    The header or set of headers is followed by a blank line, which indicates to the client browser that the server is finished sending 
-                    HTTP headers. Finally, the server sends the contents of the requested document (downloads.html). The client-side browser then 
-                    renders (or displays) the document, which may involve additional HTTP requests to obtain associated CSS and images.
-                </paragraph>
-            </subsection>    
-        </section>        
     </tutorial>
     <tutorial name="Unit 2" id="1">
         <section title="HTML Part 2">
@@ -196,11 +128,108 @@
                     majority of input elements can be seen in forms, where the user enters some sensitive data that is used to query a database.
                     An example of this would be when someone is filling out registration information to sign up on a social media platform. Most
                     likely, you will be asked to fill in your First Name, Last Name, Date of Birth, Email Address, and Password. All of these inputs
-                    use the HTML input elements that will be discussed. There are other forms of inputs that are different than text inputs, such as
-                    sliders, numeric, ___,___,___,___, and ___.
+                    use the HTML input elements that will be discussed. The inputs are also defined using the &lt;input type=&quot;&quot; /&gt; tag.
+                    There are other forms of inputs that are different than text inputs, such as range, color, date, email, number, search, and tel.
+                    These different input forms can be created by filling in the value of the type attribute, seen inside of the input tag.
                 </paragraph>
             </subsection>
-            <subsection>
+            <subsection title="2.2 Range Input">
+                <paragraph>
+                     The input of type range creates a slider control. The slider has a max, min, ****step***, and initial value that can be modified using the
+                     element's attributes (max, min, ___, and value respectively). As well, the starting location of the slider can be specified with the value attribute. A slider is
+                     self-validating, as the only viable values are the ones in the range of the specified maximum and minimum.
+                </paragraph>
+                <paragraph>
+                    Here's an example of a range input, where the maximum value is 100, the minimum value is 12, and the starting value is 51.
+                    Note that in this example, the range input is enclosed by a label to define display the maximum and minimum values.
+                </paragraph>
+                <image src="rangeInput.png">A slider with max value 100, min value 12, and starting value 51.</image>
+                <image src="rangeInput_code.png">
+                    <label>
+                        12<input type="range" max="100" min="12" value="51" />100
+                    </label>
+                    &lt;label&gt;
+                        12&lt;input type="range" max="100" min="12" value="51" /&gt;100
+                    &lt;/label&gt;
+                </image>
+            </subsection>
+            <subsection title="2.3 Color Input">
+                <paragraph>
+                    The input of type color allows for the user to access a color picker dialog box. The dialog box is accessible by clicking
+                    the "button" that the input element creates. This "button" also shows the color that the user has chosen (default to black)
+                    The color picker dialog is the standard windows dialog that shows up if you were to use somthing like Microsoft Paint.
+                    After the user selects a color and presses the "OK" button, the dialog will close and the user selected color will be
+                    displayed in the input element.
+                </paragraph>
+                <paragraph>
+                    Here's an example of how to create an HTML color picker.
+                </paragraph>
+                <image src="color_input_before.png">The  input of type color before a color is selected (default to black)</image>
+                <paragraph>
+                    The above image shows the color input type before the user has specified a color
+                </paragraph>
+                <image src="color_input_dialog.png">The color picker dialog with the selected color as cyan</image>
+                <paragraph>
+                    The above image shows the color picker dialog that is displayed when the input element is pressed
+                </paragraph>
+                <image src="color_input_after.png">The  input of type color after a color is selected (cyan)</image>
+                <paragraph>
+                    The above image shows the color input type after the user has specified a color (color seen in the previous image) 
+                </paragraph>
+                <image src="color_input_code.png">
+                    <input type="color" />
+                    &lt;input type="color" /&gt;
+                </image>
+            </subsection>
+            <subsection title="2.4 Date Input">
+                <paragraph>
+                    The input of type date creates an input textbox that allows the user to update the date values in multiple ways.
+                    First, the user can directly update the daye by typing into box in the respective fields (year, month, and day).
+                    Another way is by clicking into a field and pressing the up and down arrows on the spinner controls.
+                    The last way is by clicking an arrow next to the spinners that opens up a calendar, allowing the user to select the date
+                    from there.
+                </paragraph>
+                <paragraph>
+                    Here's an example of how to create a date input element.
+                </paragraph>
+                <image src="date_input_before.png">Date input with no date inputted</image>
+                <paragraph>
+                    The above image shows the date input no date inputted.
+                </paragraph>
+                <image src="date_input_after.png">Date input after the calendar is open</image>
+                <paragraph>
+                    The above image shows the date input element's calendar dialog
+                </paragraph>
+                <image src="date_input_code.png">
+                    <input type="date" />
+                    &lt;input type="date" /&gt;
+                </image>
+            </subsection>
+            <subsection title="2.5 Email Input">
+                <paragraph>
+                    The input of type email creates an input text box that expects text in an email format. The input text box will verify 
+                    if the input is in a correct email format when the form is submitted, but will not check if the email exists or not. it
+                    is also possible for the input to accept multiple emails (separated by commas), if the multiple attribute is specified.
+                </paragraph>
+                <paragraph>
+                    Here's an example of how to create an email input, and what it looks like if the form is to be submitted with an invalid
+                    email format.
+                </paragraph>
+                <image src="email_input_empty.png">An empty email input field</image>
+                <image src="email_input_invalid.png">An invalid email being submitted</image>
+                <paragraph>
+                    The above image shows an invalid popup message when an invalid email is trying to be submitted.
+                </paragraph>
+                <image src="email_input_code.png">
+                    <input type="email" multiple />
+                    &lt;input type="email" multiple /&gt;
+                </image>
+            </subsection>
+            <subsection title="2.6 Number Input">
+            </subsection>
+            <subsection title="2.7 Search Input">
+            </subsection>
+            <subsection title="2.8 Tel Input">
             </subsection>
         </section>
     </tutorial>
@@ -208,7 +237,7 @@
         <section title="CSS">
             <subsection title="3.1 What is CSS?">
                 <paragraph>
-                    CSS (Cascading Style-sheet) is a ___ language used to style HTML elements. CSS helps in creating aesthetically pleasing
+                    CSS (Cascading Style-sheet) is a stle sheet language used to style HTML elements. CSS helps in creating aesthetically pleasing
                     web pages by allowing the developer to color structural elements, input elements, and just about anything else HTML related. It also
                     helps to layout the web application, as it can specify the sizes of of HTML elements. In turn, this means that CSS also helps
                     with the scalability of web applications on smaller and larger devices (such as scaling down from a desktop browser on a large screen,
@@ -221,9 +250,10 @@
                     This is where the CSS styles are applied directly to the HTML element (the HTML style attributes are modified directly in the
                     creation of the HTML element). An example of what this would look like on a div element would be:
                 </paragraph>
-                <code>
-                    &lt;div style="width:50%; background-color:blue;"&gt;&lt;/div&gt;
-                </code>
+                <image src="css_3-2.png">A div with a blue background</image>
+                <image src="css_3-2_code.png">
+                    &lt;div style="width:200px; height:200px; background-color:blue;"&gt;&lt;/div&gt;
+                </image>
                 <paragraph>
                     As shown here, there is an attribute in the HTML div starting tag called style, and when that attribute is in place, CSS code
                     can be written to directly modify this element.
@@ -241,21 +271,22 @@
                     for a specific HTML file. This solution is better than the inline CSS, but still not the best, since the CSS code would need to
                     be duplicated in other HTML files as well. The best way is to use a separate CSS file (of type .css), where the stylesheet can be
                     referenced in each HTML file (using &lt;link rel="stylesheet" type="text/css" href="yourstylesheet.css" /&gt;). Discussing some of
-                    the attributes in the link tag, rel describes ___, type defines the MIME type as a text with CSS formatting, and the href is the
-                    direct reference to the stylesheet. Thus, any HTML files that have the reference can use the CSS ___ specified in the CSS file.
+                    the attributes in the link tag, rel describes the relationship between the current document and the linked document, type defines 
+                    the MIME type as a text with CSS formatting, and the href is the direct reference to the stylesheet. Thus, any HTML files that have 
+                    the reference can use the CSS rule-set specified in the CSS file.
                 </paragraph>
             </subsection>
             <subsection title="3.3 Using External CSS Stylesheets">
                 <paragraph>
-                    First, let's begin be defining a CSS ___ for an HTML element. As stated in the previous unit, HTML elements can be given unique IDs. In CSS,
-                    styles can be applied directly to an HTML element with a specific ID. For example, if there is an element declared as
+                    First, let's begin be defining a CSS rule-set for an HTML element. As stated in the previous unit, HTML elements can be given unique IDs. 
+                    In CSS, styles can be applied directly to an HTML element with a specific ID. For example, if there is an element declared as
                     &lt;div id="myDiv"&gt;&lt;/div&gt; and we wanted to set the background color to red, it can be done in the CSS stylesheet as
                     #myDiv { background-color:red; }. Notice how the div's ID was preceded by a '#'. The # symbol specifies that the CSS properties will be
-                    applied to an elements with that specific ID. Now let's say we wanted to apply the CSS properties to multiple HTML elements. A ___ 
-                    can be made similarly to how the ___ was made for an ID, but replacing the '#' with a '.' (so using the above example, it would look like
-                    .myDiv { background-color:red; }). This ___ can be applied to any HTML element by using the class attribute (so in the above div, it would
-                    be &lt;div class="myDiv"&gt;&lt;/div&gt;). Multiple CSS classes can be applied to an element. If you want CSS ___ to be applied to a
-                    certain HTML elements (such as applying the CSS ___ to all div elements), then specify the HTML element name with nothing preceding it
+                    applied to an elements with that specific ID. Now let's say we wanted to apply the CSS properties to multiple HTML elements. A rule-set 
+                    can be made similarly to how the rule-set was made for an ID, but replacing the '#' with a '.' (so using the above example, it would look like
+                    .myDiv { background-color:red; }). This rule-set can be applied to any HTML element by using the class attribute (so in the above div, it would
+                    be &lt;div class="myDiv"&gt;&lt;/div&gt;). Multiple CSS classes can be applied to an element. If you want CSS rule-sets to be applied to a
+                    certain HTML elements (such as applying the CSS rule-set to all div elements), then specify the HTML element name with nothing preceding it
                     (so once again, for a div element it would look like div { background-color:red; } to apply a red background to all div's).
                 </paragraph>
             </subsection>
@@ -281,6 +312,12 @@
                     be defined outside of an HTML file, as its own external JavaScript file (ending with .js). The JavaScript can be included into any
                     HTML file by using the same script tag, but with a src attribute that points to the location of the JavaScript file (ex.
                     &lt;script src="myJavascriptFile.js"&gt;&lt;/script&gt;
+                </paragraph>
+            </subsection>
+            <subsection title="4.2 Brief Introduction to AJAX">
+                <paragraph>
+                    In the discussions so far about web pages, the current way of communicating with a server is by using a form and refreshing the page
+                    in order to send and receive data between the server. This approach is fine, unless 
                 </paragraph>
             </subsection>
         </section>

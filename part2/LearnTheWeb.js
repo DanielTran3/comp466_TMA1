@@ -71,11 +71,16 @@ function displayInformation(tutorialData, informationDiv) {
         }
         else if (tutorialData[i].tagName === "paragraph") {
             var paragraphText = document.createElement("p");
-            paragraphText.innerHTML = tutorialData[i].textContent;
+            //https://stackoverflow.com/questions/30587718/remove-whitespaces-and-new-lines-from-xml-using-javascript
+            paragraphText.innerText = tutorialData[i].textContent.replace(new RegExp("\\n", "g"),"");
             informationDiv.appendChild(paragraphText);
         }
-        else if (tutorialData[i].tagName === "a") {
-            
+        else if (tutorialData[i].tagName === "image") {
+            var image = document.createElement("img");
+            image.src = tutorialData[i].attributes[0].nodeValue;
+            image.alt = tutorialData[i].textContent;
+            informationDiv.appendChild(image);
+            informationDiv.appendChild(document.createElement("br"));
         }
     }
 }
