@@ -6,7 +6,12 @@ var transitionsListDict = {};
 var photoInterval;
 var currentTransition;
 var currentPhotoIndex = 0;
-var transitionFunctionList = [noAnimationTransition, floatDownTransition, spinToTheCenterTransition, fadeInTransition];
+var transitionFunctionList = [noAnimationTransition, floatDownTransition, fadeInTransition];
+
+var yPos = -400;
+var xPos = 0;
+var angle = 0;
+var alpha = 0;
 
 requestAnimationFrame(drawImageUsingTransition);
 function preloadImages() {
@@ -83,12 +88,12 @@ function changeButtonValue(button) {
 }
 
 function scaleImage(image, canvas) {
-    var scale = 0.9;
+    var scale = 0.8;
     // Get the actual height and width of the image
     var height = image.naturalHeight;
     var width = image.naturalWidth;
     // Compare with the current size of the canvas
-    while(height > canvas.clientHeight || width > canvas.clientWidth) {
+    while(height > (canvas.clientHeight * scale) || width > (canvas.clientWidth * scale)) {
         height *= scale;
         width *= scale;
     } 
@@ -156,11 +161,6 @@ function changeTransition(transitionName, targetTransition) {
     }
     else if (transitionName === "Float Down") {
         transitionList.children[transitionsListDict[currentTransition][0]].classList.add("selectedTransition");
-
-    }
-    else if (transitionName === "Spin To The Center") {
-        transitionList.children[transitionsListDict[currentTransition][0]].classList.add("selectedTransition");
-
     }
     else if (transitionName === "FadeIn/Out") {
         transitionList.children[transitionsListDict[currentTransition][0]].classList.add("selectedTransition");
@@ -184,7 +184,6 @@ function noAnimationTransition() {
     ctx.drawImage(image, canvas.height / 2, 0, dimensions[0], dimensions[1]);
 }
 
-var yPos = -400;
 function floatDownTransition() {
     var canvas = document.getElementById("slideshowCanvas");
     var ctx = canvas.getContext("2d");
@@ -200,18 +199,14 @@ function floatDownTransition() {
     }
 }
 
-function spinToTheCenterTransition() {
-
-}
-
-var alpha = 0;
 function fadeInTransition() {
     var canvas = document.getElementById("slideshowCanvas");
     var ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.globalAlpha = alpha;
+    var image = _images[listOfImgSrc[currentPhotoIndex]];
     var dimensions = scaleImage(image, canvas);    
-    ctx.drawImage(_images[listOfImgSrc[currentPhotoIndex]], canvas.height / 2, 0, dimensions[0], dimensions[1]);
+    ctx.drawImage(image, canvas.height / 2, 0, dimensions[0], dimensions[1]);
     alpha += 0.01;
     if (alpha < 1) {
         requestAnimationFrame(fadeInTransition);
