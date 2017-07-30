@@ -12,7 +12,7 @@ var group2 =
 }
 
 function pageStartup() {
-    readXML("part4.xml");
+    initXML("part4.xml");
 }
 
 function createUnitTabs(xr) {
@@ -37,7 +37,7 @@ function createUnitTabs(xr) {
     }
 }
 
-function readXML(url) {
+function initXML(url) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
@@ -66,60 +66,76 @@ function removeTabInformation(informationDiv) {
 // Make recursive
 function loadTabInformation(informationNode, tabNumber, informationDiv) {
     var data = informationNode.children[tabNumber];
-    displayInformation(data.children, informationDiv);
+    displayInformation(data.children, informationDiv, "Length");
 }
 
-function displayInformation(tutorialData, informationDiv) {
+function displayInformation(tutorialData, informationDiv, conversionType) {
     for (var i = 0; i < tutorialData.length; i++) {
         for (var inst = 0; inst < tutorialData[i].attributes[1].value; inst++) {
 
             if (tutorialData[i].tagName === "select") {
                 var dropdownMenu = document.createElement("select");
-                dropdownMenu.id = tutorialData[i].id;
-                dropdownMenu.classList = "group" + (inst + 1);
+                dropdownMenu.id = tutorialData[i].id + (inst + 1);
+                dropdownMenu.className += "group" + (inst + 1);
 
-                for (var j = 0; j < tutorialData[i].children.length; j++) {
-                    if (tutorialData[i].children[j].attributes[1].value === "Length") {
-                        var dropdownOption = document.createElement("option");
-                        dropdownOption.value = tutorialData[i].children[j].innerHTML;
-                        dropdownOption.innerHTML = dropdownOption.value;
-                        dropdownOption.metersFactor = tutorialData[i].children[j].attributes[0].value;
-                        dropdownMenu.appendChild(dropdownOption);
-                    }
-                }
+                populateDropdownList(dropdownMenu, tutorialData[i], conversionType);
+                
                 dropdownMenu.addEventListener("change", function(e) {
                     changeUnits(e);
                 });
+
                 informationDiv.appendChild(dropdownMenu);
             }
 
             else if (tutorialData[i].tagName === "select2") {
                 var dropdownMenu = document.createElement("select");
                 dropdownMenu.id = tutorialData[i].id;
-                    dropdownMenu.classList = tutorialData[i].attributes[2].value;
+                dropdownMenu.className += tutorialData[i].attributes[2].value;
 
-                for (var j = 0; j < tutorialData[i].children.length; j++) {
-                    var dropdownOption = document.createElement("option");
-                    dropdownOption.value = tutorialData[i].children[j].innerHTML;
-                    dropdownOption.innerHTML = dropdownOption.value;
-                    dropdownMenu.appendChild(dropdownOption);
-                }
+                populateDropdownList(dropdownMenu, tutorialData[i], conversionType);
                 dropdownMenu.addEventListener("change", function(e) {
-                    changeUnitsTypes(e);
+                    populateDropdownXML("part4.xml", e);
                 });
                 informationDiv.appendChild(dropdownMenu);
             }
 
             else if (tutorialData[i].tagName === "input") {
                 var subsectionHeader = document.createElement("input");
-                subsectionHeader.id = tutorialData[i].id;
-                subsectionHeader.classList = "input" + (inst + 1);
+                subsectionHeader.id = tutorialData[i].id + (inst + 1);
+                subsectionHeader.className += "group" + (inst + 1);
                 subsectionHeader.value = 0;
                 subsectionHeader.addEventListener("input", function(e) {
                     convertValuesOnInput(e);
                 });
                 informationDiv.appendChild(subsectionHeader);            
             }
+        }
+    }
+}
+
+function populateDropdownList(dropdownMenu, dropdownListElement, conversionType) {
+    var firstAccessFlag = true;
+    for (var j = 0; j < dropdownListElement.children.length; j++) {
+        
+        if (dropdownListElement.children[j].attributes.length === 0) {
+            var dropdownOption = document.createElement("option");
+            dropdownOption.value = dropdownListElement.children[j].innerHTML;
+            dropdownOption.innerHTML = dropdownOption.value;
+            dropdownMenu.appendChild(dropdownOption);            
+        }
+
+        else if (dropdownListElement.children[j].attributes[1].value === conversionType) {
+            var dropdownOption = document.createElement("option");
+            dropdownOption.value = dropdownListElement.children[j].innerHTML;
+            dropdownOption.innerHTML = dropdownOption.value;
+            dropdownOption.metersFactor = dropdownListElement.children[j].attributes[0].value;
+            // Set the factor to the first element on the list
+            if (firstAccessFlag) {
+                group1.factor = dropdownOption.metersFactor;
+                group2.factor = dropdownOption.metersFactor;
+                firstAccessFlag = false;
+            }
+            dropdownMenu.appendChild(dropdownOption);
         }
     }
 }
@@ -136,10 +152,7 @@ function changeUnits(changedUnit) {
             var oldFactor = group2.factor;
             group2.factor = selectedFactor;
         }
-        
-        // group2.value = group1.value * (group2.factor / oldFactor);
-        // var group2Elem = document.getElementById("input2");
-        // group2Elem.value = group2.value;
+
         convertValues(document.getElementById("input1"));
     }
 }
@@ -161,5 +174,40 @@ function convertValues(target) {
         group1.value = group2.value * (group2.factor / group1.factor);
         var input1 = document.getElementById("input1");
         input1.value = group1.value;
+    }
+}
+
+function changeUnitsTypes(dropdownListElement, selectedConversionType) {
+    var conversion = selectedConversionType.currentTarget.options[selectedConversionType.currentTarget.selectedIndex].value;
+    for (var i = 0; i < selectedConversionType.currentTarget.classList.length; i++) {
+        var units = document.getElementById("units" + (i + 1));
+        clearDropdownList(units);
+        populateDropdownList(units, dropdownListElement, conversion);
+    }
+}
+
+function clearDropdownList(dropdownList) {
+    while(dropdownList.hasChildNodes()) {
+        dropdownList.removeChild(dropdownList.children[0]);
+    }
+}
+
+function populateDropdownXML(url, selectedConversionType) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            getListOfUnits(this.responseXML.children, selectedConversionType);
+        }
+    }
+    xhr.open("get", url, false);
+    xhr.send(null);
+}
+
+function getListOfUnits(xr, selectedConversionType) {
+    var unitConversionChildren = xr[0].children[0].children;
+    for (var i = 0; i < unitConversionChildren.length; i++) {
+        if (unitConversionChildren[i].id === "units") {
+            changeUnitsTypes(unitConversionChildren[i], selectedConversionType);
+        }
     }
 }
