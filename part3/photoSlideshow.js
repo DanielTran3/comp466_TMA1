@@ -1,7 +1,17 @@
 var _images = {}
 var buttonNameDict = {};
-var listOfImgSrc = ['gabled_roof.png', 'hipped_roof.png', 'shed_roof.png'];
-var listOfImgCaptions = ['1', '2', '3'];
+var listOfImgSrc = ['beef_tartare.png', 'blazePizza.png', 'chinese_shaved_ice.png', 'edmonton_fireworks.png',
+                    'edmonton_riverValley.png', 'edmonton_sunset.png', 'homemade_mango_cake.png', 
+                    'homemade_origami.png', 'homemade_pizza.png', 'homemade_steak_and_veggies.png', 
+                    'homemade_tacos.png', 'homemade_tacosalad.png', 'korean_hot_wings.png', 
+                    'nature.png', 'ramen.png', 'sushi.png', 'thePint_wings.png', 'toma_burger.png',
+                    'toronto_cityView1.png', 'toronto_cityView2.png', 'toronto_traintracks.png'];
+var listOfImgCaptions = ['Beef Tartare', 'Blaze Pizza custom pizza', 'Chinese Shaved Ice',
+                         'Edmonton Fireworks', 'Edmonton River Valley', 'Edmonton Sunset',
+                         'Homemade Mango Cake', 'Homemade Origami Bird and Basket', 'Homemade Pizza',
+                         'Homemade Steak and Broccoli', 'Homemade Tacos', 'Homemade Taco Salad',
+                         'Korean Hot Wings', 'Nature View', 'Ramen', 'Sushi', 'The Pint Wings (40)',
+                         'Toma Burger', 'View of Toronto 1', 'View of Toronto 2', 'Old Train Tracks in Toronto'];
 var transitionsListDict = {};
 var photoInterval;
 var currentTransition;
@@ -114,6 +124,8 @@ function initCanvas() {
     canvas.height = canvas.clientHeight;
     canvas.style.maxHeight = "89vh";
     canvas.style.maxWidth = "100%";
+    var ctx = canvas.getContext('2d');
+    ctx.translate(canvas.width / 2, canvas.height / 2);
     displayImageOnCanvas();
 }
 
@@ -178,10 +190,10 @@ function noAnimationTransition() {
     var canvas = document.getElementById("slideshowCanvas");
     var ctx = canvas.getContext("2d");
     ctx.globalAlpha = 1;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
     var image = _images[listOfImgSrc[currentPhotoIndex]];
     var dimensions = scaleImage(image, canvas);
-    ctx.drawImage(image, canvas.height / 2, 0, dimensions[0], dimensions[1]);
+    ctx.drawImage(image, -dimensions[0] / 2, -dimensions[1] / 2, dimensions[0], dimensions[1]);
 }
 
 function floatDownTransition() {
@@ -189,9 +201,9 @@ function floatDownTransition() {
     var ctx = canvas.getContext("2d");
     var image = _images[listOfImgSrc[currentPhotoIndex]];
     var dimensions = scaleImage(image, canvas);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(image, canvas.height / 2, yPos+=5, dimensions[0], dimensions[1]);
-    if (yPos < 0) {
+    ctx.clearRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
+    ctx.drawImage(image, -dimensions[0] / 2, yPos+=5, dimensions[0], dimensions[1]);
+    if (yPos < -dimensions[1] / 2) {
         requestAnimationFrame(floatDownTransition);
     }
     else {
@@ -202,11 +214,11 @@ function floatDownTransition() {
 function fadeInTransition() {
     var canvas = document.getElementById("slideshowCanvas");
     var ctx = canvas.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
     ctx.globalAlpha = alpha;
     var image = _images[listOfImgSrc[currentPhotoIndex]];
     var dimensions = scaleImage(image, canvas);    
-    ctx.drawImage(image, canvas.height / 2, 0, dimensions[0], dimensions[1]);
+    ctx.drawImage(image, -dimensions[0] / 2, -dimensions[1] / 2, dimensions[0], dimensions[1]);
     alpha += 0.01;
     if (alpha < 1) {
         requestAnimationFrame(fadeInTransition);

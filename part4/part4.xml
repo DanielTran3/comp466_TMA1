@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<utilityTools>
+    <tool name="Unit Converter" id="0">
+        <input id="input1" numInstance="2"></input>
+        <select id="units1" numInstance="2">
+            <option baseVal="1000" type="Length">Kilometre</option>
+            <option baseVal="1" type="Length">Metre</option>
+            <option baseVal="0.01" type="Length">Centimetre</option>
+            <option baseVal="0.001" type="Length">Millimetre</option>
+            <option baseVal="0.000001" type="Length">Micrometre</option>
+            <option baseVal="0.000000001" type="Length">Nanometre</option>
+            <option baseVal="0.3048" type="Length">Feet</option>
+            <option baseVal="0.0254" type="Length">Inches</option>
+            <option baseVal="" type="Weight"></option>
+        </select>
+        <select2 id="type" numInstance="1" classList="group1 group2">
+            <option>Length</option>
+            <option>Weight</option>
+            <option>Area</option>
+            <option>Volume</option>
+        </select2>
+    </tool>
+    <tool name="Mortgage Calculator" id="1">
+
+    </tool>
+    <tool name="Unknown" id="2">
+
+    </tool>
+</utilityTools>

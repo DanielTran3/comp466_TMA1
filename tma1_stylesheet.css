@@ -234,3 +234,24 @@ div#slideshowToolbar > div.dropdown {
 table, th, td {
     border: 1px solid black;
 }
+
+select#type {
+    width: 80%;
+    text-align: center;
+    height: 5%;
+}
+select {
+    width: 40%;
+    text-align: center;
+    height: 5%;
+}
+input {
+    width: 40%;
+    height: 5%;
+    text-align: center;
+    margin-top: calc(50vh - 10%);
+}
+
+.utilityTools {
+    text-align:center;
+}
