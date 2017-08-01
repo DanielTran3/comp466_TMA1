@@ -12,12 +12,20 @@
             <option baseVal="0.000000001" type="Length">Nanometre</option>
             <option baseVal="0.3048" type="Length">Feet</option>
             <option baseVal="0.0254" type="Length">Inches</option>
+
             <option baseVal="1000000" type="Weight">Tonne</option>
             <option baseVal="1000" type="Weight">Kilogram</option>
             <option baseVal="1" type="Weight">Gram</option>
             <option baseVal="0.001" type="Weight">Milligram</option>
             <option baseVal="453.592" type="Weight">Pound</option>
             <option baseVal="28.3495" type="Weight">Ounce</option>
+
+            <option baseVal="2590000" type="Area">Square Mile</option>
+            <option baseVal="1000000" type="Area">Square Kilometre</option>
+            <option baseVal="1" type="Area">Square Metre</option>
+            <option baseVal="0.092903" type="Area">Square Foot</option>
+            <option baseVal="0.00064516" type="Area">Square Inch</option>
+            <option baseVal="4046.86" type="Area">Acre</option>
         </select>
         <select2 id="type" numInstance="1" classList="group1 group2">
             <option>Length</option>

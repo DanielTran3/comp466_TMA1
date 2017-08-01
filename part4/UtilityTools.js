@@ -69,16 +69,22 @@ function loadTabInformation(informationNode, tabNumber, informationDiv) {
     displayInformation(data.children, informationDiv, "Length");
 }
 
-function displayInformation(tutorialData, informationDiv, conversionType) {
-    for (var i = 0; i < tutorialData.length; i++) {
-        for (var inst = 0; inst < tutorialData[i].attributes[1].value; inst++) {
+function displayInformation(conversionData, informationDiv, conversionType) {
+    var title = document.createTextNode("Unit Converter");
+    var titleHeader = document.createElement("h1");
+    titleHeader.className += "title1";
+    titleHeader.appendChild(title);
+    informationDiv.appendChild(titleHeader);
 
-            if (tutorialData[i].tagName === "select") {
+    for (var i = 0; i < conversionData.length; i++) {
+        for (var inst = 0; inst < conversionData[i].attributes[1].value; inst++) {
+
+            if (conversionData[i].tagName === "select") {
                 var dropdownMenu = document.createElement("select");
-                dropdownMenu.id = tutorialData[i].id + (inst + 1);
+                dropdownMenu.id = conversionData[i].id + (inst + 1);
                 dropdownMenu.className += "group" + (inst + 1);
 
-                populateDropdownList(dropdownMenu, tutorialData[i], conversionType);
+                populateDropdownList(dropdownMenu, conversionData[i], conversionType);
                 
                 dropdownMenu.addEventListener("change", function(e) {
                     changeUnits(e);
@@ -87,27 +93,27 @@ function displayInformation(tutorialData, informationDiv, conversionType) {
                 informationDiv.appendChild(dropdownMenu);
             }
 
-            else if (tutorialData[i].tagName === "select2") {
+            else if (conversionData[i].tagName === "select2") {
                 var dropdownMenu = document.createElement("select");
-                dropdownMenu.id = tutorialData[i].id;
-                dropdownMenu.className += tutorialData[i].attributes[2].value;
+                dropdownMenu.id = conversionData[i].id;
+                dropdownMenu.className += conversionData[i].attributes[2].value;
 
-                populateDropdownList(dropdownMenu, tutorialData[i], conversionType);
+                populateDropdownList(dropdownMenu, conversionData[i], conversionType);
                 dropdownMenu.addEventListener("change", function(e) {
                     populateDropdownXML("part4.xml", e);
                 });
                 informationDiv.appendChild(dropdownMenu);
             }
 
-            else if (tutorialData[i].tagName === "input") {
-                var subsectionHeader = document.createElement("input");
-                subsectionHeader.id = tutorialData[i].id + (inst + 1);
-                subsectionHeader.className += "group" + (inst + 1);
-                subsectionHeader.value = 0;
-                subsectionHeader.addEventListener("input", function(e) {
+            else if (conversionData[i].tagName === "input") {
+                var inputElement = document.createElement("input");
+                inputElement.id = conversionData[i].id + (inst + 1);
+                inputElement.className += "group" + (inst + 1);
+                inputElement.value = 0;
+                inputElement.addEventListener("input", function(e) {
                     convertValuesOnInput(e);
                 });
-                informationDiv.appendChild(subsectionHeader);            
+                informationDiv.appendChild(inputElement);            
             }
         }
     }
@@ -133,6 +139,7 @@ function populateDropdownList(dropdownMenu, dropdownListElement, conversionType)
             if (firstAccessFlag) {
                 group1.factor = dropdownOption.metersFactor;
                 group2.factor = dropdownOption.metersFactor;
+                document.getElementById("input2").value = document.getElementById("input1").value;
                 firstAccessFlag = false;
             }
             dropdownMenu.appendChild(dropdownOption);
