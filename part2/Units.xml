@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <units>
-    <tutorial name="Unit 1" id="0">
+    <tutorial name="Unit 1" >
         <section title="HTML Part 1">
             <subsection title="1.1 An Introduction to HTML Structure Elements">
                 <paragraph>
@@ -28,13 +28,13 @@
                 </paragraph>
                 <paragraph>
                     A quick note in regards to HTML elements is that each element can be given an unique ID (specified by the ID attribute).
-                    The id can be used to identify a specific element on a page (each ID must be different on one given page).
-                    There willbe more discussion on this later on.
+                    The id can be used to identify a specific element on a page (each ID must be different on one given page). As well, CSS
+                    attributes can be applied directly to an element with the specified ID. There will be more discussion on this later on.
                 </paragraph>
             </subsection>
             <subsection title="1.2 Paragraph Element">
                 <paragraph>
-                    In HTML, there exists a paragraph element, which can be created by using the &lt;p&gt;&lt;/p&gt; tag. Paragraphs
+                    In HTML, there exists a paragraph element, which can be created by using the &lt;img src="1.2_1.png"&gt;&lt;/img&gt; tag. Paragraphs
                     are used to display text that the programmer wants the end-user to see. It helps with defining a structure for the document.
                 </paragraph>
                 <paragraph>
@@ -56,8 +56,28 @@
                 </paragraph>
                 <paragraph>
                     Here is an example of a table creation, with 3 rows and 4 columns
+                     &lt;table&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;1&lt;/td&gt;
+                            &lt;td&gt;2&lt;/td&gt;
+                            &lt;td&gt;3&lt;/td&gt;
+                            &lt;td&gt;4&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;5&lt;/td&gt;
+                            &lt;td&gt;6&lt;/td&gt;
+                            &lt;td&gt;7&lt;/td&gt;
+                            &lt;td&gt;8&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;9&lt;/td&gt;
+                            &lt;td&gt;10&lt;/td&gt;
+                            &lt;td&gt;11&lt;/td&gt;
+                            &lt;td&gt;12&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
                 </paragraph>
-                <image src="table.png">A Table containing 3 rows and 4 columns, filled with numbers from 1 to 12.</image>
+                <!-- <image src="table.png">A Table containing 3 rows and 4 columns, filled with numbers from 1 to 12.</image> -->
                 <image src="table_code.png">
                     &lt;table&gt;
                         &lt;tr&gt;
@@ -91,7 +111,7 @@
                     Here's an example of a div element with a paragraph inside of it. The div will have a 1px padding on the left and a 10px
                     padding on the right, with a blue dotted border.
                 </paragraph>
-                <image src="div.png">A div with a paragraph that says "A paragraph inside a div", where the div has a 1px left padding, 10px right padding, a width of 100px, and a blue dotted border</image>
+                 <image src="div.png">A div with a paragraph that says "A paragraph inside a div", where the div has a 1px left padding, 10px right padding, a width of 100px, and a blue dotted border</image> 
                 <image src="div_code.png">
                     &lt;div style=&quot;padding-left:1px; padding-right:10px; border-style:dotted; border-color:blue; width:100px;&quot;%gt;
                         &lt;p%gt;A paragraph inside a div&lt;/p%gt;
@@ -108,6 +128,7 @@
                 </paragraph>
                 <paragraph>
                     Here's an example of an anchor element before and after it was clicked.
+                    &lt;a href="#"&gt;Anchor Element&lt;/a&gt;
                 </paragraph>
                 <image src="a_before.png">Anchor element with the text "Anchor Element" before it was clicked (text is blue)</image>
                 <image src="a_after.png">Anchor element with the text "Anchor Element" after it was clicked (text is purple)</image>
@@ -116,10 +137,133 @@
                 </image>
             </subsection>
             <subsection title="1.6 Lists">
+                <paragraph>
+                    Lists are used to order and more neatly display information. There are two kinds of lists that are available in HTML. Lists can
+                    be displayed as either ordered or unordered lists. The difference is that ordered lists have an increasing index starting from one,
+                    while the unordered list has bullet points for each element. Ordered Lists are created using the ol element, while unordered lists
+                    use the ul element. The points inside these lists are created using the li element.
+                </paragraph>
+                <paragraph>Here is an example of an ordered list using the ol element.</paragraph>
+                <paragraph>
+                    &lt;ol&gt;
+                        &lt;li&gt;Element 1&lt;/li&gt;
+                        &lt;li&gt;Element 2&lt;/li&gt;
+                        &lt;li&gt;Element 3&lt;/li&gt;
+                    &lt;ol/&gt;
+                </paragraph>
+                <image src="orderedlist_code.png">
+                    &lt;ol&gt;
+                        &lt;li&gt;Element 1&lt;/li&gt;
+                        &lt;li&gt;Element 2&lt;/li&gt;
+                        &lt;li&gt;Element 3&lt;/li&gt;
+                    &lt;ol/&gt;
+                </image>
+                <paragraph>The same ordered list can be changed into an unordered list by replacing the ol element with a ul element, as shown below.</paragraph>
+                <paragraph>
+                    &lt;ul&gt;
+                        &lt;li&gt;Element 1&lt;/li&gt;
+                        &lt;li&gt;Element 2&lt;/li&gt;
+                        &lt;li&gt;Element 3&lt;/li&gt;
+                    &lt;ul/&gt;
+                </paragraph>
+                <image src="unorderedlist_code.png">
+                    &lt;ul&gt;
+                        &lt;li&gt;Element 1&lt;/li&gt;
+                        &lt;li&gt;Element 2&lt;/li&gt;
+                        &lt;li&gt;Element 3&lt;/li&gt;
+                    &lt;ul/&gt;
+                </image>
+                <paragraph>
+                    Lists can also be nested inside eachother, called a nested list. Different lists can be nested within eachother, such as having an
+                    ordered list nested inside an unordered list, and vice-versa. This is done the same way as creating a list, but ol and ul lists are
+                    created within li element. Any number of lists can be nested within eachother. Here's an example of an unordered list nested inside an 
+                    ordered list, which is nested inside another unordered list.
+                </paragraph>
+                <paragraph>
+                    &lt;ul&gt;
+                        &lt;li&gt;Element 1&lt;/li&gt;
+                        &lt;li&gt;Element 2&lt;/li&gt;
+                        &lt;li&gt; Ordered Nested List
+                            &lt;ol&gt;
+                                &lt;li&gt;Ordered Nested Element 1&lt;/li&gt;
+                                &lt;li&gt;Ordered Nested Element 2&lt;/li&gt;
+                                &lt;li&gt; Unordered Nested List
+                                    &lt;ul&gt;
+                                        &lt;li&gt;Unordered Nested Element 1&lt;/li&gt;
+                                        &lt;li&gt;Unordered Nested Element 2&lt;/li&gt;
+                                        &lt;li&gt;Unordered Nested Element 3&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;Ordered Nested Element 3&lt;/li&gt;
+                            &lt;/ol&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;Element 3&lt;/li&gt;
+                    &lt;/ul&gt;
+                </paragraph>
+                <image src="nestedlist_code.png">
+                    &lt;ul&gt;
+                        &lt;li&gt;Element 1&lt;/li&gt;
+                        &lt;li&gt;Element 2&lt;/li&gt;
+                        &lt;li&gt; Ordered Nested List
+                            &lt;ol&gt;
+                                &lt;li&gt;Ordered Nested Element 1&lt;/li&gt;
+                                &lt;li&gt;Ordered Nested Element 2&lt;/li&gt;
+                                &lt;li&gt; Unordered Nested List
+                                    &lt;ul&gt;
+                                        &lt;li&gt;Unordered Nested Element 1&lt;/li&gt;
+                                        &lt;li&gt;Unordered Nested Element 2&lt;/li&gt;
+                                        &lt;li&gt;Unordered Nested Element 3&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;Ordered Nested Element 3&lt;/li&gt;
+                            &lt;/ol&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;Element 3&lt;/li&gt;
+                    &lt;/ul&gt;
+                </image>
             </subsection>
         </section>
+        <!-- <section title="&lt;hr&gt;">
+            <paragraph>
+                &lt;input type="submit" value="Start Quiz" class="whiteButton" style="margin-top:0px" /&gt;
+            </paragraph>
+        </section> -->
     </tutorial>
-    <tutorial name="Unit 2" id="1">
+    <quiz name="Unit 1 Quiz" >
+        <section title="Unit 1 Quiz">
+            <question title="Question 1. What kind of language is HTML?">
+                <answer name="q1" correct="">A. Scripting Language</answer>
+                <answer name="q1" correct="*">B. Markup Language</answer>
+                <answer name="q1" correct="">C. XML-based Language</answer>
+                <answer name="q1" correct="">D. Visual Language</answer>
+            </question>
+            <question title="Question 2. A paragraph is defined using the ___ tag">
+                <answer name="q2" correct="*">A. p</answer>
+                <answer name="q2" correct="">B. para</answer>
+                <answer name="q2" correct="">C. paragraph</answer>
+                <answer name="q2" correct="">D. p1</answer>
+            </question>
+            <question title="Question 3. How is a row created in an HTML table?">
+                <answer name="q3" correct="*">A. Using the &quot;tr&quot; tag</answer>
+                <answer name="q3" correct="">B. Using the &quot;td&quot; tag</answer>
+                <answer name="q3" correct="">C. Using the &quot;row&quot; tag</answer>
+                <answer name="q3" correct="">D. Using the &quot;tableRow&quot; tag</answer>
+            </question>
+            <question title="Question 4. What happens if a nested list is not inside na &quot;li&quot; element?">
+                <answer name="q4" correct="">A. The HTML page gets an error and does not render</answer>
+                <answer name="q4" correct="">B. The HTML page renders but the nested list does not</answer>
+                <answer name="q4" correct="">C. The output is the same as if the list was inside an &quot;li&quot; element</answer>
+                <answer name="q4" correct="*">D. Every subsequent &quot;li&quot; element is nested under the nested list</answer>
+            </question>
+            <question title="Question 5. What is an HTML ID used for?">
+                <answer name="q5" correct="*">A. Uniquely identifying an HTML element</answer>
+                <answer name="q5" correct="">B. Applying CSS to elements on the same page with the same ID</answer>
+                <answer name="q5" correct="">C. Both A and B</answer>
+                <answer name="q5" correct="">D. None of the Above</answer>
+            </question>
+        </section>
+    </quiz>
+    <tutorial name="Unit 2" >
         <section title="HTML Part 2">
             <subsection title="2.1 An Introduction to HTML Input Elements">
                 <paragraph>
@@ -128,7 +272,12 @@
                     majority of input elements can be seen in forms, where the user enters some sensitive data that is used to query a database.
                     An example of this would be when someone is filling out registration information to sign up on a social media platform. Most
                     likely, you will be asked to fill in your First Name, Last Name, Date of Birth, Email Address, and Password. All of these inputs
-                    use the HTML input elements that will be discussed. The inputs are also defined using the &lt;input type=&quot;&quot; /&gt; tag.
+                    use the HTML input elements that will be discussed. The inputs are also defined using the input tag
+                </paragraph>
+                <paragraph>
+                    &lt;input type=&quot;&quot; /&gt;
+                </paragraph>
+                <paragraph>    
                     There are other forms of inputs that are different than text inputs, such as range, color, date, email, number, search, and tel.
                     These different input forms can be created by filling in the value of the type attribute, seen inside of the input tag.
                 </paragraph>
@@ -143,7 +292,12 @@
                     Here's an example of a range input, where the maximum value is 100, the minimum value is 12, and the starting value is 51.
                     Note that in this example, the range input is enclosed by a label to define display the maximum and minimum values.
                 </paragraph>
-                <image src="rangeInput.png">A slider with max value 100, min value 12, and starting value 51.</image>
+                <paragraph>
+                    &lt;label&gt;
+                        12&lt;input type="range" max="100" min="12" value="51" /&gt;100
+                    &lt;/label&gt;
+                </paragraph>
+                <!-- <image src="rangeInput.png">A slider with max value 100, min value 12, and starting value 51.</image> -->
                 <image src="rangeInput_code.png">
                     &lt;label&gt;
                         12&lt;input type="range" max="100" min="12" value="51" /&gt;100
@@ -183,18 +337,14 @@
                     First, the user can directly update the date by typing into box in the respective fields (year, month, and day).
                     Another way is by clicking into a field and pressing the up and down arrows on the spinner controls.
                     The last way is by clicking an arrow next to the spinners that opens up a calendar, allowing the user to select the date
-                    from there.
+                    from there. Note that the last two ways are not shown in Firefox or IE12 or earlier browsers.
                 </paragraph>
                 <paragraph>
                     Here's an example of how to create a date input element.
                 </paragraph>
-                <image src="date_input_before.png">Date input with no date inputted</image>
+                <paragraph>&lt;input type="date" /&gt;</paragraph>
                 <paragraph>
-                    The above image shows the date input no date inputted.
-                </paragraph>
-                <image src="date_input_after.png">Date input after the calendar is open</image>
-                <paragraph>
-                    The above image shows the date input element's calendar dialog
+                    The above element shows the date input with not date inputted.
                 </paragraph>
                 <image src="date_input_code.png">
                     &lt;input type="date" /&gt;
@@ -210,24 +360,110 @@
                     Here's an example of how to create an email input, and what it looks like if the form is to be submitted with an invalid
                     email format (or is submitted empty (the required attribute forces a value to be inputted into the input)).
                 </paragraph>
-                <image src="email_input_empty.png">An empty email input field</image>
+                <paragraph>&lt;input type="email" multiple required/&gt;</paragraph>
+                <paragraph>
+                    The above element is an email input. Entering an invalid format email hightlight the input box red, while
+                    entering a valid email (ex. email@email.com) will not.</paragraph>
                 <image src="email_input_invalid.png">An invalid email being submitted</image>
                 <paragraph>
-                    The above image shows an invalid popup message when an invalid email is trying to be submitted.
+                    The above image shows an invalid popup message when an invalid email is trying to be submitted. The input box is
+                    hightligted in red if the email is invalid
                 </paragraph>
                 <image src="email_input_code.png">
                     &lt;input type="email" multiple required/&gt;
                 </image>
             </subsection>
             <subsection title="2.6 Number Input">
+                <paragraph>
+                    The number input allows the user to input a numeric value with type checking. It ensures that the user's input is a valid number.
+                    As well, the input allows the developer to specify a minimum and maximum valid input range, which is useful for limiting the user's
+                    valid inputs. This is done by setting the min attribute and the max attribute, respectively. There is also a spinner that is 
+                    available to increase or decrease the user's value by a step amount, which can also be specified by the developer. Setting the
+                    step attribute will change how much the spinner increments and decrements the numeric value. 
+                </paragraph>
+                <paragraph>Here is an example of a number input, with a minimum of 5, maximum of 25, and a step of 2.</paragraph>
+                <paragraph>&lt;input type="number" min="5" max="25" step="2" /&gt;</paragraph>
+                <image src="number_input_code.png">
+                    &lt;input type="number" min="5" max="25" step="2" /&gt;
+                </image>
+                <paragraph>
+                    If a number is submitted with a non-numeric value, or a value outside of the specified range, the user will be notified.
+                    Here's an example, using the above example, when the user inputs a value outside of the valid range.
+                </paragraph>
+                <image src="number_input_invalid.png">
+                    Inputting a value of 2566 when the maximum allowed numeric value is 25. User gets prompted by a message stating
+                    "Please select a value that is no more than 25."
+                </image>                    
             </subsection>
             <subsection title="2.7 Search Input">
+                <paragraph>
+                    The search input creates a text box search field that allows the user to input text for a query. There is also
+                    an "x" that will clear the search box. As well, the placeholder attribute can be set to a text string to display
+                    placeholder text within the search box.
+                </paragraph>
+                <paragraph>Here's an example of a search input.</paragraph>
+                <paragraph>&lt;input type="search" placeholder="Enter Query Here."/&gt;</paragraph>
+                <image src="search_input_code.png">
+                    &lt;input type="search" placeholder="Enter Query Here."/&gt;
+                </image>
             </subsection>
             <subsection title="2.8 Tel Input">
+                <paragraph>
+                    The tel input type is used for telephone number inputs. The tel input doesn't validate if the inputted telephone number is
+                    a real, valid number, but it does provide a pattern attribute to allow the developer to specify regular expressions (regex)
+                    to test for a correct telephone input format. This is done because different regions have different telephone number formats.
+                    This allows the tel input to be modified to suit any region. Once again, there is also a placeholder attribute to display
+                    the required telephone input format
+                </paragraph>
+                <paragraph>Here's an example of a tel input for a Canadian phone number format (###) ###-####.</paragraph>
+                <paragraph>
+                    &lt;input type="tel" placeholder="(###) ###-####" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"&gt;
+                </paragraph>
+                <image src="tel_input_code.png">
+                    &lt;input type="tel" placeholder="(###) ###-####" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"&gt;
+                </image>
+                <paragraph>The error message for trying to submit a tel input that doesn't match the regex patter will be similar to the image seen below.</paragraph>
+                <image src="tel_input_error.png">
+                    Error message for inputting a telephone number of the incorrect format.
+                </image>
             </subsection>
         </section>
     </tutorial>
-    <tutorial name="Unit 3" id="2">
+    <tutorial name="Unit 2 Quiz" >
+    <section title="Unit 2 Quiz">
+        <question title="Question 1. What kind of language is HTML?">
+            <answer name="q1" correct="">A. Scripting Language</answer>
+            <answer name="q1" correct="*">B. Markup Language</answer>
+            <answer name="q1" correct="">C. XML-based Language</answer>
+            <answer name="q1" correct="">D. Visual Language</answer>
+        </question>
+        <question title="Question 2. A paragraph is defined using the ___ tag">
+            <answer name="q2" correct="*">A. p</answer>
+            <answer name="q2" correct="">B. para</answer>
+            <answer name="q2" correct="">C. paragraph</answer>
+            <answer name="q2" correct="">D. p1</answer>
+        </question>
+        <question title="Question 3. How is a row created in an HTML table?">
+            <answer name="q3" correct="">A. Using the &quot;tr&quot; tag</answer>
+            <answer name="q3" correct="*">B. Using the &quot;td&quot; tag</answer>
+            <answer name="q3" correct="">C. Using the &quot;row&quot; tag</answer>
+            <answer name="q3" correct="">D. Using the &quot;tableRow&quot; tag</answer>
+        </question>
+        <question title="Question 4. What happens if a nested list is not inside na &quot;li&quot; element?">
+            <answer name="q4" correct="">A. The HTML page gets an error and does not render</answer>
+            <answer name="q4" correct="">B. The HTML page renders but the nested list does not</answer>
+            <answer name="q4" correct="">C. The output is the same as if the list was inside an &quot;li&quot; element</answer>
+            <answer name="q4" correct="*">D. Every subsequent &quot;li&quot; element is nested under the nested list</answer>
+        </question>
+        <question title="Question 5. What is an HTML ID used for?">
+            <answer name="q5" correct="">A. Uniquely identifying an HTML element</answer>
+            <answer name="q5" correct="*">B. Applying CSS to elements on the same page with the same ID</answer>
+            <answer name="q5" correct="">C. Both A and B</answer>
+            <answer name="q5" correct="">D. None of the Above</answer>
+        </question>
+    </section>
+    </tutorial>
+    <tutorial name="Unit 3" >
         <section title="CSS">
             <subsection title="3.1 What is CSS?">
                 <paragraph>
@@ -274,19 +510,55 @@
                 <paragraph>
                     First, let's begin be defining a CSS rule-set for an HTML element. As stated in the previous unit, HTML elements can be given unique IDs. 
                     In CSS, styles can be applied directly to an HTML element with a specific ID. For example, if there is an element declared as
-                    &lt;div id="myDiv"&gt;&lt;/div&gt; and we wanted to set the background color to red, it can be done in the CSS stylesheet as
-                    #myDiv { background-color:red; }. Notice how the div's ID was preceded by a '#'. The # symbol specifies that the CSS properties will be
-                    applied to an elements with that specific ID. Now let's say we wanted to apply the CSS properties to multiple HTML elements. A rule-set 
-                    can be made similarly to how the rule-set was made for an ID, but replacing the '#' with a '.' (so using the above example, it would look like
-                    .myDiv { background-color:red; }). This rule-set can be applied to any HTML element by using the class attribute (so in the above div, it would
-                    be &lt;div class="myDiv"&gt;&lt;/div&gt;). Multiple CSS classes can be applied to an element. If you want CSS rule-sets to be applied to a
-                    certain HTML elements (such as applying the CSS rule-set to all div elements), then specify the HTML element name with nothing preceding it
-                    (so once again, for a div element it would look like div { background-color:red; } to apply a red background to all div's).
+                    &lt;img src="3.3_1.png"&gt;&lt;/img&gt;
+                    and we wanted to set the background color to red, it can be done in the CSS stylesheet as #myDiv { background-color:red; }. 
+                    Notice how the div's ID was preceded by a '#'. The # symbol specifies that the CSS properties will be applied to an elements with that specific 
+                    ID. Now let's say we wanted to apply the CSS properties to multiple HTML elements. A rule-set can be made similarly to how the rule-set 
+                    was made for an ID, but replacing the '#' with a '.' (so using the above example, it would look like .myDiv { background-color:red; }). 
+                    This rule-set can be applied to any HTML element by using the class attribute (so in the above div, it would be 
+                    &lt;img src="3.3_2.png"&gt;&lt;/img&gt;.
+                    Multiple CSS classes can be applied to an element. If you want CSS rule-sets to be applied to a certain HTML elements (such as applying the CSS 
+                    rule-set to all div elements), then specify the HTML element name with nothing preceding it (so once again, for a div element it would look 
+                    like div { background-color:red; } to apply a red background to all div's).
                 </paragraph>
             </subsection>
         </section>
     </tutorial>
-    <tutorial name="Unit 4" id="3">
+    <tutorial name="Unit 3 Quiz" >
+    <section title="Unit 3 Quiz">
+        <question title="Question 1. What kind of language is HTML?">
+            <answer name="q1" correct="">A. Scripting Language</answer>
+            <answer name="q1" correct="*">B. Markup Language</answer>
+            <answer name="q1" correct="">C. XML-based Language</answer>
+            <answer name="q1" correct="">D. Visual Language</answer>
+        </question>
+        <question title="Question 2. A paragraph is defined using the ___ tag">
+            <answer name="q2" correct="*">A. p</answer>
+            <answer name="q2" correct="">B. para</answer>
+            <answer name="q2" correct="">C. paragraph</answer>
+            <answer name="q2" correct="">D. p1</answer>
+        </question>
+        <question title="Question 3. How is a row created in an HTML table?">
+            <answer name="q3" correct="">A. Using the &quot;tr&quot; tag</answer>
+            <answer name="q3" correct="*">B. Using the &quot;td&quot; tag</answer>
+            <answer name="q3" correct="">C. Using the &quot;row&quot; tag</answer>
+            <answer name="q3" correct="">D. Using the &quot;tableRow&quot; tag</answer>
+        </question>
+        <question title="Question 4. What happens if a nested list is not inside na &quot;li&quot; element?">
+            <answer name="q4" correct="">A. The HTML page gets an error and does not render</answer>
+            <answer name="q4" correct="">B. The HTML page renders but the nested list does not</answer>
+            <answer name="q4" correct="">C. The output is the same as if the list was inside an &quot;li&quot; element</answer>
+            <answer name="q4" correct="*">D. Every subsequent &quot;li&quot; element is nested under the nested list</answer>
+        </question>
+        <question title="Question 5. What is an HTML ID used for?">
+            <answer name="q5" correct="">A. Uniquely identifying an HTML element</answer>
+            <answer name="q5" correct="*">B. Applying CSS to elements on the same page with the same ID</answer>
+            <answer name="q5" correct="">C. Both A and B</answer>
+            <answer name="q5" correct="">D. None of the Above</answer>
+        </question>
+    </section>
+    </tutorial>
+    <tutorial name="Unit 4" >
         <section title="JavaScript, AJAX, and XML">
             <subsection title="4.1 What is JavaScript?">
                 <paragraph>
@@ -299,7 +571,7 @@
                 </paragraph>
                 <paragraph>
                     JavaScript can be used in similar ways as CSS can. Some JavaScript functions can be called for an event in an inline HTML element
-                    (For example, &lt;button type="submit" onclick="javascriptFunction()"&gt;&lt;/button&gt; would create a button that would call the functions
+                    (For example, &lt;img src="4.1_1.png"&gt;&lt;/img&gt; would create a button that would call the functions
                     "javascriptFunction" when it is clicked). For similar reasons as with CSS, it is not recommended to call JavaScript functions in this
                     manner, as it makes maintainability and scalability more difficult. JavaScript can be declared inside an HTML file by using the
                     &lt;script&gt;"...JavaScript Here"&lt;/script&gt;. The JavaScript decan be defined between the two script tags. As well, JavaScript can
@@ -311,9 +583,93 @@
             <subsection title="4.2 Brief Introduction to AJAX">
                 <paragraph>
                     In the discussions so far about web pages, the current way of communicating with a server is by using a form and refreshing the page
-                    in order to send and receive data between the server. This approach is fine, unless 
+                    in order to send and receive data between the server and the client. This approach is fine, unless the user has to go through many
+                    web pages, or is required to repeatedly input information. The reason why the the way we have been inputting information into the
+                    web pages is bad for this type of application is because it takes too long. Refreshing the entire page to load data if whenever the
+                    user wants to send in information can take a long time. This is especially true for validating inputs. For example, we don't want to
+                    refresh the entire page just to check if one of the user's inputs is in the correct format. AJAX is a way around this, as it creates
+                    a dynamic web page that is able to asynchronously send and receive data between the client and server and updating the webpage without
+                    having to refresh the entire webpage.
+                </paragraph>
+                <paragraph>
+                    One way of creating an AJAX application is through the use of XMLHttpRequests, which sends and recieves XML data between the
+                    server and the client. Here's an example of how to open a connection to asynchronously request from a server XML document and display
+                    the requested information back to the client.
+                </paragraph>
+                <image src="4.2_1.png">
+                    function readXML(url) {
+                        var xhr = new XMLHttpRequest();
+                        xhr.onreadystatechange = function () {
+                            if (this.readyState === 4 &amp;&amp; this.status === 200) {
+                                callbackFunction(this);
+                            }
+                        }
+                        xhr.open("get", url, false);
+                        xhr.send(null);
+                    }
+                </image>
+                <paragraph>
+                    Let's take a look at the above function, called readXML. This function will create an XMLHttpRequest to a URL, and when the request is
+                    ready, then a callback function is called. First, this method takes in a url as an input, which is the path to the URL that the user will
+                    be requesting from. The line &lt;img src="4.2_2.png"&gt;&lt;/img&gt; creates the XMLHttpRequest and assigns it to a variable called xhr.
+                    This variable will be used to deal with the XMLHttpRequest. The next chunk of code,
+                </paragraph>
+                <image src="4.2_3.png">
+                    xhr.onreadystatechange = function () {
+                        if (this.readyState === 4 &amp;&amp; this.status === 200) {
+                            callbackFunction(this);
+                        }
+                    }
+                </image>
+                <paragraph>
+                    sets an event handler for the xhr variable, which will call a function if the ready state of the request changes. The function that
+                    is called will check if the request is complete (readyState === 4) and that the client has successfully received the request (status === 200).
+                    If these two conditions are satisfied, then a callback function is called, passing in the request (callbackFunction(this)). "this" contains all
+                    of the information from the request. Before the onreadystatechange is called, the request must be opened first, which occurs in the lines 
+                </paragraph>
+                <image src="4.2_4.png">
+                    xhr.open("get", url, false);
+                    xhr.send(null);
+                </image>
+                <paragraph>
+                    The xhr is opened using a "get" request to the URL. The third parameter, which is set to false, specifies if the request is asynchronous or not.
+                    Finally, in the send method (xhr.send(null)), this means that the request is not submitting data in the body of the request.
                 </paragraph>
             </subsection>
         </section>
+    </tutorial>
+    <tutorial name="Unit 4 Quiz" >
+    <section title="Unit 4 Quiz">
+        <question title="Question 1. What kind of language is HTML?">
+            <answer name="q1" correct="">A. Scripting Language</answer>
+            <answer name="q1" correct="*">B. Markup Language</answer>
+            <answer name="q1" correct="">C. XML-based Language</answer>
+            <answer name="q1" correct="">D. Visual Language</answer>
+        </question>
+        <question title="Question 2. A paragraph is defined using the ___ tag">
+            <answer name="q2" correct="*">A. p</answer>
+            <answer name="q2" correct="">B. para</answer>
+            <answer name="q2" correct="">C. paragraph</answer>
+            <answer name="q2" correct="">D. p1</answer>
+        </question>
+        <question title="Question 3. How is a row created in an HTML table?">
+            <answer name="q3" correct="">A. Using the &quot;tr&quot; tag</answer>
+            <answer name="q3" correct="*">B. Using the &quot;td&quot; tag</answer>
+            <answer name="q3" correct="">C. Using the &quot;row&quot; tag</answer>
+            <answer name="q3" correct="">D. Using the &quot;tableRow&quot; tag</answer>
+        </question>
+        <question title="Question 4. What happens if a nested list is not inside na &quot;li&quot; element?">
+            <answer name="q4" correct="">A. The HTML page gets an error and does not render</answer>
+            <answer name="q4" correct="">B. The HTML page renders but the nested list does not</answer>
+            <answer name="q4" correct="">C. The output is the same as if the list was inside an &quot;li&quot; element</answer>
+            <answer name="q4" correct="*">D. Every subsequent &quot;li&quot; element is nested under the nested list</answer>
+        </question>
+        <question title="Question 5. What is an HTML ID used for?">
+            <answer name="q5" correct="">A. Uniquely identifying an HTML element</answer>
+            <answer name="q5" correct="*">B. Applying CSS to elements on the same page with the same ID</answer>
+            <answer name="q5" correct="">C. Both A and B</answer>
+            <answer name="q5" correct="">D. None of the Above</answer>
+        </question>
+    </section>
     </tutorial>
 </units>

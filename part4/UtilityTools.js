@@ -109,6 +109,7 @@ function displayInformation(conversionData, informationDiv, conversionType) {
                 var inputElement = document.createElement("input");
                 inputElement.id = conversionData[i].id + (inst + 1);
                 inputElement.className += "group" + (inst + 1);
+                inputElement.className += " inputMovedDown";
                 inputElement.value = 0;
                 inputElement.addEventListener("input", function(e) {
                     convertValuesOnInput(e);
