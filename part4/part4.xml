@@ -26,6 +26,14 @@
             <option baseVal="0.092903" type="Area">Square Foot</option>
             <option baseVal="0.00064516" type="Area">Square Inch</option>
             <option baseVal="4046.86" type="Area">Acre</option>
+
+            <option baseVal="0.001" type="Volume">Millilitre</option>
+            <option baseVal="0.284131" type="Volume">Imperial Cup</option>
+            <option baseVal="0.568261" type="Volume">Imperial Pint</option>
+            <option baseVal="1" type="Volume">Litre</option>
+            <option baseVal="1.13652" type="Volume">Imperial Quart</option>
+            <option baseVal="4.54609" type="Volume">Imperial Gallon</option>
+            <option baseVal="28.3168" type="Volume">CubicFoot</option>
         </select>
         <select2 id="type" numInstance="1" classList="group1 group2">
             <option>Length</option>
