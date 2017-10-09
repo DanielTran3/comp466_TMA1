@@ -35,7 +35,12 @@
         </select2>
     </tool>
     <tool name="Mortgage Calculator" id="1">
-
+        <htmlItems>
+            &lt;label&gt;Monthly Payment
+                &lt;input&gt;
+            &lt;/label&gt;
+            &lt;input&gt;
+        </htmlItems>
     </tool>
     <tool name="Unknown" id="2">
 
