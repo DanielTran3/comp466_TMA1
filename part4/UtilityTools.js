@@ -231,13 +231,6 @@ function createMortgageCalculatorInformation(informationDiv) {
     mortgageCalculatorHeader.innerHTML = "Mortgage Calculator";
     mortgageCalculatorHeader.className += "title1"; 
     
-    var monthlyPaymentInputLabel = document.createElement("label");
-    monthlyPaymentInputLabel.innerHTML = "Monthly Payment";
-    var monthlyPaymentInput = document.createElement("input");
-    monthlyPaymentInput.id = "monthlyPayment";
-    monthlyPaymentInput.type = "number";
-    monthlyPaymentInput.step = "any";
-    
     var principalInputLabel = document.createElement("label");
     principalInputLabel.innerHTML = "Principal\t";
     var principalInput = document.createElement("input");
@@ -258,25 +251,18 @@ function createMortgageCalculatorInformation(informationDiv) {
     numberOfPaymentsInput.id = "numberOfPayments";
     numberOfPaymentsInput.type = "number";
     numberOfPaymentsInput.step = "any";
-
-    monthlyPaymentInput.addEventListener("input", function() {
-        calculateMortgage(informationDiv, monthlyPaymentInput, principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
-    });
+    
     principalInput.addEventListener("input", function() {
-        calculateMortgage(informationDiv, monthlyPaymentInput, principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
+        calculateMortgage(informationDiv, principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
     });
     monthlyInterestRateInput.addEventListener("input", function() {
-        calculateMortgage(informationDiv, monthlyPaymentInput, principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
+        calculateMortgage(informationDiv, principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
     });
     numberOfPaymentsInput.addEventListener("input", function() {
-        calculateMortgage(informationDiv, monthlyPaymentInput, principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
+        calculateMortgage(informationDiv, principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
     });
 
     informationDiv.appendChild(mortgageCalculatorHeader);
-    informationDiv.appendChild(document.createElement("br"));
-
-    informationDiv.appendChild(monthlyPaymentInputLabel);
-    informationDiv.appendChild(monthlyPaymentInput);
     informationDiv.appendChild(document.createElement("br"));
 
     informationDiv.appendChild(principalInputLabel);

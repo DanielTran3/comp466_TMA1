@@ -1,22 +1,38 @@
 <html>
     <head>
         <link rel = "stylesheet" type="text/css" href="tma1_stylesheet.css" />
+        <script src="tma1.js"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                pageStartup();
+            }
+        </script>
         <title>TMA1 - Main Page</title>
     </head>
     <body>
         <div class="linksBar">
             <ul>
                 <li>
-                    <a href="#">Tab 1</a>
+                    <a href="part1/resume.xml">Resume</a>
                 </li>
                 <li>
-                    <a href="#">Tab 1</a>
+                    <a href="part2/WelcomeToLearnTheWeb.html">Learn The Web</a>
+                </li>
+                <li>
+                    <a href="part3/photoSlideshow.html">Photo Slideshow</a>
+                </li>
+                <li>
+                    <a href="part4/UtilityTools.html">Utility Tools</a>
                 </li>
             </ul>
         </div>
 
         <div class="aside mainScreen">
-
+            <button id="defaultOpen" class="active tablinks">Assignment #1</button>
+            <button class="tablinks">Resume Documentation</button>
+            <button class="tablinks">Learn The Web Documentation</button>
+            <button class="tablinks">Photo Slideshow Documentation</button>
+            <button class="tablinks">Utility Tools Documentation</button>
         </div>
 
         <div class="main-content mainScreen">
@@ -27,6 +43,353 @@
                 <span class="title3">Start Date: July 5, 2017</span>
                 <span class="title3">End Date: TBA</span>
                 <span class="title3">Estimated Hours: 630 minutes</span>
+            </div>
+            <div class="titleDiv" hidden>
+                <span class="title1">Resume Documentation</span>
+                <span class="title2">Original Description and Requirements (Part 1 - 15 marks)</span>
+                <p class="title4">
+                    Create an XML version of your resume containing at least three sections: 
+                    general information about you; your educational background, and your work experience. 
+                    Create a schema for the XML document, and then create an XSLT for the XML document so 
+                    that it can be rendered in a browser.
+                </p>
+                <p class="title4">
+                    Save all three files (resume.xml, resume.XSD, and resume.xsl) for Part 1 in the 
+                    directory TMA1/part1.
+                </p>
+                
+                <hr />
+                
+                <span class="title2">Interpretation of Description and Requirements</span>
+                <p class="title4">
+                    My interpretation for the resume documentation assignment was to understand the basics of
+                    how to create an XML file, with the appropriate headers and properly named XML tags. Using
+                    this structured XML document, an XSD file is also important to accomodate the XML file
+                    in order to create a structure for the document. This way, an XSL file can be made to
+                    display the XML information in an HTML format. I believe a resume was chosen because a
+                    resume has a rigid structure that is followed, similar to an XML document, so it can be
+                    easily modeled in XML. I understand the question as asking me to create an XML file containing
+                    the information from my resume, having an XSD file to verify the structure of the XML file,
+                    and an XSLT file to render the XML document in the browser.
+                </p>
+
+                <hr />
+
+                <span class="title2">Analysis and Design</span>
+                <p class="title4">
+                    The order of progression in developing this portion of the web application was first
+                    creating an XML file. It is important to look at a resume before trying to create the XML file,
+                    in order to create a more structured XML file that better models the resume structure.This XML 
+                    file should contain tags that separate the XML file into different sections that match
+                    the different sections of the resume. There should be headers for each of the sections, with the
+                    possibility of subsections (such as the workplace name and job position under a work experience
+                    section). There should also be sections within the XMl file, under the headers, which contain
+                    section specific information. Since the structure of the XML file is of a recursive nature, the
+                    XSLT file should operate recursively to display the information in the XML file.
+                </p>
+
+                <hr />
+
+                <span class="title2">Documentation of Implementation</span>                
+                <p class="title4">
+                    In my implementation of the Resume Web Application, the XML document consists of all sections
+                    of the resume within the &lt;myResume&gt; XML tags. Each section of the resume (ex. General Information,
+                    Educational Background, etc.) are seperated by &lt;section&gt; tags. Each section must contain a 
+                    &lt;sectionHeader&gt; tag, which displays the name of the section. Next, there is a 
+                    &lt;sectionInformation&gt; tag which contains all of the information for the section. It can contain 
+                    &lt;workplaceName&gt; tags (within the workexperience header) to denote a specific workplace name, 
+                    along with a &lt;workPosition&gt; tag for the accomodating position at the company. There are 
+                    &lt;detail&gt; tags as well, which provide information for all of the sectionInformation sections. 
+                    In the case of my resume, the only other titles that existed were subtitles for the workplace, which 
+                    is why the sections for "workplacename" and "workPosition" exist in the XML structure. The structure 
+                    of the XML is defined in the XSD file. The section is defined to have a minimum of three occurances, which
+                    matches the specification of the resume "containing at least three sections". The section has a type
+                    of resume:sectionDetails. There are also unlimited number of sections that can be created, allowing for
+                    a more flexible design for resumes. Next, there is the sectionDetails type, which contains a sectionHeader
+                    element and a sectionInformation element. The sectionHeader element can only appear once, while the
+                    sectionInformation element can appear multiple times. This is because each section should only have one
+                    header, but can have multiple sections of information (such as in Work Experience). Finally, there is the
+                    sectionInfo type, which contains a workplacaeName element, workPosition element, and a details element. The
+                    workplaceName and workPosition elements show up once per sectionInformation section, and can show up either
+                    0 or 1 times. They are designed to be implemented in the Work Experience section, and other sections of the\
+                    resume may not have these workplaceName/workPosition elements, so they are optional. The details element can
+                    occur as many times as wanted, but must appear at least once per sectionInformation. The format of the types is:
+                </p>
+                <pre class="title4">
+                    resumeType
+                        section : sectionDetails
+                    sectionDetails
+                        sectionHeader : string
+                        sectionInformation : sectionInfo
+                    sectionInfo
+                        workplaceName : string
+                        workPosition : string
+                        details : string
+                </pre>
+                <p class="title4">
+                    Finally, after having the XML and XSD files created, the XSLT file is needed to be able to render the XML file
+                    in a browser. The XSLT file works recursively bit first matching the each section in the resume. In the section,
+                    it takes the sectionHeader and converts the information between the tag into an &lt;h1&gt; element, then
+                    it looks through the &lt;sectionInformation&gt; tag. In here, we see if there is a workplaceName tag
+                    by using an xsl:if statement on the string. If there is, it renders the &lt;workplaceName&gt; tag as &lt;h2&gt;
+                    element. It does the same thing with the &lt;workPosition&gt; tag, but creates an &lt;h3&gt; element. Next, it
+                    recurses through the &lt;details&gt; tag and displays all of the information in this tag as list elements.
+                </p>
+
+                <hr />
+
+                <span class="title2">Setup, Run, and Use Guide</span>
+                <p class="title4">
+                    The setup required for this application requires that the resume.xml, resume.xsd, and resume.xsl files exist in
+                    the part1 folder. To check the XML file with the XSD file, include the line
+                    &lt;resume:myResume xmlns:resume=&quot;http://www.resume.com&quot;&gt; at the top of the resume.xml file. To
+                    render the XML file to a browser, include the 
+                    &lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;resume.xsl&quot;?&gt; statement at the top of the
+                    resume.xml file. Ensure that only one of these are present at the top of the resume.xml file at any one point,
+                    and not both at the same time.
+                </p>
+            </div>
+            <div class="titleDiv" hidden>
+                <span class="title1">Learn The Web Documentation</span>
+                <span class="title2">Original Description and Requirements (Part 2 - 30 marks)</span>
+                <p class="title4">
+                    Using the web technologies you have learned so far, including HTML5, CSS3, JavaScript, 
+                    XML and Ajax, write a web application, that can help people to learn the technologies 
+                    covered in Unit 1, Unit 2, or Unit 3 of the course. The requirements are detailed as follows:
+                </p>
+                <ol class="title4">
+                    <li>It must be a web-based system with a name you choose, a banner to show off your work, 
+                        navigation menus and buttons. It should begin with a welcome page to greet the users, 
+                        to explain what the application does, and what they get from it, and how they should proceed.
+                    </li>
+                    <li>
+                        The application must have three pages of tutorials, accessible through navigation menus or 
+                        buttons, to teach the technologies covered in Unit 1, Unit 2 and Unit 3 respectively. You don’t 
+                        need to teach everything, but there should be enough content to make each of the tutorials useful.
+                    </li>
+                    <li>
+                        There should be a quiz for each tutorial, which can be accessed right after the tutorial page, 
+                        as well as through the navigation menus and buttons of the system.
+                    </li>
+                    <li>
+                        After the submission button is hit, the quiz system should be able to grade the answers the 
+                        learner has provided, show the correct answers as well as the score in percentage.
+                    </li>
+                    <li>
+                        The quiz system should be designed so that questions can be easily edited, added, 
+                        or deleted, and new quiz can be easily created.
+                    </li>
+                    <li>
+                        You should do your best to use the web technologies covered in Unit 1, unit 2 and Unit 3, 
+                        including HTML5, CSS3, JavaScript, XML and Ajax.
+                    </li>
+                    <li>
+                        Your web application should use or teach at least five page-structure elements and six new input types
+                    </li>
+                    <li>
+                        You should use an external style sheet for all pages of the system, to retain a consistent and 
+                        user-friendly interface for your system.
+                    </li>
+                    <li>
+                        When using HTML5 table, be sure that you only use it to display tabular information, not to lay out the 
+                        elements on your page.
+                    </li>
+                </ol>
+                <p class="title4">
+                    You must pay attention to both the functionalities and user interface. Save Part 2 files in the directory TMA1/part2.
+                </p>
+                
+                <hr />
+                
+                <span class="title2">Interpretation of Description and Requirements</span>
+                <p class="title4">
+                    My interpretation of the requirements is that a web application is created to teach 
+                    users about the basics of the technologies discussed in Units 1 through 3, using the
+                    knowledge gained from these units (HTML, CSS, JavaScript, XML, and Ajax). I understand the
+                    "banner to show off your work" as a bar on the webpage that will show the rest of the
+                    applications in the network of web applications, including this web application. As well,
+                    the banner should contain buttons or some sort of access to different sections of the tutorial 
+                    information, as well as the quizzes. The welcome page to greet the users just displays what the
+                    web application is about, and leads the user to the tutorials web application. Next, it looks
+                    like what is expected from the application is that there are different sections that cover 
+                    different units in the text, where there are at least 3 tutorials, covering some of the material
+                    from Units 1, 2, and 3. As well, there should be a minimum of five page-structured elements and
+                    six input types. These should be taught in the tutorials. As well, each tutorial should have a
+                    quiz at the end of the quiz. The quiz should also be accessible on through navigation buttons,
+                    so the same quiz should be accessible through either the end of the quiz or through the 
+                    navigation menu. As well, the quiz system should be able to output the number of correct answers,
+                    as well as the percentage correct. It doesn't talk about things such as showing the correct answer
+                    and incorrect answer if the user selected the wrong answer, or randomizing the questions or
+                    multiple choice questions, although these are definitely good enhancements for the future. Finally,
+                    the quiz system should be created so questions could be easily added, removed, or edited, which
+                    tells me that they want the place containing the information of the questions/answers to be
+                    separate from the code. As well, all of the styling should be external for ease of CSS reuse and
+                    having a consistent UI.
+                </p>
+
+                <hr />
+
+                <span class="title2">Analysis and Design</span>
+                <p class="title4">
+                    The analysis of this 
+                </p>
+
+                <hr />
+
+                <span class="title2">Documentation of Implementation</span>                
+                <p class="title4">
+
+                </p>
+
+                <hr />
+
+                <span class="title2">Setup, Run, and Use Guide</span>
+                <p class="title4">
+
+                </p>
+            </div>
+            <div class="titleDiv" hidden>
+                <span class="title1">Photo Slideshow Documentation</span>
+                <span class="title2">Original Description and Requirements (Part 3 - 15 marks)</span>
+                <p class="title4">
+                    For this project, you are required to create a slideshow web application using HTML5 
+                    canvas and other web technologies you have learned so far. The requirements are as follows:
+                </p>
+                <ol class="title4">
+                    <li>The slideshow should be drawn on the canvas;</li>
+                    <li>There should be a caption for each image in the show;</li>
+                    <li>There should be a button to start/stop the show;</li>
+                    <li>There should be a control to toggle the show between random and sequential;</li>
+                    <li>
+                        There should be buttons to manually turn the show backward 
+                        or forward, only if the show is in sequential mode;
+                    </li>
+                    <li>
+                        There should be a dropdown list for users to select different 
+                        transition/transformation effects for the show;
+                    </li>
+                    <li>
+                        The data of the images should be in a JSON array so that images and 
+                        their captions can be easily maintained;
+                    </li>
+                    <li>
+                        To avoid copyright issues, you should use the images/photos you took. 
+                        If you don’t have the images ready, please go around the place you live 
+                        or work and take some good ones;
+                    </li>
+                    <li>The show should have at least 20 nice pictures.</li>
+                </ol>
+                <p class="title4">
+                    Save Part 3 files in the directory TMA1/part3.
+                </p>
+
+                <hr />
+                
+                <span class="title2">Interpretation of Description and Requirements</span>
+                <p class="title4">
+                    
+                </p>
+
+                <hr />
+
+                <span class="title2">Analysis and Design</span>
+                <p class="title4">
+                    The analysis of this 
+                </p>
+
+                <hr />
+
+                <span class="title2">Documentation of Implementation</span>                
+                <p class="title4">
+
+                </p>
+
+                <hr />
+
+                <span class="title2">Setup, Run, and Use Guide</span>
+                <p class="title4">
+
+                </p>
+            </div>
+            <div class="titleDiv" hidden>
+                <span class="title1">Utility Tools Documentation</span>
+                <span class="title2">Original Description and Requirements (Part 4 - 30 marks)</span>
+                <p class="title4">
+                    For this project, you are required to develop a web application that can 
+                    provide users with the following utility tools:
+                </p>
+                <ul>
+                    <li>
+                        <b>(10 marks)</b> Measurement converter: weight, length, area and volume
+                    </li>
+                    <li>
+                        <b>(10 marks)</b> Mortgage Calculator
+                    </li>
+                    <li>
+                        <b>(10 marks)</b> A utility tool that you think could be useful. 
+                        You may need to do some research on the Web to build this last tool.
+                    </li>
+                </ul>
+                <p class="title4">
+                    In order to get full marks for the above design and implementation, the following are required:
+                </p>
+                <ol class="title4">
+                    <li>
+                        It must have an integrated and user-friendly interface for users to access each 
+                        of the tools you designed.
+                    </li>
+                    <li>
+                        You need to use JavaScript functions and built-in objects to implement the application.    
+                    </li>
+                    <li>
+                        <b>At any time only one tool will be shown, to ensure a clean and 
+                            tidy space for users to work with.</b>
+                    </li>
+                    <li>
+                        <b>You need to use Ajax technologies to eliminate whole page update when 
+                            switching from one utility to another.</b>
+                    </li>
+                    <li>
+                        <b>You need to use event handler to calculate and show the result as soon as 
+                            the user has given enough input to the system.</b>
+                    </li>
+                    <li>
+                        In the assignment report, you need to provide sufficient documentation for your work, 
+                        including algorithms and formulas used for the tools. If you have used any resources, 
+                        including documents on the Web, you must clearly identify the source in your documentation.
+                    </li>
+                </ol>
+                <p class="title4">
+                    Save Part 4 files in the directory TMA1/part4.
+                </p>
+
+                <hr />
+                
+                <span class="title2">Interpretation of Description and Requirements</span>
+                <p class="title4">
+                    
+                </p>
+
+                <hr />
+
+                <span class="title2">Analysis and Design</span>
+                <p class="title4">
+                    The analysis of this 
+                </p>
+
+                <hr />
+
+                <span class="title2">Documentation of Implementation</span>                
+                <p class="title4">
+
+                </p>
+
+                <hr />
+
+                <span class="title2">Setup, Run, and Use Guide</span>
+                <p class="title4">
+
+                </p>
             </div>
         </div>
     </body>

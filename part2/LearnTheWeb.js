@@ -161,6 +161,7 @@ function checkQuizResults(tabNumber, informationDiv) {
     finalScore.id = "score";
     finalScore.style.styleFloat = 'right';
     finalScore.style.cssFloat = 'right';
-    finalScore.innerHTML = "Final Score: " + score + "/" + quiz.childElementCount;
+    finalScore.innerHTML = "Final Score: " + score + "/" + quiz.childElementCount + 
+                           " | " + ((score/quiz.childElementCount) * 100).toFixed(2) + "%";
     informationDiv.appendChild(finalScore);
 }
