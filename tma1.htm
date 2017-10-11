@@ -75,7 +75,7 @@
 
                 <hr />
 
-                <span class="title2">Analysis and Design</span>
+                <span class="title2">Analysis and Design of the Web Application</span>
                 <p class="title4">
                     The order of progression in developing this portion of the web application was first
                     creating an XML file. It is important to look at a resume before trying to create the XML file,
@@ -229,7 +229,7 @@
 
                 <hr />
 
-                <span class="title2">Analysis and Design</span>
+                <span class="title2">Analysis and Design of the Web Application</span>
                 <p class="title4">
                     The analysis of this web application is that the code should be able to display different sections
                     of information for different units. The &quot;banner&quot; will be split into two sections, where
@@ -361,7 +361,7 @@
                     </li>
                     <li>
                         To avoid copyright issues, you should use the images/photos you took. 
-                        If you don’t have the images ready, please go around the place you live 
+                        If you don't have the images ready, please go around the place you live 
                         or work and take some good ones;
                     </li>
                     <li>The show should have at least 20 nice pictures.</li>
@@ -374,28 +374,90 @@
                 
                 <span class="title2">Interpretation of Description and Requirements</span>
                 <p class="title4">
-                    
+                    My interpretation of hte Photo Slideshow web application is that pictures will be displayed 
+                    on a canvas, along with an associated caption for the image. There are multiple buttons used 
+                    to control the display of the images. One button can start and stop the slideshow, another 
+                    button can make the images display sequentially or randomly, another button can change the 
+                    order that the images are displayed (only available in sequential mode, so in random mode the 
+                    button should not be usable). Next, there should be a dropdown menu for different effects, or 
+                    different way for the images to be displayed, where there should be at least one effect, but 
+                    be open to easily add more effects. Finally use my own images for the slideshow and have at 
+                    least 20 images. The data of the images and captions being stored in a JSON array for ease of 
+                    maintainability can be understood as  the data for the images being the URL or relative path 
+                    to the image and the caption as a string accomodating the image.
                 </p>
 
                 <hr />
 
-                <span class="title2">Analysis and Design</span>
+                <span class="title2">Analysis and Design of the Web Application</span>
                 <p class="title4">
-                    The analysis of this 
+                    The web application should contain three buttons, a dropdown menu, a canvas, and a label.
+                    The three buttons are for start/stop, random/sequential, and forward/backward respectively.
+                    The dropdown menu should contain some effects that affect how the canvas displays the images, 
+                    such as images floating down to the canvas, or fading into the canvas. These buttons and dropdown 
+                    menu will be at the top of the application (under the navigation bar at the top of the web page) 
+                    and the canvas will exist below these UI elements. Under the canvas, the ***CAPTION FOR THE IMAGE 
+                    WILL BE DISPLAYED*** as a label element. If there are no effects selected from the dropdown menu, 
+                    then the images should just change normally. As well, it is assumed that there is some time delay 
+                    between images changing.
                 </p>
 
                 <hr />
 
                 <span class="title2">Documentation of Implementation</span>                
                 <p class="title4">
-
+                    The list of image sources and captions were contained in a lists, one for the image sources and 
+                    one for the captions. These lists correspond with eachother through position, so for example, the 
+                    first image source in the image sources list matches with the first caption in the image captions 
+                    list. ***REVIEW CODE FOR REQUEST ANIMATION CALLBACK***. The images are initially preloaded into the 
+                    application on the application's start up so the images are all loaded and ready to display when the 
+                    slideshow starts. This is done through the preloadImages function and the loadImages function, where 
+                    there is a callback method to set the global list of images list to the loaded list of images. The 
+                    buttons, and dropdown menu are defined in HTML in the photoSlideshow.html file, with initial values 
+                    of Start, Sequential, and Forward for the buttons, and a dropdown list labeled Transitions, with 
+                    No Animation as the initial value. The canvas starts blank, along with the label under the canvas. 
+                    The canvas's size is initialized in the initCanvas function to a size that scales with the users screen. 
+                    In the javascript code, the buttons and dropdown menu have their event listeners defined in the 
+                    initListeners function. A changeButtonValue is used to change the buttons text. Now, images need to 
+                    be displayed on the canvas. To ensure that the image fits in the canvas and has relatively good quality, 
+                    progressive sizing is used to progressively shrink the size of the image until it fits the canvas. 
+                    This is done in the scaleImage function, and images are displayed on the canvas using the 
+                    displayImageOnCanvas function, which also takes into account the animation. For the animations, there 
+                    is a dictionary that links the animation name in the transitions dropdown menu with the appropriate 
+                    animation function. The names for the buttons also exist in a buttons dictionary, as key/value pairs, 
+                    so if a button is pressed, the dictionary can be searched for the new value it should be. This works 
+                    both ways (ex. from Sequential to Random and from Random to Sequential). For the start and stop of the 
+                    images, if the button's value is start, then an interval is started to change images every 2 seconds. 
+                    If stop is the value, then the interval is cleared. The photos that is chosen to be displayed is in the 
+                    switchPhoto function, which depends on the state of the random/sequential button and forward/backward 
+                    button. If the mode is set to random, then a random picture is selected from the list. Otherwise, 
+                    sequential is the mode, and if the mode if forward, then the images list is iterated from the current 
+                    image forward, and loops to the first image once the end is hit. The same occurs on backwards. If 
+                    random is selected as a mode, then the forward/backwards button is disabled in the 
+                    forwardBackwardAvailability function. There is also a current transition that holds the current 
+                    transition effect from the selected list. This changes through the changeTransition function. For 
+                    no animation, the noAnimationTransition function is called, which just clears and draws the image on 
+                    the canvas. For a floating down transition, the floatDownTransition method is called, where it draws 
+                    and clears the image while moving it down the y-axis on the canvas. For the fade in transition, the 
+                    fadeInTransition method is called which cahnges slowly changes the alpha value of the image before 
+                    displaying it. To animate these effects, the requestAnimationFrame function is called as a callback 
+                    function to control the recurrsive calls of the code and display a smooth transition.
                 </p>
 
                 <hr />
 
                 <span class="title2">Setup, Run, and Use Guide</span>
                 <p class="title4">
-
+                    The setup required for this application requires that the photoSlideshow.html and photoSlideshow.js  
+                    files exist in the part3 folder. As well, ensure that there are .png images within the part3 folder, as they are 
+                    the images that will be displayed on the canvas. To run the program, simply access the photoSlideshow.html file directly 
+                    or through the network of web applications. The slideshow can be started anytime by pressing the start 
+                    button and stopped anytime by pressing the stop button. The images can be changed from sequential to 
+                    random by pressing the sequential button to change it to random, and vice-versa. In sequential image 
+                    display, the forward/backward button will be available. The direction of images displayed can be changed 
+                    by toggling this button. The transitions in the slideshow can be changed by selecting a transition in the 
+                    transitions dropdown menu. This is done by hovering over the transitions button and selecting one of the 
+                    animations.
                 </p>
             </div>
             <div class="titleDiv" hidden>
@@ -459,7 +521,7 @@
 
                 <hr />
 
-                <span class="title2">Analysis and Design</span>
+                <span class="title2">Analysis and Design of the Web Application</span>
                 <p class="title4">
                     The analysis of this 
                 </p>
