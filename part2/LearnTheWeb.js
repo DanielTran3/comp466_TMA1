@@ -63,6 +63,9 @@ function displayInformation(tutorialData, informationDiv) {
         if (tutorialData[i].tagName === "section") {
             var sectionHeader = document.createElement("h1");
             sectionHeader.innerHTML = tutorialData[i].attributes[0].nodeValue;
+            sectionHeader.style.textAlign = "center";
+            sectionHeader.style.borderBottom = "4px solid black";
+            sectionHeader.classList.add("title1");
             informationDiv.appendChild(sectionHeader);
             displayInformation(tutorialData[i].children, informationDiv);
         }

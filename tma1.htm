@@ -164,7 +164,7 @@
                     </li>
                     <li>
                         The application must have three pages of tutorials, accessible through navigation menus or 
-                        buttons, to teach the technologies covered in Unit 1, Unit 2 and Unit 3 respectively. You don’t 
+                        buttons, to teach the technologies covered in Unit 1, Unit 2 and Unit 3 respectively. You don't 
                         need to teach everything, but there should be enough content to make each of the tutorials useful.
                     </li>
                     <li>
@@ -231,21 +231,108 @@
 
                 <span class="title2">Analysis and Design</span>
                 <p class="title4">
-                    The analysis of this 
+                    The analysis of this web application is that the code should be able to display different sections
+                    of information for different units. The &quot;banner&quot; will be split into two sections, where
+                    one banner that spans the top of the page will provide links to the other applications in the network.
+                    There will be a vertical section of the banner that spans the left side of the screen, which will
+                    display navigation buttons related to the specific web application. In this case, the web application
+                    is Learn The Web. Thus, there will be buttons on the side banner to navigate to different
+                    units and to access different quizzes. The welcome page of the application will be the page that is
+                    accessed first whenever a user tries to navigate to the Learn The Web application. This page will
+                    contain some general information about the application including the purpose and what the users should 
+                    be getting out of the application. This web page allow the users to access the application, which will 
+                    be done using a button. Since there are tutorial sections and quiz sections, and that the quizzes should 
+                    be accessible through the quizzes, then the same quiz should be accessed through a button on the navigation 
+                    menu and from the bottom of the quiz. The button at the bottom of the quiz should link to the same spot 
+                    as the navigation button. As well, it seems that the quiz system should be easily modified, which seems 
+                    most easily done through containing all of the tutorial information and quiz information in XML. The different 
+                    units will be contained in XML tags, which will then be converted into the appropriate HTML elements through 
+                    the use of JavaScript. This is designed to make both the tutorials and quizzes easy to modify.
                 </p>
 
                 <hr />
 
                 <span class="title2">Documentation of Implementation</span>                
                 <p class="title4">
-
+                    For the implementation, the top banner was implemented as a div containing an unordered list, where the 
+                    aesthetics was modified through an external CSS stylesheet. The list contains links (&lt;a&gt; tags) 
+                    containing a reference to the other web applications. The side navigation menu and buttons are contained 
+                    in a div, taking up 20% of the screen. First, the XML data is read from a file, which is structured for 
+                    tutorial data as follows: 
+                </p>
+                <ul class="title4">
+                    <li>&lt;units&gt; tag contains all of the other tags and information.</li>
+                    <li>
+                        &lt;tutorial name=&quot;&quot;&gt; tag contains a single unit, where the &quot;name&quot; attribute is the name of 
+                        the name of the button on the navigation menu.
+                    </li>
+                    <li>
+                        &lt;section title=&quot;&quot;&gt; tag contains multiple subsectionssections for the tutorial. The &quot;title&quot; 
+                        attribute is displayed at the top of the each tutorial unit and quiz as a &lt;h1&gt; element.
+                    </li>
+                    <li>
+                        &lt;subsection title=&quot;&quot;&gt; tag is contained within a section tag and contains a subsection 
+                        of the unit, such as a particular part of the unit. The &quot;title&quot; attribute contains the name of the subsection 
+                        as a &lt;h2&gt; element.
+                    </li>
+                    <li>
+                        &lt;paragraph&gt; tag is contained within a subsection tag, where multiple paragraph tags can appear within 
+                        one subsection text information or html elements that will be displayed in a &lt;p&gt; paragraph element in HTML.
+                    </li>
+                    <li>
+                        &lt;image src=&quot;&quot;&gt; tag is used to render an image in HTML. The &quot;src&quot; attribute is used to provide the  
+                        path to the image file, and the text within the &lt;image&gt;&lt;/&gt; tags is the backup text if the image 
+                        fails to render.
+                    </li>
+                </ul>
+                <p class="title4">
+                    For the quiz data, it follows a similar format, and is contained within the same XML file as the Tutorial data. 
+                    The quiz information is also under the &lt;units&gt; tag. The rest of the tags are contained within it as follows:  
+                </p>
+                <ul class="title4">
+                    <li>
+                        &lt;quiz name=&quot;&quot;&gt; tag contains a quiz for a unit, where the &quot;name&quot; attribute is the name of 
+                        the name of the button on the navigation menu.
+                    </li>
+                    <li>
+                        &lt;section title=&quot;&quot;&gt; tag contains multiple questions for the tutorial. The &quot;title&quot; attribute
+                        is displayed at the top of the each tutorial unit and quiz as a &lt;h1&gt; element.
+                    </li>
+                    <li>
+                        &lt;question title=&quot;&quot;&gt; tag is contained within a section tag and contains a single question  
+                        for the unit. The &quot;title&quot; attribute contains the text for the question, created as an &lt;h3&gt; element.
+                    </li>
+                    <li>
+                        &lt;answer name=&quot;&quot; correct=&quot;&quot;&gt; tag is contained within a question tag, where multiple answer tags 
+                        can appear within one question tag. These represent the possible answers to the question. The &quot;name&quot; attribute 
+                        defines the group of radio buttons for the question. The &quot;correct&quot; attribute defines if that answer is correct 
+                        or not. A &#42; inside the &quot;correct&quot; attribute denotes the correct answer
+                    </li>
+                </ul>
+                <p class="title4">
+                    The navigation menu and information work by showing and hiding specific information on the main-content div depending on 
+                    what button is pressed in the aside div. Pressing a button on the navigation menu will remove the information in the 
+                    main-content div, read the stored XML information (from reading the XML file once and storing the data into a variable) 
+                    and displaying the appropriate information from the selected information. There is JavaScript code that is used to recursively 
+                    parse the XML tags and create the appropriate HTML elements, as defined in the above XML structure. For linking the button 
+                    at the bottom of the quiz to the navigation button to access the same quiz, the button is dynamically created when the data 
+                    is loaded into the main-content div. If the button is pressed, the tabs in the navigation menu will change to the appropriate 
+                    quiz tab that follows the chapter. Then, the JavaScript program will detect that the user is now on a quiz page and it will 
+                    clear the main-content div, load the quiz information, and dynamically add a button to submit the quiz. When the submit button 
+                    is pressed, the program will check the position of the answers that the user selected, compare it with the answers in the XML 
+                    file, and return the results of how much the user got correct and their percent correct.
                 </p>
 
                 <hr />
 
                 <span class="title2">Setup, Run, and Use Guide</span>
                 <p class="title4">
-
+                    The setup required for this application requires that the WelcomeToLearnTheWeb.html, LearnTheWeb.html, LearnTheWeb.js, 
+                    and Units.xml files exist in the part2 folder. As well, ensure that there are .png images within the part2 folder, as they are 
+                    used to display some images throughout the tutorial. To run the program, simply access the WelcomeToLearnTheWeb.html file directly 
+                    or through the network of web applications. Proceed into the application and read the material in each unit. When the user 
+                    has read the information, they can choose to take the quiz at the bottom of the unit, or move on and access the quiz at anytime 
+                    on the side navigation menu or at the bottom of the quiz. In the quiz, answer each question and press submit to see the final score.
                 </p>
             </div>
             <div class="titleDiv" hidden>
