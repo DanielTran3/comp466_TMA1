@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <units>
-    <tutorial name="Unit 1" >
+    <tutorial name="Unit 1">
         <section title="HTML Part 1">
             <subsection title="1.1 An Introduction to HTML Structure Elements">
                 <paragraph>
@@ -229,7 +229,7 @@
             </paragraph>
         </section> -->
     </tutorial>
-    <quiz name="Unit 1 Quiz" >
+    <quiz name="Unit 1 Quiz">
         <section title="Unit 1 Quiz">
             <question title="Question 1. What kind of language is HTML?">
                 <answer name="q1" correct="">A. Scripting Language</answer>
@@ -263,7 +263,7 @@
             </question>
         </section>
     </quiz>
-    <tutorial name="Unit 2" >
+    <tutorial name="Unit 2">
         <section title="HTML Part 2">
             <subsection title="2.1 An Introduction to HTML Input Elements">
                 <paragraph>
@@ -353,7 +353,7 @@
             <subsection title="2.5 Email Input">
                 <paragraph>
                     The input of type email creates an input text box that expects text in an email format. The input text box will verify 
-                    if the input is in a correct email format when the form is submitted, but will not check if the email exists or not. it
+                    if the input is in a correct email format when the form is submitted, but will not check if the email exists or not. It
                     is also possible for the input to accept multiple emails (separated by commas), if the multiple attribute is specified.
                 </paragraph>
                 <paragraph>
@@ -429,45 +429,46 @@
             </subsection>
         </section>
     </tutorial>
-    <tutorial name="Unit 2 Quiz" >
+    <tutorial name="Unit 2 Quiz">
     <section title="Unit 2 Quiz">
-        <question title="Question 1. What kind of language is HTML?">
-            <answer name="q1" correct="">A. Scripting Language</answer>
-            <answer name="q1" correct="*">B. Markup Language</answer>
-            <answer name="q1" correct="">C. XML-based Language</answer>
-            <answer name="q1" correct="">D. Visual Language</answer>
+        <question title="Question 1. The starting value of a Range Input can be specified with the ___ attribute">
+            <answer name="q1" correct="">A. start</answer>
+            <answer name="q1" correct="">B. step</answer>
+            <answer name="q1" correct="*">C. value</answer>
+            <answer name="q1" correct="">D. begin</answer>
         </question>
-        <question title="Question 2. A paragraph is defined using the ___ tag">
-            <answer name="q2" correct="*">A. p</answer>
-            <answer name="q2" correct="">B. para</answer>
-            <answer name="q2" correct="">C. paragraph</answer>
-            <answer name="q2" correct="">D. p1</answer>
+        <question title="Question 2. Multiple emails inside an email input are separated by ">
+            <answer name="q2" correct="">A. Asterisk</answer>
+            <answer name="q2" correct="">B. Semi-Colons</answer>
+            <answer name="q2" correct="">C. Spaces</answer>
+            <answer name="q2" correct="*">D. Commas</answer>
         </question>
-        <question title="Question 3. How is a row created in an HTML table?">
-            <answer name="q3" correct="">A. Using the &quot;tr&quot; tag</answer>
-            <answer name="q3" correct="*">B. Using the &quot;td&quot; tag</answer>
-            <answer name="q3" correct="">C. Using the &quot;row&quot; tag</answer>
-            <answer name="q3" correct="">D. Using the &quot;tableRow&quot; tag</answer>
+        <question title="Question 3. Consider a Number Input with a minimum value of 3, maximum value of 11, starting value of 4, and step value of 9.
+                         What happens when the up arrow on the spinner is pressed?">
+            <answer name="q3" correct="">A. 11</answer>
+            <answer name="q3" correct="">B. 9</answer>
+            <answer name="q3" correct="*">C. 4</answer>
+            <answer name="q3" correct="">D. NaN</answer>
         </question>
-        <question title="Question 4. What happens if a nested list is not inside na &quot;li&quot; element?">
-            <answer name="q4" correct="">A. The HTML page gets an error and does not render</answer>
-            <answer name="q4" correct="">B. The HTML page renders but the nested list does not</answer>
-            <answer name="q4" correct="">C. The output is the same as if the list was inside an &quot;li&quot; element</answer>
-            <answer name="q4" correct="*">D. Every subsequent &quot;li&quot; element is nested under the nested list</answer>
+        <question title="Question 4. What do the Tel Input and Email Input have in common?">
+            <answer name="q4" correct="*">A. They both do not validate if the input exists</answer>
+            <answer name="q4" correct="">B. They both validate if the input exists</answer>
+            <answer name="q4" correct="">C. Both inputs can accept multiple inputs, separated by spaces</answer>
+            <answer name="q4" correct="">D. Both A and C</answer>
         </question>
-        <question title="Question 5. What is an HTML ID used for?">
-            <answer name="q5" correct="">A. Uniquely identifying an HTML element</answer>
-            <answer name="q5" correct="*">B. Applying CSS to elements on the same page with the same ID</answer>
-            <answer name="q5" correct="">C. Both A and B</answer>
+        <question title="Question 5. Why is a Range Input self-validating?">
+            <answer name="q5" correct="">A. The slider checks its current value to see if it is outside of the range and corrects itself</answer>
+            <answer name="q5" correct="*">B. The slider cannot move outside of the valid range</answer>
+            <answer name="q5" correct="">C. The slider can only move within the min and max range exclusively (never reach the min or max value)</answer>
             <answer name="q5" correct="">D. None of the Above</answer>
         </question>
     </section>
     </tutorial>
-    <tutorial name="Unit 3" >
+    <tutorial name="Unit 3">
         <section title="CSS">
             <subsection title="3.1 What is CSS?">
                 <paragraph>
-                    CSS (Cascading Style-sheet) is a stle sheet language used to style HTML elements. CSS helps in creating aesthetically pleasing
+                    CSS (Cascading Style-sheet) is a style sheet language used to style HTML elements. CSS helps in creating aesthetically pleasing
                     web pages by allowing the developer to color structural elements, input elements, and just about anything else HTML related. It also
                     helps to layout the web application, as it can specify the sizes of of HTML elements. In turn, this means that CSS also helps
                     with the scalability of web applications on smaller and larger devices (such as scaling down from a desktop browser on a large screen,
@@ -497,7 +498,7 @@
                 <paragraph>
                     A more reasonable approach would be to use an external CSS stylesheet, which can be used to create a common style for certain
                     elements or certain groups of elements. This can be done in one of two ways. In the first method, a "style" element
-                    (&lt;style&gt;&lt;CSS description here&gt;&lt;/style&gt;) can be declared inside the HTML document that will allow for CSS styling
+                    (&lt;img src="3.2_2.png"&gt;&lt;/img&gt;) can be declared inside the HTML document that will allow for CSS styling
                     for a specific HTML file. This solution is better than the inline CSS, but still not the best, since the CSS code would need to
                     be duplicated in other HTML files as well. The best way is to use a separate CSS file (of type .css), where the stylesheet can be
                     referenced in each HTML file (using &lt;link rel="stylesheet" type="text/css" href="yourstylesheet.css" /&gt;). Discussing some of
@@ -505,6 +506,10 @@
                     the MIME type as a text with CSS formatting, and the href is the direct reference to the stylesheet. Thus, any HTML files that have 
                     the reference can use the CSS rule-set specified in the CSS file.
                 </paragraph>
+
+                <style>...CSS code here...</style>
+
+
             </subsection>
             <subsection title="3.3 Using External CSS Stylesheets">
                 <paragraph>
@@ -524,42 +529,42 @@
             </subsection>
         </section>
     </tutorial>
-    <tutorial name="Unit 3 Quiz" >
+    <tutorial name="Unit 3 Quiz">
     <section title="Unit 3 Quiz">
-        <question title="Question 1. What kind of language is HTML?">
-            <answer name="q1" correct="">A. Scripting Language</answer>
-            <answer name="q1" correct="*">B. Markup Language</answer>
-            <answer name="q1" correct="">C. XML-based Language</answer>
-            <answer name="q1" correct="">D. Visual Language</answer>
+        <question title="Question 1. CSS is used to">
+            <answer name="q1" correct="">A. Define HTML elements</answer>
+            <answer name="q1" correct="">B. Create JavaScript objects</answer>
+            <answer name="q1" correct="*">C. Style HTML elements</answer>
+            <answer name="q1" correct="">D. Create attributes for JavaScript objects</answer>
         </question>
-        <question title="Question 2. A paragraph is defined using the ___ tag">
-            <answer name="q2" correct="*">A. p</answer>
-            <answer name="q2" correct="">B. para</answer>
-            <answer name="q2" correct="">C. paragraph</answer>
-            <answer name="q2" correct="">D. p1</answer>
+        <question title="Question 2. Why is it considered bad to use inline HTML?">
+            <answer name="q2" correct="">A. Because it makes it difficult to change themes of web pages</answer>
+            <answer name="q2" correct="">B. There is duplicate CSS code for HTML element that should be styled the same</answer>
+            <answer name="q2" correct="">C. CSS code becomes less maintainable</answer>
+            <answer name="q2" correct="*">D. All of the Above</answer>
         </question>
-        <question title="Question 3. How is a row created in an HTML table?">
-            <answer name="q3" correct="">A. Using the &quot;tr&quot; tag</answer>
-            <answer name="q3" correct="*">B. Using the &quot;td&quot; tag</answer>
-            <answer name="q3" correct="">C. Using the &quot;row&quot; tag</answer>
-            <answer name="q3" correct="">D. Using the &quot;tableRow&quot; tag</answer>
+        <question title="Question 3. CSS styles an HTML element by ID by preceding the ID with a ">
+            <answer name="q3" correct="*">A. &quot;#&quot;</answer>
+            <answer name="q3" correct="">B. &quot;.&quot;</answer>
+            <answer name="q3" correct="">C. &quot;>&quot;</answer>
+            <answer name="q3" correct="">D. &quot;&amp;&quot;</answer>
         </question>
-        <question title="Question 4. What happens if a nested list is not inside na &quot;li&quot; element?">
-            <answer name="q4" correct="">A. The HTML page gets an error and does not render</answer>
-            <answer name="q4" correct="">B. The HTML page renders but the nested list does not</answer>
-            <answer name="q4" correct="">C. The output is the same as if the list was inside an &quot;li&quot; element</answer>
-            <answer name="q4" correct="*">D. Every subsequent &quot;li&quot; element is nested under the nested list</answer>
+        <question title="Question 4. CSS is considered a ">
+            <answer name="q4" correct="*">A. Style Sheet Language</answer>
+            <answer name="q4" correct="">B. Scripting Language</answer>
+            <answer name="q4" correct="">C. Markup Language</answer>
+            <answer name="q4" correct="">D. Declarative Language</answer>
         </question>
-        <question title="Question 5. What is an HTML ID used for?">
-            <answer name="q5" correct="">A. Uniquely identifying an HTML element</answer>
-            <answer name="q5" correct="*">B. Applying CSS to elements on the same page with the same ID</answer>
-            <answer name="q5" correct="">C. Both A and B</answer>
-            <answer name="q5" correct="">D. None of the Above</answer>
+        <question title="Question 5. Where can CSS code reside?">
+            <answer name="q5" correct="">A. In HTML elements</answer>
+            <answer name="q5" correct="">B. In an HTML style element</answer>
+            <answer name="q5" correct="">C. Outside of a HTML style element</answer>
+            <answer name="q5" correct="*">D. Both A and B</answer>
         </question>
     </section>
     </tutorial>
-    <tutorial name="Unit 4" >
-        <section title="JavaScript, AJAX, and XML">
+    <tutorial name="Unit 4">
+        <section title="JavaScript and AJAX">
             <subsection title="4.1 What is JavaScript?">
                 <paragraph>
                     JavaScript is a client-side scripting language that can be used to perform tasks to save time and data transfer between the server
@@ -638,37 +643,37 @@
             </subsection>
         </section>
     </tutorial>
-    <tutorial name="Unit 4 Quiz" >
+    <tutorial name="Unit 4 Quiz">
     <section title="Unit 4 Quiz">
-        <question title="Question 1. What kind of language is HTML?">
-            <answer name="q1" correct="">A. Scripting Language</answer>
-            <answer name="q1" correct="*">B. Markup Language</answer>
-            <answer name="q1" correct="">C. XML-based Language</answer>
-            <answer name="q1" correct="">D. Visual Language</answer>
+        <question title="Question 1. JavaScript is a scripting language that works on the ">
+            <answer name="q1" correct="">A. Server-side</answer>
+            <answer name="q1" correct="*">B. Client-side</answer>
+            <answer name="q1" correct="">C. As an intermediate between the server-side and client-side</answer>
+            <answer name="q1" correct="">D. None of the Above</answer>
         </question>
-        <question title="Question 2. A paragraph is defined using the ___ tag">
-            <answer name="q2" correct="*">A. p</answer>
-            <answer name="q2" correct="">B. para</answer>
-            <answer name="q2" correct="">C. paragraph</answer>
-            <answer name="q2" correct="">D. p1</answer>
+        <question title="Question 2. Is it safe to store sensitive data in JavaScript objects and why? Choose the best answer.">
+            <answer name="q2" correct="">A. Yes, because the client cannot view the data</answer>
+            <answer name="q2" correct="*">B. No, because the data can be viewed through the browser console</answer>
+            <answer name="q2" correct="">C. Yes, because the data is encrypted when stored and decrypted when displayed</answer>
+            <answer name="q2" correct="">D. Both A and C</answer>
         </question>
-        <question title="Question 3. How is a row created in an HTML table?">
-            <answer name="q3" correct="">A. Using the &quot;tr&quot; tag</answer>
-            <answer name="q3" correct="*">B. Using the &quot;td&quot; tag</answer>
-            <answer name="q3" correct="">C. Using the &quot;row&quot; tag</answer>
-            <answer name="q3" correct="">D. Using the &quot;tableRow&quot; tag</answer>
+        <question title="Question 3. What does AJAX do?">
+            <answer name="q3" correct="">A. Helps transfer data between the client and server asynchronously</answer>
+            <answer name="q3" correct="">B. Helps transfer data between the client and server synchronously</answer>
+            <answer name="q3" correct="">C. Helps store data on the client side</answer>
+            <answer name="q3" correct="*">D. Both A and B</answer>
         </question>
-        <question title="Question 4. What happens if a nested list is not inside na &quot;li&quot; element?">
-            <answer name="q4" correct="">A. The HTML page gets an error and does not render</answer>
-            <answer name="q4" correct="">B. The HTML page renders but the nested list does not</answer>
-            <answer name="q4" correct="">C. The output is the same as if the list was inside an &quot;li&quot; element</answer>
-            <answer name="q4" correct="*">D. Every subsequent &quot;li&quot; element is nested under the nested list</answer>
+        <question title="Question 4. Where can JavaScript code reside?">
+            <answer name="q4" correct="">A. Inline HTML elements</answer>
+            <answer name="q4" correct="">B. External JavaScript file</answer>
+            <answer name="q4" correct="">C. In a script tag in the HTML document</answer>
+            <answer name="q4" correct="*">D. All of the Above</answer>
         </question>
-        <question title="Question 5. What is an HTML ID used for?">
-            <answer name="q5" correct="">A. Uniquely identifying an HTML element</answer>
-            <answer name="q5" correct="*">B. Applying CSS to elements on the same page with the same ID</answer>
-            <answer name="q5" correct="">C. Both A and B</answer>
-            <answer name="q5" correct="">D. None of the Above</answer>
+        <question title="Question 5. What does the readyState and status in an XMLHttpRequest stand for?">
+            <answer name="q5" correct="*">A. Done (sent) and Successful</answer>
+            <answer name="q5" correct="">B. Loading (processing) and Found</answer>
+            <answer name="q5" correct="">C. Loading (processing) and Successful</answer>
+            <answer name="q5" correct="">D. Done (sent) and Found</answer>
         </question>
     </section>
     </tutorial>
