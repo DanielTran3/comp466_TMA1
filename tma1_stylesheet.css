@@ -258,3 +258,16 @@ select {
 .utilityTools {
     text-align:center;
 }
+
+#colorDiv {
+    width: 500px; 
+    height: 300px; 
+    margin: 0 auto; 
+    margin-top: 5%;
+}
+
+#colorLabel {
+    margin-top: 5%;
+    font-size: 1.2em !important;
+    font-family: Consolas,monospace;
+}

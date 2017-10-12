@@ -58,7 +58,10 @@ function changeTab(targetTab, xmlData, informationDiv) {
         loadTabInformation(xmlData, targetTab.name, informationDiv);
     }
     else if (targetTab.name === "1") {
-        createMortgageCalculatorInformation(informationDiv);
+        createMortgageCalculatorInformation(xmlData.children[1], informationDiv);
+    }
+    else if (targetTab.name === "2") {
+        createColorGeneratiorInformation(xmlData.children[2], informationDiv);
     }
 }
 
@@ -226,32 +229,13 @@ function getListOfUnits(xr, selectedConversionType) {
 }
 
 
-function createMortgageCalculatorInformation(informationDiv) {
-    var mortgageCalculatorHeader = document.createElement("h1");
-    mortgageCalculatorHeader.innerHTML = "Mortgage Calculator";
-    mortgageCalculatorHeader.className += "title1"; 
-    
-    var principalInputLabel = document.createElement("label");
-    principalInputLabel.innerHTML = "Principal\t";
-    var principalInput = document.createElement("input");
-    principalInput.id = "principal";
-    principalInput.type = "number";
-    principalInput.step = "any";
+function createMortgageCalculatorInformation(xmlData, informationDiv) {
+    informationDiv.innerHTML = xmlData.innerHTML;
 
-    var monthlyInterestRateInputLabel = document.createElement("label");
-    monthlyInterestRateInputLabel.innerHTML = "Monthly Interest Rate";
-    var monthlyInterestRateInput = document.createElement("input");
-    monthlyInterestRateInput.id = "monthlyInterestRate";
-    monthlyInterestRateInput.type = "number";
-    monthlyInterestRateInput.step = "any";
+    var principalInput = document.getElementById("principal");
+    var monthlyInterestRateInput = document.getElementById("monthlyInterestRate");
+    var numberOfPaymentsInput = document.getElementById("numberOfPayments");
 
-    var numberOfPaymentsInputLabel = document.createElement("label");
-    numberOfPaymentsInputLabel.innerHTML = "Number of Payments ";
-    var numberOfPaymentsInput = document.createElement("input");
-    numberOfPaymentsInput.id = "numberOfPayments";
-    numberOfPaymentsInput.type = "number";
-    numberOfPaymentsInput.step = "any";
-    
     principalInput.addEventListener("input", function() {
         calculateMortgage(informationDiv, principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
     });
@@ -261,26 +245,8 @@ function createMortgageCalculatorInformation(informationDiv) {
     numberOfPaymentsInput.addEventListener("input", function() {
         calculateMortgage(informationDiv, principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
     });
-
-    informationDiv.appendChild(mortgageCalculatorHeader);
-    informationDiv.appendChild(document.createElement("br"));
-
-    informationDiv.appendChild(principalInputLabel);
-    informationDiv.appendChild(principalInput);
-    informationDiv.appendChild(document.createElement("br"));
-
-    informationDiv.appendChild(monthlyInterestRateInputLabel);
-    informationDiv.appendChild(monthlyInterestRateInput);
-    informationDiv.appendChild(document.createElement("br"));
-
-    informationDiv.appendChild(numberOfPaymentsInputLabel);
-    informationDiv.appendChild(numberOfPaymentsInput);
-    informationDiv.appendChild(document.createElement("br"));
     
-    var mortgageLabel = document.createElement("label");
-    mortgageLabel.id = "mortgageLabel";
-    mortgageLabel.innerHTML = "Awaiting Inputs"
-    informationDiv.appendChild(mortgageLabel);
+    
 }
 
 function calculateMortgage() {
@@ -296,7 +262,6 @@ function calculateMortgage() {
         }
     }
 
-    var monthlyPayment = parseFloat(document.getElementById("monthlyPayment").value);
     var principal = parseFloat(document.getElementById("principal").value);
     var monthlyInterestRate = parseFloat(document.getElementById("monthlyInterestRate").value);
     var numberOfPayments = parseFloat(document.getElementById("numberOfPayments").value);
@@ -304,4 +269,28 @@ function calculateMortgage() {
     var overallMortgage = (principal * ((monthlyInterestRate * Math.pow((1 + monthlyInterestRate), numberOfPayments)) / (Math.pow((1 + monthlyInterestRate), numberOfPayments) - 1)));
 
     mortgageLabel.innerHTML = "Mortgage Amount: " + overallMortgage.toFixed(2);    
+}
+
+function createColorGeneratiorInformation(xmlData, informationDiv) {
+    informationDiv.innerHTML = xmlData.innerHTML;
+
+    var colorGenerateButton = document.getElementById("colorGenerateButton");
+    var colorDiv = document.getElementById("colorDiv");
+    var colorLabel = document.getElementById("colorLabel");
+    // Ensure that the label is inside of the informationDiv rather than inside of the colorDiv div
+    if (colorLabel.parentElement === colorDiv) {
+        colorLabel.parentNode.removeChild(colorLabel);
+        informationDiv.appendChild(colorLabel);
+    }
+    var colorInHex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+
+    colorGenerateButton.addEventListener("click", function() {
+        var colorString = "#";
+        for (var i = 0; i < 6; i++) {
+            var randNum = Math.floor(Math.random() * 16);
+            colorString += colorInHex[randNum];
+        }
+        colorDiv.style.backgroundColor = colorString;
+        colorLabel.innerHTML = "Color: " + colorString;
+    });
 }
