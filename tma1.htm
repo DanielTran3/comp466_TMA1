@@ -33,6 +33,7 @@
             <button class="tablinks">Learn The Web Documentation</button>
             <button class="tablinks">Photo Slideshow Documentation</button>
             <button class="tablinks">Utility Tools Documentation</button>
+            <button class="tablinks">Notes to the Tutor</button>
         </div>
 
         <div class="main-content mainScreen">
@@ -41,8 +42,8 @@
                 <span class="title2">COMP 466 - Advanced Technologies for Web-Based Systems</span>
                 <span class="title3">Daniel Tran - 3339325</span>
                 <span class="title3">Start Date: July 5, 2017</span>
-                <span class="title3">End Date: TBA</span>
-                <span class="title3">Estimated Hours: 630 minutes</span>
+                <span class="title3">End Date: October 12, 2017</span>
+                <span class="title3">Estimated Hours: 40 hours</span>
             </div>
             <div class="titleDiv" hidden>
                 <span class="title1">Resume Documentation</span>
@@ -416,8 +417,8 @@
                     The dropdown menu should contain some effects that affect how the canvas displays the images, 
                     such as images floating down to the canvas, or fading into the canvas. These buttons and dropdown 
                     menu will be at the top of the application (under the navigation bar at the top of the web page) 
-                    and the canvas will exist below these UI elements. Under the canvas, the ***CAPTION FOR THE IMAGE 
-                    WILL BE DISPLAYED*** as a label element. If there are no effects selected from the dropdown menu, 
+                    and the canvas will exist below these UI elements. Under the canvas, the caption will be displayed 
+                    as a label element. If there are no effects selected from the dropdown menu, 
                     then the images should just change normally. As well, it is assumed that there is some time delay 
                     between images changing.
                 </p>
@@ -429,7 +430,7 @@
                     The list of image sources and captions were contained in a lists, one for the image sources and 
                     one for the captions. These lists correspond with eachother through position, so for example, the 
                     first image source in the image sources list matches with the first caption in the image captions 
-                    list. ***REVIEW CODE FOR REQUEST ANIMATION CALLBACK***. The images are initially preloaded into the 
+                    list. The images are initially preloaded into the 
                     application on the application's start up so the images are all loaded and ready to display when the 
                     slideshow starts. This is done through the preloadImages function and the loadImages function, where 
                     there is a callback method to set the global list of images list to the loaded list of images. The 
@@ -468,7 +469,7 @@
 
                 <span class="title2">Setup, Run, and Use Guide</span>
                 <p class="title4">
-                    The setup required for this application requires that the photoSlideshow.html and photoSlideshow.js  
+                    The setup for this application requires that the photoSlideshow.html and photoSlideshow.js  
                     files exist in the part3 folder. As well, ensure that there are .png images within the part3 folder, as they are 
                     the images that will be displayed on the canvas. To run the program, simply access the photoSlideshow.html file directly 
                     or through the network of web applications. The slideshow can be started anytime by pressing the start 
@@ -574,11 +575,14 @@
                     My interpretation of the Utility Tools Web Application was that the applicaiton would consist 
                     of three tools to be used, which is a unit converter for weight, length, are, and volume. The 
                     number of conversions possible are not specified, but the structure should be good enough to 
-                    allow more units to be added easily. The mortgage calculator is a simple calculator that  
+                    allow more units to be added easily. As well, I imagine the unit converter to be similar to the 
+                    converter that is available by Google. The mortgage calculator is a simple calculator that  
                     provides the monthly payment rate if the correctly specified variables are inputted. It is 
                     assumed that the mortgage wanted is the monthly payment, and that it can be calculated using 
                     principal amount, monthly interest rate, and number of payments. The final tool is a tool that 
-                    would prove useful, where it ***GET TOOL***. The application also asked for a user-friendly 
+                    could potentially be useful, which will be a color generator. The color generator can be useful 
+                    in helping to decide a color for themes when it becomes difficult to find or think of one on 
+                    your own. The application also asked for a user-friendly 
                     interface, and that only one tool should be shown at one time. This seems similar to how the 
                     LearnTheWeb application was built and works, where only one unit is shown at a time and the 
                     user can easily switch between units. This can be applied here, where one tool is shown at a 
@@ -592,21 +596,89 @@
 
                 <span class="title2">Analysis and Design of the Web Application</span>
                 <p class="title4">
-                    The analysis of this 
+                    The analysis of this web application was to create a small network of tools. The first tool is 
+                    create a unit converter which replicates something similar to Google's unit converter. There 
+                    should be two input boxes, one for each of the units that will be converted between. There should 
+                    be drop boxes for each of the inputs to specify which inputs have which units for proper conversion. 
+                    As well, there should be another drop box for determining which categories of units to choose from.
+                    For the mortgage calculator, there should be inputs and labels associated with the inputs to tell 
+                    what the input is. There should also be text that displays the mortgage (or monthly payment amount) 
+                    which updates once all of the inputs are filled in. The inputs should be of type number, to ensure 
+                    that only numbers are inputted, and the mortgage amount should only be displayed if all of the inputs 
+                    are proper numbers. For the color generator, there will be a button that will generate the random color. 
+                    A div will update to display the color, and an associated label will display the color code in hexadecimal.
                 </p>
 
                 <hr />
 
                 <span class="title2">Documentation of Implementation</span>                
                 <p class="title4">
-
+                    For each of the utility tools, an XML file is used to create the HTML elements. Starting with the 
+                    unit converter tool, the XML contains information for creating two inputs and three dropdown lists. The 
+                    options for the two dropdown menus with different units have base values in an attribute called baseVal, which 
+                    are the value relative to the option with a base value of one for the respective type. The type of the unit is 
+                    specified in the second attribute parameter called type, which correlates with the options in the third 
+                    dropdown list that contains different types of unit conversions. To add another unit type of unit, add the 
+                    unit to the third select menu, then add the appropriate units under the other two select dropdown menus with 
+                    the appropriate base value and type that matches the unit. For the UI, the inputs and select dropdown lists are 
+                    created in the displayInformation function, which is called when the tab is switched to. The function 
+                    recursively creates the XML elements and assigns the appropriate classes and event listeners. Each input has an 
+                    dropdown menu associated with it, grouped together by having the same group className (ex. group1 for the first 
+                    input and dropdown list). The dropdown lists are then populated based on the type of unit conversion in the 
+                    third dropdown menu. The lists are populated with the options in the XML file. When the user inputs an input into 
+                    one of the dropdown menu, an event handler will use the base units from the two dropdown menus and convert the 
+                    opposing input value to the converted value. Two global variables (called group1 and group2) correspond with the 
+                    input and dropdown menu groups, and these variables are updated when any changes occur to the inputted values or 
+                    the units are changed. When the type of unit conversion dropdown list is changed, the two dropdown lists are updated 
+                    to have the appropriate units for the selected type. When either of the two dropdown lists have their units changed, 
+                    only the right input value (group2 input) will update to reflect the change. The left input value (group1) will 
+                    remain (this is similar to Google's unit converter).
                 </p>
-
+                <p class="title4">
+                    For the mortgage calculator, the XML data is structured differently, as they represent the actual HTML elements. 
+                    Thus, there is an h1 element for the header, a label, input, and break associated with each of the inputs 
+                    (principal, monthly interest rate, and number of payments). The inputs have id's so they can be referenced in the 
+                    JavaScript code, and they are of type &quot;number&quot; with steps of &quot;any&quot;. Setting the steps to any is 
+                    important, otherwise decimal values cannot be inputted into the textbox as valid inputs. Finally, there is one more 
+                    label that is the mortgageLabel, which will update when all of the inputs are valid. The program will generate the 
+                    HTML elements by using the innerHTML value from the XML data and setting that to the div's innerHTML, thus producing 
+                    the appropriate HTML elements. Afterwards, each input is given an event listener to calculate the mortgage. Each of the 
+                    inputs are passed into the calculateMortgage function (which is called by the event listener for an input into the input 
+                    elements), which uses the arguements property to retrieve a variable number of inputs. Each of these inputs are checked 
+                    to be numbers (not NaN values or NaN values after converting to floats), where an invalid input will keep the mortgageLabel 
+                    text from updating to show a mortgageg amount. If each of the inputs have a valid input, then the values are retrieved and 
+                    applied into the mortage calculation formula (more information about the formula can be found in the resources section). 
+                    The mortgageLabel text is then updated to show the mortgage amount. If the mortgage amount is too large to display, then 
+                    a note is displayed (otherwise NaN is displayed). This can be caused from an overflow with the Number of Payments input, 
+                    since it is used as an exponential value.
+                </p>
+                <p class="title4">
+                    For the random color generator, the XML data is structured similarily to the mortgage calculator, where it also defines 
+                    the exact HTML elements that will be rendered in the browswer. This includes a h1 element for the header title, a button to 
+                    generate the random color, a div to display the color, and a label to display the color code. The code uses the same method 
+                    of using the XML data's innerHTML property and set that div container's innerHTML to that value. Afterwards, the label is 
+                    moved outside of thediv that's created from the XML data, into the containing div. Afterards, an array for all hexadecimal 
+                    values are created. An event handler is added to the button to where there is an initial string called colorInHex containing 
+                    &quot;#&quot;, which is the start of a color code. Next, a for loop runs for 6 iterations, randomly generating a number 
+                    between 0 and 15 and selects a number of letter from the possible hexadecimal values. This value is appended onto the colorInHex 
+                    string to build the random color. After the loop finishes, the background color of the div is set to the color string, and the 
+                    colorLabel text value is updated to the colorString value.
+                </p>
                 <hr />
 
                 <span class="title2">Setup, Run, and Use Guide</span>
                 <p class="title4">
-
+                    The setup for this application requires that the UtilityTools.html, UtilityTools.js, and part4.xml files exist in  
+                    the part3 folder. To run the program, simply access the UtilityTools.html file directly or through the network of 
+                    web applications. The unit converting tool is used by inputting values into one input box, with the appropriately 
+                    selected units and the converted value in the second input box will appear. Conversions can be done in both 
+                    directions by changing inputting values into different input boxes. Different units can be selected from the 
+                    dropdown list underneath the inputs, and different types of units can be selected from the large dropdown menu. The 
+                    mortgage calculator can be used by inputting the appropriate values required to calculate a mortgage amount and the 
+                    value will be dynamically changed upon any inputs. The random color generator tool can be used by simply pressing the 
+                    &quot;Generate a Color!&quot; button. The div below the button will update with the randomly generated color and the 
+                    color code can be found below the div.
+                    Each tool can be accessed through the buttons in the navigation menu on the left side of the screen. 
                 </p>
 
                 <hr />
@@ -633,6 +705,24 @@
                         </a>
                     </li>
                 </ul>
+            </div>
+            <div class="titleDiv" hidden>
+                <span class="title2">About the XML Parsing Code</span>
+                <p class="title4">
+                    The XML parsing in the Learn The Web Web Application, Photo Slideshow Web Application, and Unit Converter tool in 
+                    the Utility Tools web application is a bit messy, but it performs the job correctly. After closer inspection 
+                    of the properties in the responseXML data, I noticed that the innerHTML elements match the can be created by simply 
+                    setting the innerHTML of the div container to the same innerHTML of the XML response. This would have simplified the 
+                    code greatly if I had figured this out earlier, but it was a great learning experience and helped in understanding 
+                    how XML data is passed from an XML file into JavaScript.
+                </p>
+                <hr />
+                <span class="title2">XMLHttpRequests and Working Browsers</span>
+                <p class="title4">
+                    The web application was tested on the Firefox and Chrome web browsers. Due to Chrome's inability to run XSLT files or 
+                    XMLHttpRequests, the web application only works on the Firefox browser.
+                </p>
+                <hr />
             </div>
         </div>
     </body>

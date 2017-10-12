@@ -10,7 +10,7 @@ var listOfImgCaptions = ['Beef Tartare', 'Blaze Pizza custom pizza', 'Chinese Sh
                          'Edmonton Fireworks', 'Edmonton River Valley', 'Edmonton Sunset',
                          'Homemade Mango Cake', 'Homemade Origami Bird and Basket', 'Homemade Pizza',
                          'Homemade Steak and Broccoli', 'Homemade Tacos', 'Homemade Taco Salad',
-                         'Korean Hot Wings', 'Nature View', 'Ramen', 'Sushi', 'The Pint Wings (40)',
+                         'Korean Hot Wings', 'Nature View', 'Ramen', 'Sushi', 'The Pint Wings (40 Wings)',
                          'Toma Burger', 'View of Toronto 1', 'View of Toronto 2', 'Old Train Tracks in Toronto'];
 var transitionsListDict = {};
 var photoInterval;

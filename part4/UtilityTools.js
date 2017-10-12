@@ -237,13 +237,13 @@ function createMortgageCalculatorInformation(xmlData, informationDiv) {
     var numberOfPaymentsInput = document.getElementById("numberOfPayments");
 
     principalInput.addEventListener("input", function() {
-        calculateMortgage(informationDiv, principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
+        calculateMortgage(principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
     });
     monthlyInterestRateInput.addEventListener("input", function() {
-        calculateMortgage(informationDiv, principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
+        calculateMortgage(principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
     });
     numberOfPaymentsInput.addEventListener("input", function() {
-        calculateMortgage(informationDiv, principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
+        calculateMortgage(principalInput, monthlyInterestRateInput, numberOfPaymentsInput);
     });
     
     
@@ -251,7 +251,7 @@ function createMortgageCalculatorInformation(xmlData, informationDiv) {
 
 function calculateMortgage() {
     var mortgageLabel = document.getElementById("mortgageLabel");
-    for (var i = 1; i < arguments.length; i++) {
+    for (var i = 0; i < arguments.length; i++) {
         if (isNaN(arguments[i].value)) {
             mortgageLabel.innerHTML = "Please Enter Valid Inputs";
             return;
@@ -266,9 +266,10 @@ function calculateMortgage() {
     var monthlyInterestRate = parseFloat(document.getElementById("monthlyInterestRate").value);
     var numberOfPayments = parseFloat(document.getElementById("numberOfPayments").value);
     
-    var overallMortgage = (principal * ((monthlyInterestRate * Math.pow((1 + monthlyInterestRate), numberOfPayments)) / (Math.pow((1 + monthlyInterestRate), numberOfPayments) - 1)));
+    var subcalc1 = Math.pow((1 + monthlyInterestRate), numberOfPayments);
 
-    mortgageLabel.innerHTML = "Mortgage Amount: " + overallMortgage.toFixed(2);    
+    var overallMortgage = (principal * ((monthlyInterestRate * subcalc1) / (subcalc1 - 1)));
+    mortgageLabel.innerHTML = isNaN(overallMortgage.toFixed(2)) ? "Mortgage Amount is too large to display!" : "Mortgage Amount: $" + overallMortgage.toFixed(2);        
 }
 
 function createColorGeneratiorInformation(xmlData, informationDiv) {
