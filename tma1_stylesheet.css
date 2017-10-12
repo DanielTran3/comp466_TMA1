@@ -266,8 +266,15 @@ select {
     margin-top: 5%;
 }
 
-#colorLabel {
+.largerLabel {
     margin-top: 5%;
     font-size: 1.2em !important;
     font-family: Consolas,monospace;
+}
+
+#captionLabel {
+    font-size: 1.8em !important;
+    font-family: Consolas,monospace;
+    text-align: center;
+    display: inherit;
 }

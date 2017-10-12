@@ -111,8 +111,6 @@ function scaleImage(image, canvas) {
 }
 
 function displayImageOnCanvas() {
-    var canvas = document.getElementById("slideshowCanvas");
-    
     transitionsListDict[currentTransition][1]();
 }
 
@@ -122,7 +120,7 @@ function initCanvas() {
     canvas.style.height = "100%";
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
-    canvas.style.maxHeight = "89vh";
+    canvas.style.maxHeight = "80vh";
     canvas.style.maxWidth = "100%";
     var ctx = canvas.getContext('2d');
     ctx.translate(canvas.width / 2, canvas.height / 2);
@@ -194,6 +192,7 @@ function noAnimationTransition() {
     var image = _images[listOfImgSrc[currentPhotoIndex]];
     var dimensions = scaleImage(image, canvas);
     ctx.drawImage(image, -dimensions[0] / 2, -dimensions[1] / 2, dimensions[0], dimensions[1]);
+    document.getElementById("captionLabel").innerHTML = image.caption;
 }
 
 function floatDownTransition() {
@@ -203,6 +202,7 @@ function floatDownTransition() {
     var dimensions = scaleImage(image, canvas);
     ctx.clearRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
     ctx.drawImage(image, -dimensions[0] / 2, yPos+=5, dimensions[0], dimensions[1]);
+    document.getElementById("captionLabel").innerHTML = image.caption;
     if (yPos < -dimensions[1] / 2) {
         requestAnimationFrame(floatDownTransition);
     }
@@ -219,6 +219,7 @@ function fadeInTransition() {
     var image = _images[listOfImgSrc[currentPhotoIndex]];
     var dimensions = scaleImage(image, canvas);    
     ctx.drawImage(image, -dimensions[0] / 2, -dimensions[1] / 2, dimensions[0], dimensions[1]);
+    document.getElementById("captionLabel").innerHTML = image.caption;
     alpha += 0.01;
     if (alpha < 1) {
         requestAnimationFrame(fadeInTransition);

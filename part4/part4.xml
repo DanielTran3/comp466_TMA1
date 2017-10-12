@@ -59,6 +59,6 @@
         <h1 class="title1">Random Color Generator</h1>
         <button id="colorGenerateButton" class="whiteButton">Generate a Color!</button>
         <div id="colorDiv"></div>
-        <label id="colorLabel"></label>
+        <label id="colorLabel" class="largerLabel"></label>
     </tool>
 </utilityTools>
