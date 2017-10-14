@@ -44,16 +44,23 @@
     </tool>
     <tool name="Mortgage Calculator" id="1">
         <h1 class="title1">Mortgage Calculator</h1>
-        <label>Principal </label>
-        <input type="number" id="principal" step="any"></input>
-        <br />
-        <label>Monthly Interest Rate </label>
-        <input type="number" id="monthlyInterestRate" step="any"></input>
-        <br />
-        <label>Number of Payments</label>
-        <input type="number" id="numberOfPayments" step="any"></input>
-        <br />
-        <label id="mortgageLabel">Awaiting Inputs</label>
+        <div class="containerDiv">
+            <div class="innerDiv">
+                <label class="floatLeftLabel">Principal</label>
+                <input type="number" id="principal" step="any" class="floatRightInput largeInputBox"></input>
+            </div>
+            <div class="innerDiv">
+                <label class="floatLeftLabel">Monthly Interest Rate</label>
+                <input type="number" id="monthlyInterestRate" step="any" class="floatRightInput largeInputBox"></input>
+            </div>
+            <div class="innerDiv">
+                <label class="floatLeftLabel">Number of Payments</label>
+                <input type="number" id="numberOfPayments" step="any" class="floatRightInput largeInputBox"></input>
+            </div>
+            <div class="innerDiv">
+                <label id="mortgageLabel" class="largerLabel">Awaiting Inputs</label>
+            </div>
+        </div>
     </tool>
     <tool name="Random Color Generator" id="2">
         <h1 class="title1">Random Color Generator</h1>

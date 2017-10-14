@@ -1,11 +1,11 @@
 var _images = {}
 var buttonNameDict = {};
-var listOfImgSrc = ['beef_tartare.png', 'blazePizza.png', 'chinese_shaved_ice.png', 'edmonton_fireworks.png',
-                    'edmonton_riverValley.png', 'edmonton_sunset.png', 'homemade_mango_cake.png', 
-                    'homemade_origami.png', 'homemade_pizza.png', 'homemade_steak_and_veggies.png', 
-                    'homemade_tacos.png', 'homemade_tacosalad.png', 'korean_hot_wings.png', 
-                    'nature.png', 'ramen.png', 'sushi.png', 'thePint_wings.png', 'toma_burger.png',
-                    'toronto_cityView1.png', 'toronto_cityView2.png', 'toronto_traintracks.png'];
+var listOfImgSrc = ['../shared/beef_tartare.png', '../shared/blazePizza.png', '../shared/chinese_shaved_ice.png', '../shared/edmonton_fireworks.png',
+                    '../shared/edmonton_riverValley.png', '../shared/edmonton_sunset.png', '../shared/homemade_mango_cake.png', 
+                    '../shared/homemade_origami.png', '../shared/homemade_pizza.png', '../shared/homemade_steak_and_veggies.png', 
+                    '../shared/homemade_tacos.png', '../shared/homemade_tacosalad.png', '../shared/korean_hot_wings.png', 
+                    '../shared/nature.png', '../shared/ramen.png', '../shared/sushi.png', '../shared/thePint_wings.png', '../shared/toma_burger.png',
+                    '../shared/toronto_cityView1.png', '../shared/toronto_cityView2.png', '../shared/toronto_traintracks.png'];
 var listOfImgCaptions = ['Beef Tartare', 'Blaze Pizza custom pizza', 'Chinese Shaved Ice',
                          'Edmonton Fireworks', 'Edmonton River Valley', 'Edmonton Sunset',
                          'Homemade Mango Cake', 'Homemade Origami Bird and Basket', 'Homemade Pizza',
@@ -117,7 +117,7 @@ function displayImageOnCanvas() {
 function initCanvas() {
     var canvas = document.getElementById("slideshowCanvas");
     canvas.style.width = "100%";
-    canvas.style.height = "100%";
+    canvas.style.height = "80vh";
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
     canvas.style.maxHeight = "80vh";

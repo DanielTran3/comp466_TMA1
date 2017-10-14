@@ -34,14 +34,14 @@
             </subsection>
             <subsection title="1.2 Paragraph Element">
                 <paragraph>
-                    In HTML, there exists a paragraph element, which can be created by using the &lt;img src="1.2_1.png"&gt;&lt;/img&gt; tag. Paragraphs
+                    In HTML, there exists a paragraph element, which can be created by using the &lt;img src="../shared/1.2_1.png"&gt;&lt;/img&gt; tag. Paragraphs
                     are used to display text that the programmer wants the end-user to see. It helps with defining a structure for the document.
                 </paragraph>
                 <paragraph>
                     Here is an example of a couple of paragraph elements displayed over eachother.
                 </paragraph>
-                <image src="paragraph.png">Two paragraphs, one ontop of the other saying &quot;This is a paragraph&quot; and &quot;This is another paragraph&quot; respectively</image>
-                <image src="paragraph_code.png">
+                <image src="../shared/paragraph.png">Two paragraphs, one ontop of the other saying &quot;This is a paragraph&quot; and &quot;This is another paragraph&quot; respectively</image>
+                <image src="../shared/paragraph_code.png">
                     &lt;p&gt;This is a paragraph&lt;/p&gt;
                     &lt;p&gt;This is another paragraph&lt;/p&gt;
                 </image>
@@ -77,8 +77,7 @@
                         &lt;/tr&gt;
                     &lt;/table&gt;
                 </paragraph>
-                <!-- <image src="table.png">A Table containing 3 rows and 4 columns, filled with numbers from 1 to 12.</image> -->
-                <image src="table_code.png">
+                <image src="../shared/table_code.png">
                     &lt;table&gt;
                         &lt;tr&gt;
                             &lt;td&gt;1&lt;/td&gt;
@@ -111,8 +110,8 @@
                     Here's an example of a div element with a paragraph inside of it. The div will have a 1px padding on the left and a 10px
                     padding on the right, with a blue dotted border.
                 </paragraph>
-                 <image src="div.png">A div with a paragraph that says "A paragraph inside a div", where the div has a 1px left padding, 10px right padding, a width of 100px, and a blue dotted border</image> 
-                <image src="div_code.png">
+                 <image src="../shared/div.png">A div with a paragraph that says "A paragraph inside a div", where the div has a 1px left padding, 10px right padding, a width of 100px, and a blue dotted border</image> 
+                <image src="../shared/div_code.png">
                     &lt;div style=&quot;padding-left:1px; padding-right:10px; border-style:dotted; border-color:blue; width:100px;&quot;%gt;
                         &lt;p%gt;A paragraph inside a div&lt;/p%gt;
                     &lt;/div%gt;
@@ -130,9 +129,9 @@
                     Here's an example of an anchor element before and after it was clicked.
                     &lt;a href="#"&gt;Anchor Element&lt;/a&gt;
                 </paragraph>
-                <image src="a_before.png">Anchor element with the text "Anchor Element" before it was clicked (text is blue)</image>
-                <image src="a_after.png">Anchor element with the text "Anchor Element" after it was clicked (text is purple)</image>
-                <image src="a_code.png">
+                <image src="../shared/a_before.png">Anchor element with the text "Anchor Element" before it was clicked (text is blue)</image>
+                <image src="../shared/a_after.png">Anchor element with the text "Anchor Element" after it was clicked (text is purple)</image>
+                <image src="../shared/a_code.png">
                     &lt;a href="#"&gt;Anchor Element&lt;/a&gt;
                 </image>
             </subsection>
@@ -151,7 +150,7 @@
                         &lt;li&gt;Element 3&lt;/li&gt;
                     &lt;ol/&gt;
                 </paragraph>
-                <image src="orderedlist_code.png">
+                <image src="../shared/orderedlist_code.png">
                     &lt;ol&gt;
                         &lt;li&gt;Element 1&lt;/li&gt;
                         &lt;li&gt;Element 2&lt;/li&gt;
@@ -166,7 +165,7 @@
                         &lt;li&gt;Element 3&lt;/li&gt;
                     &lt;ul/&gt;
                 </paragraph>
-                <image src="unorderedlist_code.png">
+                <image src="../shared/unorderedlist_code.png">
                     &lt;ul&gt;
                         &lt;li&gt;Element 1&lt;/li&gt;
                         &lt;li&gt;Element 2&lt;/li&gt;
@@ -200,7 +199,7 @@
                         &lt;li&gt;Element 3&lt;/li&gt;
                     &lt;/ul&gt;
                 </paragraph>
-                <image src="nestedlist_code.png">
+                <image src="../shared/nestedlist_code.png">
                     &lt;ul&gt;
                         &lt;li&gt;Element 1&lt;/li&gt;
                         &lt;li&gt;Element 2&lt;/li&gt;
@@ -223,11 +222,6 @@
                 </image>
             </subsection>
         </section>
-        <!-- <section title="&lt;hr&gt;">
-            <paragraph>
-                &lt;input type="submit" value="Start Quiz" class="whiteButton" style="margin-top:0px" /&gt;
-            </paragraph>
-        </section> -->
     </tutorial>
     <quiz name="Unit 1 Quiz">
         <section title="Unit 1 Quiz">
@@ -249,7 +243,7 @@
                 <answer name="q3" correct="">C. Using the &quot;row&quot; tag</answer>
                 <answer name="q3" correct="">D. Using the &quot;tableRow&quot; tag</answer>
             </question>
-            <question title="Question 4. What happens if a nested list is not inside na &quot;li&quot; element?">
+            <question title="Question 4. What happens if a nested list is not inside an &quot;li&quot; element?">
                 <answer name="q4" correct="">A. The HTML page gets an error and does not render</answer>
                 <answer name="q4" correct="">B. The HTML page renders but the nested list does not</answer>
                 <answer name="q4" correct="">C. The output is the same as if the list was inside an &quot;li&quot; element</answer>
@@ -297,8 +291,7 @@
                         12&lt;input type="range" max="100" min="12" value="51" /&gt;100
                     &lt;/label&gt;
                 </paragraph>
-                <!-- <image src="rangeInput.png">A slider with max value 100, min value 12, and starting value 51.</image> -->
-                <image src="rangeInput_code.png">
+                <image src="../shared/rangeInput_code.png">
                     &lt;label&gt;
                         12&lt;input type="range" max="100" min="12" value="51" /&gt;100
                     &lt;/label&gt;
@@ -315,19 +308,19 @@
                 <paragraph>
                     Here's an example of how to create an HTML color picker.
                 </paragraph>
-                <image src="color_input_before.png">The  input of type color before a color is selected (default to black)</image>
+                <image src="../shared/color_input_before.png">The  input of type color before a color is selected (default to black)</image>
                 <paragraph>
                     The above image shows the color input type before the user has specified a color
                 </paragraph>
-                <image src="color_input_dialog.png">The color picker dialog with the selected color as cyan</image>
+                <image src="../shared/color_input_dialog.png">The color picker dialog with the selected color as cyan</image>
                 <paragraph>
                     The above image shows the color picker dialog that is displayed when the input element is pressed
                 </paragraph>
-                <image src="color_input_after.png">The  input of type color after a color is selected (cyan)</image>
+                <image src="../shared/color_input_after.png">The  input of type color after a color is selected (cyan)</image>
                 <paragraph>
                     The above image shows the color input type after the user has specified a color (color seen in the previous image) 
                 </paragraph>
-                <image src="color_input_code.png">
+                <image src="../shared/color_input_code.png">
                     &lt;input type="color" /&gt;
                 </image>
             </subsection>
@@ -346,7 +339,7 @@
                 <paragraph>
                     The above element shows the date input with not date inputted.
                 </paragraph>
-                <image src="date_input_code.png">
+                <image src="../shared/date_input_code.png">
                     &lt;input type="date" /&gt;
                 </image>
             </subsection>
@@ -364,12 +357,12 @@
                 <paragraph>
                     The above element is an email input. Entering an invalid format email hightlight the input box red, while
                     entering a valid email (ex. email@email.com) will not.</paragraph>
-                <image src="email_input_invalid.png">An invalid email being submitted</image>
+                <image src="../shared/email_input_invalid.png">An invalid email being submitted</image>
                 <paragraph>
                     The above image shows an invalid popup message when an invalid email is trying to be submitted. The input box is
                     hightligted in red if the email is invalid
                 </paragraph>
-                <image src="email_input_code.png">
+                <image src="../shared/email_input_code.png">
                     &lt;input type="email" multiple required/&gt;
                 </image>
             </subsection>
@@ -383,14 +376,14 @@
                 </paragraph>
                 <paragraph>Here is an example of a number input, with a minimum of 5, maximum of 25, and a step of 2.</paragraph>
                 <paragraph>&lt;input type="number" min="5" max="25" step="2" /&gt;</paragraph>
-                <image src="number_input_code.png">
+                <image src="../shared/number_input_code.png">
                     &lt;input type="number" min="5" max="25" step="2" /&gt;
                 </image>
                 <paragraph>
                     If a number is submitted with a non-numeric value, or a value outside of the specified range, the user will be notified.
                     Here's an example, using the above example, when the user inputs a value outside of the valid range.
                 </paragraph>
-                <image src="number_input_invalid.png">
+                <image src="../shared/number_input_invalid.png">
                     Inputting a value of 2566 when the maximum allowed numeric value is 25. User gets prompted by a message stating
                     "Please select a value that is no more than 25."
                 </image>                    
@@ -403,7 +396,7 @@
                 </paragraph>
                 <paragraph>Here's an example of a search input.</paragraph>
                 <paragraph>&lt;input type="search" placeholder="Enter Query Here."/&gt;</paragraph>
-                <image src="search_input_code.png">
+                <image src="../shared/search_input_code.png">
                     &lt;input type="search" placeholder="Enter Query Here."/&gt;
                 </image>
             </subsection>
@@ -419,11 +412,11 @@
                 <paragraph>
                     &lt;input type="tel" placeholder="(###) ###-####" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"&gt;
                 </paragraph>
-                <image src="tel_input_code.png">
+                <image src="../shared/tel_input_code.png">
                     &lt;input type="tel" placeholder="(###) ###-####" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"&gt;
                 </image>
                 <paragraph>The error message for trying to submit a tel input that doesn't match the regex patter will be similar to the image seen below.</paragraph>
-                <image src="tel_input_error.png">
+                <image src="../shared/tel_input_error.png">
                     Error message for inputting a telephone number of the incorrect format.
                 </image>
             </subsection>
@@ -481,8 +474,8 @@
                     This is where the CSS styles are applied directly to the HTML element (the HTML style attributes are modified directly in the
                     creation of the HTML element). An example of what this would look like on a div element would be:
                 </paragraph>
-                <image src="css_3-2.png">A div with a blue background</image>
-                <image src="css_3-2_code.png">
+                <image src="../shared/css_3-2.png">A div with a blue background</image>
+                <image src="../shared/css_3-2_code.png">
                     &lt;div style="width:200px; height:200px; background-color:blue;"&gt;&lt;/div&gt;
                 </image>
                 <paragraph>
@@ -498,7 +491,7 @@
                 <paragraph>
                     A more reasonable approach would be to use an external CSS stylesheet, which can be used to create a common style for certain
                     elements or certain groups of elements. This can be done in one of two ways. In the first method, a "style" element
-                    (&lt;img src="3.2_2.png"&gt;&lt;/img&gt;) can be declared inside the HTML document that will allow for CSS styling
+                    (&lt;img src="../shared/3.2_2.png"&gt;&lt;/img&gt;) can be declared inside the HTML document that will allow for CSS styling
                     for a specific HTML file. This solution is better than the inline CSS, but still not the best, since the CSS code would need to
                     be duplicated in other HTML files as well. The best way is to use a separate CSS file (of type .css), where the stylesheet can be
                     referenced in each HTML file (using &lt;link rel="stylesheet" type="text/css" href="yourstylesheet.css" /&gt;). Discussing some of
@@ -515,13 +508,13 @@
                 <paragraph>
                     First, let's begin be defining a CSS rule-set for an HTML element. As stated in the previous unit, HTML elements can be given unique IDs. 
                     In CSS, styles can be applied directly to an HTML element with a specific ID. For example, if there is an element declared as
-                    &lt;img src="3.3_1.png"&gt;&lt;/img&gt;
+                    &lt;img src="../shared/3.3_1.png"&gt;&lt;/img&gt;
                     and we wanted to set the background color to red, it can be done in the CSS stylesheet as #myDiv { background-color:red; }. 
                     Notice how the div's ID was preceded by a '#'. The # symbol specifies that the CSS properties will be applied to an elements with that specific 
                     ID. Now let's say we wanted to apply the CSS properties to multiple HTML elements. A rule-set can be made similarly to how the rule-set 
                     was made for an ID, but replacing the '#' with a '.' (so using the above example, it would look like .myDiv { background-color:red; }). 
                     This rule-set can be applied to any HTML element by using the class attribute (so in the above div, it would be 
-                    &lt;img src="3.3_2.png"&gt;&lt;/img&gt;.
+                    &lt;img src="../shared/3.3_2.png"&gt;&lt;/img&gt;.
                     Multiple CSS classes can be applied to an element. If you want CSS rule-sets to be applied to a certain HTML elements (such as applying the CSS 
                     rule-set to all div elements), then specify the HTML element name with nothing preceding it (so once again, for a div element it would look 
                     like div { background-color:red; } to apply a red background to all div's).
@@ -576,13 +569,13 @@
                 </paragraph>
                 <paragraph>
                     JavaScript can be used in similar ways as CSS can. Some JavaScript functions can be called for an event in an inline HTML element
-                    (For example, &lt;img src="4.1_1.png"&gt;&lt;/img&gt; would create a button that would call the functions
+                    (For example, &lt;img src="../shared/4.1_1.png"&gt;&lt;/img&gt; would create a button that would call the functions
                     "javascriptFunction" when it is clicked). For similar reasons as with CSS, it is not recommended to call JavaScript functions in this
                     manner, as it makes maintainability and scalability more difficult. JavaScript can be declared inside an HTML file by using the
                     &lt;script&gt;"...JavaScript Here"&lt;/script&gt;. The JavaScript decan be defined between the two script tags. As well, JavaScript can
                     be defined outside of an HTML file, as its own external JavaScript file (ending with .js). The JavaScript can be included into any
                     HTML file by using the same script tag, but with a src attribute that points to the location of the JavaScript file (ex.
-                    &lt;script src="myJavascriptFile.js"&gt;&lt;/script&gt;).
+                    &lt;script src="../shared/myJavascriptFile.js"&gt;&lt;/script&gt;).
                 </paragraph>
             </subsection>
             <subsection title="4.2 Brief Introduction to AJAX">
@@ -601,7 +594,7 @@
                     server and the client. Here's an example of how to open a connection to asynchronously request from a server XML document and display
                     the requested information back to the client.
                 </paragraph>
-                <image src="4.2_1.png">
+                <image src="../shared/4.2_1.png">
                     function readXML(url) {
                         var xhr = new XMLHttpRequest();
                         xhr.onreadystatechange = function () {
@@ -616,10 +609,10 @@
                 <paragraph>
                     Let's take a look at the above function, called readXML. This function will create an XMLHttpRequest to a URL, and when the request is
                     ready, then a callback function is called. First, this method takes in a url as an input, which is the path to the URL that the user will
-                    be requesting from. The line &lt;img src="4.2_2.png"&gt;&lt;/img&gt; creates the XMLHttpRequest and assigns it to a variable called xhr.
+                    be requesting from. The line &lt;img src="../shared/4.2_2.png"&gt;&lt;/img&gt; creates the XMLHttpRequest and assigns it to a variable called xhr.
                     This variable will be used to deal with the XMLHttpRequest. The next chunk of code,
                 </paragraph>
-                <image src="4.2_3.png">
+                <image src="../shared/4.2_3.png">
                     xhr.onreadystatechange = function () {
                         if (this.readyState === 4 &amp;&amp; this.status === 200) {
                             callbackFunction(this);
@@ -632,7 +625,7 @@
                     If these two conditions are satisfied, then a callback function is called, passing in the request (callbackFunction(this)). "this" contains all
                     of the information from the request. Before the onreadystatechange is called, the request must be opened first, which occurs in the lines 
                 </paragraph>
-                <image src="4.2_4.png">
+                <image src="../shared/4.2_4.png">
                     xhr.open("get", url, false);
                     xhr.send(null);
                 </image>
