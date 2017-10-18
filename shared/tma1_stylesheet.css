@@ -310,3 +310,14 @@ select {
     display: inherit;
     margin-top: 5%;
 }
+
+.banner {
+    font-size: 2em !important;
+    font-family: Consolas,monospace;
+    text-decoration: underline;
+    color: white;
+    background-color: black;
+    text-align: right;
+    margin: 0px;
+    height: 1vh;
+}
